@@ -1,14 +1,14 @@
+import csv
+import doctest
+import glob
+import itertools
+from itertools import groupby
+import random
 import re
 import sys
-import glob
-import csv
-import itertools
-import random
-import doctest
+from time import localtime
 import unittest
 import xml.etree.ElementTree as etree
-from time import localtime
-from itertools import groupby
 
 # Output
 
