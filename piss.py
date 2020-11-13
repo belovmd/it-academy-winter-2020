@@ -1,3 +1,10 @@
+import sys
+import re
+import glob
+import csv
+import itertools
+import xml.etree.ElementTree as etree
+import random
 
 # 1 line: Output
 
@@ -35,9 +42,6 @@ greet('Jill')
 greet('Bob')
 # 6 lines: Import, regular expressions
 
-
-import re
-
 for test_string in ['555-1212', 'ILL-EGAL']:
     if re.match(r'^\d{3}-\d{4}$', test_string):
         print(test_string, 'is a valid US local phone number')
@@ -57,7 +61,6 @@ print('I owe the grocer $%.2f' % grocery_bill)
 
 
 # This program adds up integers that have been passed as arguments in the command line
-import sys
 
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
@@ -68,7 +71,7 @@ except ValueError:
 
 
 # indent your Python code to put into an email
-import glob
+
 
 # glob supports Unix style pathname extensions
 python_files = glob.glob('*.py')
@@ -165,10 +168,10 @@ if __name__ == '__main__':
 
 
 def median(pool):
-    '''Statistical median to demonstrate doctest.
+    """Statistical median to demonstrate doctest.
     >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
     6 #change to 7 in order to pass the test
-    '''
+    """
     copy = sorted(pool)
     size = len(copy)
     if size % 2 == 1:
@@ -197,16 +200,16 @@ This is the second.
 for has_chars, frags in groupby(lines, bool):
     if has_chars:
         print(' '.join(frags))
+
+
 # PRINTS:
 # This is the first paragraph.
 # This is the second.
 # 16 lines: csv module, tuple unpacking, cmp() built-in
 
 
-import csv
-
-
 # need to define cmp function in Python 3
+
 def cmp(a, b):
     return (a > b) - (a < b)
 
@@ -262,7 +265,7 @@ for answer in solve(BOARD_SIZE):
 # 20 lines: Prime numbers sieve w/fancy generators
 
 
-import itertools
+
 
 
 def iter_primes():
@@ -296,7 +299,7 @@ dinner_recipe = '''<html><body><table>
 </table></body></html>'''
 
 # From http://effbot.org/zone/element-index.htm
-import xml.etree.ElementTree as etree
+
 
 tree = etree.fromstring(dinner_recipe)
 
@@ -348,7 +351,7 @@ print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
 # 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
 
 
-import random
+
 
 guesses_made = 0
 
