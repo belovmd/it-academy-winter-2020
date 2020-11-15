@@ -1,15 +1,16 @@
-# 1 line: Output
-import re
-import sys
+import csv
+import doctest
 import glob
-from time import localtime
-import unittest
 import itertools
 from itertools import groupby
-import csv
-import xml.etree.ElementTree as etree
 import random
+import re
+import sys
+from time import localtime
+import unittest
+import xml.etree.ElementTree as etree
 
+# 1 line: Output
 print('Hello, world!')
 # 2 lines: Input, assignment
 
@@ -155,15 +156,10 @@ class TestMedian(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
-
 # 14 lines: Doctest-based testing
 
-
-def median(pool):
-    """Statistical median to demonstrate doctest.
-    >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
-    6 #change to 7 in order to pass the test
-    """
+def median1(pool):
+    """Statistical median to demonstrate doctest. >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8]) 6 #change to 7 in order to pass the test """
     copy = sorted(pool)
     size = len(copy)
     if size % 2 == 1:
@@ -173,7 +169,6 @@ def median(pool):
 
 
 if __name__ == '__main__':
-    import doctest
 
     doctest.testmod()
 # 15 lines: itertools
