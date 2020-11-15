@@ -1,6 +1,6 @@
-import re
-import random
 import itertools
+import random
+import re
 
 # 1 line: Output
 
@@ -99,7 +99,7 @@ def add_queen(queens):
 
 queens = add_queen([])
 print(queens)
-print("\n".join(". " * q + "Q " + ". "*(BOARD_SIZE - q - 1) for q in queens))
+print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
 
 # 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
 
