@@ -1,11 +1,13 @@
-
-import sys
-import re
-import glob
 import csv
+import glob
 import itertools
-import xml.etree.ElementTree as etree
 import random
+import re
+import sys
+import unittest
+import xml.etree.ElementTree as etree
+from itertools import groupby
+from time import localtime
 
 # 1 line: Output
 
@@ -86,9 +88,6 @@ for file_name in sorted(python_files):
     print()
 # 10 lines: Time, conditionals, from..import, for..else
 
-
-from time import localtime
-
 activities = {8: 'Sleeping',
               9: 'Commuting',
               17: 'Working',
@@ -107,7 +106,6 @@ else:
     print('Unknown, AFK or sleeping!')
 # 11 lines: Triple-quoted strings, while loop
 
-
 REFRAIN = '''
 %d bottles of beer on the wall,
 %d bottles of beer,
@@ -122,7 +120,6 @@ while bottles_of_beer > 1:
 
 
 # 12 lines: Classes
-
 
 class BankAccount(object):
     def __init__(self, initial_balance=0):
@@ -141,11 +138,9 @@ class BankAccount(object):
 my_account = BankAccount(15)
 my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
+
+
 # 13 lines: Unit testing with unittest
-
-
-import unittest
-
 
 def median(pool):
     copy = sorted(pool)
@@ -186,9 +181,6 @@ if __name__ == '__main__':
 
     doctest.testmod()
 # 15 lines: itertools
-
-
-from itertools import groupby
 
 lines = '''
 This is the
@@ -263,11 +255,9 @@ def solve(n):
 
 for answer in solve(BOARD_SIZE):
     print(answer)
+
+
 # 20 lines: Prime numbers sieve w/fancy generators
-
-
-
-
 
 def iter_primes():
     # an iterator of all numbers between 2 and +infinity
@@ -290,7 +280,6 @@ for p in iter_primes():
     print(p)
 # 21 lines: XML/HTML parsing
 
-
 dinner_recipe = '''<html><body><table>
 <tr><th>amt</th><th>unit</th><th>item</th></tr>
 <tr><td>24</td><td>slices</td><td>baguette</td></tr>
@@ -300,7 +289,6 @@ dinner_recipe = '''<html><body><table>
 </table></body></html>'''
 
 # From http://effbot.org/zone/element-index.htm
-
 
 tree = etree.fromstring(dinner_recipe)
 
@@ -350,10 +338,6 @@ print(queens)
 print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
 
 # 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
-
-
-
-
 guesses_made = 0
 
 name = input('Hello! What is your name?\n')
