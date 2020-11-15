@@ -61,10 +61,7 @@ my_purchase = {
 grocery_bill = sum(prices[fruit] * my_purchase[fruit]
                    for fruit in my_purchase)
 print('I owe the grocer $%.2f' % grocery_bill)
-# 8 lines: Command line arguments, exception handling
-
-
-# This program adds up integers that have been passed as arguments in the command line
+# 8 lines: Command line arguments, exception handlinge
 
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
@@ -89,7 +86,8 @@ for file_name in sorted(python_files):
 # 10 lines: Time, conditionals, from..import, for..else
 
 
-activities = {8: 'Sleeping', 9: 'Commuting', 17: 'Working', 18: 'Commuting', 20: 'Eating', 22: 'Resting'}
+activities = {8: 'Sleeping', 9: 'Commuting', 17: 'Working',
+              18: 'Commuting', 20: 'Eating', 22: 'Resting'}
 
 time_now = localtime()
 hour = time_now.tm_hour
@@ -158,8 +156,9 @@ if __name__ == '__main__':
 
 # 14 lines: Doctest-based testing
 
-def median1(pool):
-    """Statistical median to demonstrate doctest. >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8]) 6 #change to 7 in order to pass the test """
+def median(pool):
+    """Statistical median to demonstrate doctest. >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
+    6 #change to 7 in order to pass the test """
     copy = sorted(pool)
     size = len(copy)
     if size % 2 == 1:
