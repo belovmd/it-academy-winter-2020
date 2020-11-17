@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import csv
 import glob
 import itertools
@@ -62,8 +63,8 @@ grocery_bill = sum(prices[fruit] * my_purchase[fruit]
 print('I owe the grocer $%.2f' % grocery_bill)
 # 8 lines: Command line arguments, exception handling
 
-
-# This program adds up integers that have been passed as arguments in the command line
+# This program adds up integers that have been passed as arguments in the
+# command line
 
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
@@ -159,27 +160,6 @@ class TestMedian(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
-
-# 14 lines: Doctest-based testing
-
-
-def median(pool):
-    """Statistical median to demonstrate doctest.
-    >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
-    6 #change to 7 in order to pass the test
-    """
-    copy = sorted(pool)
-    size = len(copy)
-    if size % 2 == 1:
-        return copy[int((size - 1) / 2)]
-    else:
-        return (copy[int(size / 2 - 1)] + copy[int(size / 2)]) / 2
-
-
-if __name__ == '__main__':
-    import doctest
-
-    doctest.testmod()
 # 15 lines: itertools
 
 lines = '''
@@ -361,6 +341,7 @@ while guesses_made < 6:
         break
 
 if guess == number:
-    print('Good job, {0}! You guessed my number in {1} guesses!'.format(name, guesses_made))
+    print('Good job, {0}! You guessed my number in {1} guesses!'.format
+          (name, guesses_made))
 else:
     print('Nope. The number I was thinking of was {0}'.format(number))
