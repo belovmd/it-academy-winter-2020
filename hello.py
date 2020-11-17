@@ -6,9 +6,9 @@ import random
 import re
 import sys
 import unittest
-from itertools import groupby
 import xml.etree.ElementTree as etree
 from time import localtime
+from itertools import groupby
 
 # 1 line: Output
 
