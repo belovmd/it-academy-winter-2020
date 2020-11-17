@@ -1,16 +1,19 @@
 import re
 import sys
 import glob
-from time import localtime
 import unittest
-from itertools import groupby
 import csv
+import itertools
+
+from time import localtime
+from itertools import groupby
+
 
 # 1 line: Output
 print('Hello, world!')
 
 # 2 lines: Input, assignment
-name = input('What is your name?\n')
+name = input('What is your name?')
 print('Hi, %s.' % name)
 
 # 3 lines: For loop, built-in enumerate function, new style formatting
@@ -52,6 +55,7 @@ grocery_bill = sum(prices[fruit] * my_purchase[fruit]
 print('I owe the grocer $%.2f' % grocery_bill)
 
 # 8 lines: Command line arguments, exception handling
+# This program adds up integers that have been passed as arguments in the command line
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
     print('sum =', total)
@@ -59,6 +63,8 @@ except ValueError:
     print('Please supply integer arguments')
 
 # 9 lines: Opening files
+# indent your Python code to put into an email
+# glob supports Unix style pathname extensions
 python_files = glob.glob('*.py')
 for file_name in sorted(python_files):
     print('    ------' + file_name)
@@ -221,9 +227,57 @@ def solve(n):
 
     smaller_solutions = solve(n - 1)
 
-    return [solution + [(n , i + 1)]
-        for i in range(BOARD_SIZE)
+    return [solution + [(n, i + 1)]
+            for i in range(BOARD_SIZE)
             for solution in smaller_solutions
-                if not under_attack(i+1, solution)]
+            if not under_attack(i + 1, solution)]
+
+
 for answer in solve(BOARD_SIZE):
     print(answer)
+
+# 20 lines: Prime numbers sieve w/fancy generators
+
+
+def iter_primes():
+    # an iterator of all numbers between 2 and +infinity
+    numbers = itertools.count(2)
+
+    # generate primes forever
+    while True:
+        # get the first number from the iterator (always a prime)
+        prime = next(numbers)
+        yield prime
+
+        # this code iteratively builds up a chain of
+        # filters...slightly tricky, but ponder it a bit
+        numbers = filter(prime.__rmod__, numbers)
+
+
+for p in iter_primes():
+    if p > 1000:
+        break
+    print(p)
+
+# 21 lines: XML/HTML parsing
+dinner_recipe = '''<html><body><table>
+<tr><th>amt</th><th>unit</th><th>item</th></tr>
+<tr><td>24</td><td>slices</td><td>baguette</td></tr>
+<tr><td>2+</td><td>tbsp</td><td>olive oil</td></tr>
+<tr><td>1</td><td>cup</td><td>tomatoes</td></tr>
+<tr><td>1</td><td>jar</td><td>pesto</td></tr>
+</table></body></html>'''
+
+# From http://effbot.org/zone/element-index.htm
+import xml.etree.ElementTree as etree
+tree = etree.fromstring(dinner_recipe)
+
+# For invalid HTML use http://effbot.org/zone/element-soup.htm
+# import ElementSoup, StringIO
+# tree = ElementSoup.parse(StringIO.StringIO(dinner_recipe))
+
+pantry = set(['olive oil', 'pesto'])
+for ingredient in tree.getiterator('tr'):
+    amt, unit, item = ingredient
+    if item.tag == "td" and item.text not in pantry:
+        print ("%s: %s %s" % (item.text, amt.text, unit.text))
