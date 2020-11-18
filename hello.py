@@ -1,15 +1,13 @@
 #!/usr/bin/env python
-import csv
-import glob
-import itertools
-import random
-import re
 import sys
-import unittest
-import xml.etree.ElementTree as etree
+import glob
 from time import localtime
+import unittest
 from itertools import groupby
-
+import csv
+import itertools
+import xml.etree.ElementTree as etree
+import random
 # 1 line: Output
 
 print('Hello, world!')
