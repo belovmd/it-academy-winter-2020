@@ -1,6 +1,5 @@
 # Output
-import unittest
-from itertools import groupby
+import itertools
 
 print('Hello, world!')
 
@@ -97,7 +96,7 @@ This is the second.
 '''.splitlines()
 # Use itertools.groupby and bool to return groups of
 # consecutive lines that either have content or don't.
-for has_chars, frags in groupby(lines, bool):
+for has_chars, frags in itertools.groupby(lines, bool):
     if has_chars:
         print(' '.join(frags))
 
@@ -109,8 +108,11 @@ for has_chars, frags in groupby(lines, bool):
 # Doctest-based testing
 def median(pool):
     """Statistical median to demonstrate doctest.
+
     >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
+
     6 #change to 7 in order to pass the test
+
     """
     copy = sorted(pool)
     size = len(copy)
@@ -124,23 +126,3 @@ if __name__ == '__main__':
     import doctest
 
     doctest.testmod()
-
-
-# Unit testing with unittest
-# noqa import unittest
-def median(pool):
-    copy = sorted(pool)
-    size = len(copy)
-    if size % 2 == 1:
-        return copy[int((size - 1) / 2)]
-    else:
-        return (copy[int(size / 2 - 1)] + copy[int(size / 2)]) / 2
-
-
-class TestMedian(unittest.TestCase):
-    def testMedian(self):
-        self.assertEqual(median([2, 9, 9, 7, 9, 2, 4, 5, 8]), 7)
-
-
-if __name__ == '__main__':
-    unittest.main()
