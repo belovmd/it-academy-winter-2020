@@ -1,15 +1,16 @@
+from itertools
+from time
 import csv
 import doctest
 import glob
+import groupby
 import itertools
+import localtime
 import random
 import re
 import sys
 import unittest
 import xml.etree.ElementTree as etree
-from itertools import groupby
-from time import localtime
-
 
 # 1 line: Output
 
@@ -64,7 +65,7 @@ print('I owe the grocer $%.2f' % grocery_bill)
 # 8 lines: Command line arguments, exception handling
 
 
-# The program adds the numbers passed as arguments on the command line.
+# This program adds up integers that have been passed as arguments in the command line
 
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
@@ -160,11 +161,8 @@ if __name__ == '__main__':
 
 def median_2(pool):
     '''Statistical median to demonstrate doctest.
-
     >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
-
     6 #change to 7 in order to pass the test
-
     '''
     copy = sorted(pool)
     size = len(copy)
@@ -329,10 +327,8 @@ def add_queen(queens):
 
 queens = add_queen([])
 print(queens)
-print("\n".join(". "*q + "Q " + ". "*(BOARD_SIZE-q-1) for q in queens)
-
+print("\n".join(". " * q + "Q " + " . " * (BOARD_SIZE - q - 1) for q in queens))
 # 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
-
 
 guesses_made = 0
 
