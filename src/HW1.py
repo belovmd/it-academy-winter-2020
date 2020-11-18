@@ -13,6 +13,7 @@ while babies < 100:
     print('This generation has {0} babies'.format(babies))
     parents, babies = (babies, parents + babies)
 # Import, regular expressions
+
 import re
 
 for test_string in ['555-1212', 'ILL-EGAL']:
