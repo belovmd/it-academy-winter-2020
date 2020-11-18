@@ -18,18 +18,20 @@ name = input('What is your name?\n')
 print('Hi, %s.' % name)
 
 # 3 lines: For loop, built-in enumerate function, new style formatting
+
 friends = ['john', 'pat', 'gary', 'michael']
 for i, name in enumerate(friends):
     print("iteration {iteration} is {name}".format(iteration=i, name=name))
 
-    # 4 lines: Fibonacci, tuple assignment
+# 4 lines: Fibonacci, tuple assignment
 
 parents, babies = (1, 1)
 while babies < 100:
     print('This generation has {0} babies'.format(babies))
     parents, babies = (babies, parents + babies)
 
-    # 5 lines: Functions
+
+# 5 lines: Functions
 
 
 def greet(name):
@@ -60,7 +62,8 @@ print('I owe the grocer $%.2f' % grocery_bill)
 
 # 8 lines: Command line arguments, exception handling
 
-# This program adds up integers that have been passed as arguments in the command line
+# This program adds up integers that have been passed \
+# as arguments in the command line
 
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
@@ -136,7 +139,6 @@ class BankAccount(object):
 my_account = BankAccount(15)
 my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
-
 
 # 13 lines: Unit testing with unittest
 
@@ -235,7 +237,7 @@ def under_attack(col, queens):
 
         if c in (left, col, right):
             return True
-        return False
+    return False
 
 
 def solve(n):
@@ -255,6 +257,7 @@ for answer in solve(BOARD_SIZE):
 
 
 # 20 lines: Prime numbers sieve w/fancy generators
+
 
 def iter_primes():
     # an iterator of all numbers between 2 and +infinity
