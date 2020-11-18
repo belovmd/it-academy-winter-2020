@@ -11,7 +11,6 @@ from itertools import groupby
 from time import localtime
 
 
-
 # 1 line: Output
 
 
