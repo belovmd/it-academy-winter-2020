@@ -1,3 +1,14 @@
+import re
+import sys
+import glob
+from time import localtime
+import unittest
+from itertools import groupby
+import csv
+import xml.etree.ElementTree as etree
+import itertools
+import random
+
 # 1 line: Output
 
 print('Hello, world!')
@@ -33,7 +44,6 @@ greet('Bob')
 
 # 6 lines: Import, regular expressions
 
-import re
 
 for test_string in ['555-1212', 'ILL-EGAL']:
     if re.match(r'^\d{3}-\d{4}$', test_string):
@@ -53,7 +63,6 @@ print('I owe the grocer $%.2f' % grocery_bill)
 
 # 8 lines: Command line arguments, exception handling
 # This program adds up integers that have been passed as arguments in the command line
-import sys
 
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
@@ -63,7 +72,6 @@ except ValueError:
 
 # 9 lines: Opening files
 # indent your Python code to put into an email
-import glob
 
 # glob supports Unix style pathname extensions
 python_files = glob.glob('*.py')
@@ -78,7 +86,6 @@ for file_name in sorted(python_files):
 
 # 10 lines: Time, conditionals, from..import, for..else
 
-from time import localtime
 
 activities = {8: 'Sleeping',
               9: 'Commuting',
@@ -132,10 +139,8 @@ my_account = BankAccount(15)
 my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
 
+
 # 13 lines: Unit testing with unittest
-
-import unittest
-
 
 def median(pool):
     copy = sorted(pool)
@@ -144,7 +149,6 @@ def median(pool):
         return copy[int((size - 1) / 2)]
     else:
         return (copy[int(size / 2 - 1)] + copy[int(size / 2)]) / 2
-
 
 class TestMedian(unittest.TestCase):
     def testMedian(self):
@@ -158,10 +162,10 @@ if __name__ == '__main__':
 # 14 lines: Doctest-based testing
 
 def median(pool):
-    '''Statistical median to demonstrate doctest.
+    """Statistical median to demonstrate doctest.
     >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
     6 #change to 7 in order to pass the test
-    '''
+    """
     copy = sorted(pool)
     size = len(copy)
     if size % 2 == 1:
@@ -177,7 +181,6 @@ if __name__ == '__main__':
 
 # 15 lines: itertools
 
-from itertools import groupby
 
 lines = '''
 This is the
@@ -190,16 +193,16 @@ This is the second.
 for has_chars, frags in groupby(lines, bool):
     if has_chars:
         print(' '.join(frags))
+
+
 # PRINTS:
 # This is the first paragraph.
 # This is the second.
 
 # 16 lines: csv module, tuple unpacking, cmp() built-in
-
-import csv
-
-
 # need to define cmp function in Python 3
+
+
 def cmp(a, b):
     return (a > b) - (a < b)
 
@@ -252,15 +255,13 @@ def solve(n):
 
 for answer in solve(BOARD_SIZE):
     print(answer)
+
+
 # 20 lines: Prime numbers sieve w/fancy generators
-
-import itertools
-
 
 def iter_primes():
     # an iterator of all numbers between 2 and +infinity
     numbers = itertools.count(2)
-
     # generate primes forever
     while True:
         # get the first number from the iterator (always a prime)
@@ -288,7 +289,6 @@ dinner_recipe = '''<html><body><table>
 </table></body></html>'''
 
 # From http://effbot.org/zone/element-index.htm
-import xml.etree.ElementTree as etree
 
 tree = etree.fromstring(dinner_recipe)
 
@@ -296,7 +296,7 @@ tree = etree.fromstring(dinner_recipe)
 # import ElementSoup, StringIO
 # tree = ElementSoup.parse(StringIO.StringIO(dinner_recipe))
 
-pantry = set(['olive oil', 'pesto'])
+pantry = ['olive oil', 'pesto']
 for ingredient in tree.getiterator('tr'):
     amt, unit, item = ingredient
     if item.tag == "td" and item.text not in pantry:
@@ -339,7 +339,6 @@ print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
 
 # 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
 
-import random
 
 guesses_made = 0
 
