@@ -1,7 +1,4 @@
-from itertools import groupby
-from time import localtime
 import csv
-import doctest
 import glob
 import itertools
 import random
@@ -10,31 +7,29 @@ import sys
 import unittest
 import xml.etree.ElementTree as etree
 
+from itertools import groupby
+from time import localtime
+
 # 1 line: Output
-
-
 print('Hello, world!')
+
 # 2 lines: Input, assignment
-
-
-name = input('What is your name?\n')
+name = ('What is your name?\n')
 print('Hi, %s.' % name)
+
 # 3 lines: For loop, built-in enumerate function, new style formatting
-
-
 friends = ['john', 'pat', 'gary', 'michael']
 for i, name in enumerate(friends):
     print("iteration {iteration} is {name}".format(iteration=i, name=name))
+
 # 4 lines: Fibonacci, tuple assignment
-
-
 parents, babies = (1, 1)
 while babies < 100:
     print('This generation has {0} babies'.format(babies))
     parents, babies = (babies, parents + babies)
+
+
 # 5 lines: Functions
-
-
 def greet(name):
     print('Hello', name)
 
@@ -42,17 +37,16 @@ def greet(name):
 greet('Jack')
 greet('Jill')
 greet('Bob')
+
+
 # 6 lines: Import, regular expressions
-
-
 for test_string in ['555-1212', 'ILL-EGAL']:
     if re.match(r'^\d{3}-\d{4}$', test_string):
         print(test_string, 'is a valid US local phone number')
     else:
         print(test_string, 'rejected')
+
 # 7 lines: Dictionaries, generator expressions
-
-
 prices = {'apple': 0.40, 'banana': 0.50}
 my_purchase = {
     'apple': 1,
@@ -60,21 +54,18 @@ my_purchase = {
 grocery_bill = sum(prices[fruit] * my_purchase[fruit]
                    for fruit in my_purchase)
 print('I owe the grocer $%.2f' % grocery_bill)
+
 # 8 lines: Command line arguments, exception handling
-
-
-# This program adds the numbers given as an argument on the command line.
-
+# This program adds up integers that have been\
+# passed as arguments in the command line
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
     print('sum =', total)
 except ValueError:
     print('Please supply integer arguments')
+
 # 9 lines: Opening files
-
-
 # indent your Python code to put into an email
-
 # glob supports Unix style pathname extensions
 python_files = glob.glob('*.py')
 for file_name in sorted(python_files):
@@ -85,6 +76,7 @@ for file_name in sorted(python_files):
             print('    ' + line.rstrip())
 
     print()
+
 # 10 lines: Time, conditionals, from..import, for..else
 activities = {8: 'Sleeping',
               9: 'Commuting',
@@ -102,9 +94,8 @@ for activity_time in sorted(activities.keys()):
         break
 else:
     print('Unknown, AFK or sleeping!')
+
 # 11 lines: Triple-quoted strings, while loop
-
-
 REFRAIN = '''
 %d bottles of beer on the wall,
 %d bottles of beer,
@@ -113,11 +104,12 @@ take one down, pass it around,
 '''
 bottles_of_beer = 9
 while bottles_of_beer > 1:
-    print(REFRAIN % (bottles_of_beer, bottles_of_beer, bottles_of_beer - 1))
+    print(REFRAIN % (bottles_of_beer, bottles_of_beer,
+          bottles_of_beer - 1))
     bottles_of_beer -= 1
+
+
 # 12 lines: Classes
-
-
 class BankAccount(object):
     def __init__(self, initial_balance=0):
         self.balance = initial_balance
@@ -135,9 +127,9 @@ class BankAccount(object):
 my_account = BankAccount(15)
 my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
+
+
 # 13 lines: Unit testing with unittest
-
-
 def median(pool):
     copy = sorted(pool)
     size = len(copy)
@@ -152,12 +144,12 @@ class TestMedian(unittest.TestCase):
         self.assertEqual(median([2, 9, 9, 7, 9, 2, 4, 5, 8]), 7)
 
 
-if __name__ == '__main__':
+if name == '__main__':
     unittest.main()
+
+
 # 14 lines: Doctest-based testing
-
-
-def median_2(pool):
+def median1(pool):
     '''Statistical median to demonstrate doctest.
 
     >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
@@ -165,6 +157,7 @@ def median_2(pool):
     6 #change to 7 in order to pass the test
 
     '''
+
     copy = sorted(pool)
     size = len(copy)
     if size % 2 == 1:
@@ -173,9 +166,11 @@ def median_2(pool):
         return (copy[int(size / 2 - 1)] + copy[int(size / 2)]) / 2
 
 
-if __name__ == '__main__':
+if name == '__main__':
+    import doctest
+    doctest.te
+stmod()
 
-    doctest.testmod()
 # 15 lines: itertools
 lines = '''
 This is the
@@ -191,16 +186,16 @@ for has_chars, frags in groupby(lines, bool):
 # PRINTS:
 # This is the first paragraph.
 # This is the second.
+
 # 16 lines: csv module, tuple unpacking, cmp() built-in
+
+
 # need to define cmp function in Python 3
-
-
 def cmp(a, b):
     return (a > b) - (a < b)
 
+
 # write stocks data as comma-separated values
-
-
 with open('stocks.csv', 'w', newline='') as stocksFileW:
     writer = csv.writer(stocksFileW)
     writer.writerows([
@@ -217,9 +212,8 @@ with open('stocks.csv', 'r') as stocksFile:
     for ticker, name, price, change, pct in stocks:
         status = status_labels[cmp(float(change), 0.0)]
         print('%s is %s (%.2f)' % (name, status, float(pct)))
+
 # 18 lines: 8-Queens Problem (recursion)
-
-
 BOARD_SIZE = 8
 
 
@@ -248,6 +242,7 @@ def solve(n):
 
 for answer in solve(BOARD_SIZE):
     print(answer)
+
 # 20 lines: Prime numbers sieve w/fancy generators
 
 
@@ -270,9 +265,8 @@ for p in iter_primes():
     if p > 1000:
         break
     print(p)
+
 # 21 lines: XML/HTML parsing
-
-
 dinner_recipe = '''<html><body><table>
 <tr><th>amt</th><th>unit</th><th>item</th></tr>
 <tr><td>24</td><td>slices</td><td>baguette</td></tr>
@@ -282,7 +276,6 @@ dinner_recipe = '''<html><body><table>
 </table></body></html>'''
 
 # From http://effbot.org/zone/element-index.htm
-
 tree = etree.fromstring(dinner_recipe)
 
 # For invalid HTML use http://effbot.org/zone/element-soup.htm
@@ -294,9 +287,8 @@ for ingredient in tree.getiterator('tr'):
     amt, unit, item = ingredient
     if item.tag == "td" and item.text not in pantry:
         print("%s: %s %s" % (item.text, amt.text, unit.text))
+
 # 28 lines: 8-Queens Problem (define your own exceptions)
-
-
 BOARD_SIZE = 8
 
 
@@ -328,14 +320,15 @@ def add_queen(queens):
 
 queens = add_queen([])
 print(queens)
-print("\n".join(". "*q + "Q " + ". "*(BOARD_SIZE-q-1) for q in queens))
-# 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
+print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
 
+# 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
 guesses_made = 0
 
 name = input('Hello! What is your name?\n')
 
-number = random.randint(1, 20)
+number = rand
+om.randint(1, 20)
 print('Well, {0}, I am thinking of a number between 1 and 20.'.format(name))
 
 while guesses_made < 6:
@@ -354,6 +347,8 @@ while guesses_made < 6:
         break
 
 if guess == number:
-    print 'Good job, {0}! You guessed my number in {1} guesses!'.format(name, guesses_made)
+    print('Good job, {0}! You guessed my\
+    number in {1} guesses!'.format(name, guesses_made))
 else:
     print('Nope. The number I was thinking of was {0}'.format(number))
+    
