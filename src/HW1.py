@@ -1,4 +1,14 @@
+import re
 import sys
+import glob
+from time import localtime
+import unittest
+from itertools import groupby
+import csv
+import itertools
+import xml.etree.ElementTree
+import random
+# Все операции импорта перемещены в верхнюю часть файла (из строк 26, 50, 63, 113, 152, 169, 224, 256, 303)
 
 print('Hello, world!')
 
@@ -23,7 +33,6 @@ greet('Jack')
 greet('Jill')
 greet('Bob')
 
-import re
 for test_string in ['555-1212', 'ILL-EGAL']:
     if re.match(r'^\d{3}-\d{4}$', test_string):
         print(test_string, 'is a valid US local phone number')
@@ -47,7 +56,6 @@ except ValueError:
     print('Please supply integer arguments')
 
 # indent your Python code to put into an email
-import glob
 
 # glob supports Unix style pathname extensions
 python_files = glob.glob('*.py')
@@ -60,7 +68,6 @@ for file_name in sorted(python_files):
 
     print()
 
-from time import localtime
 
 activities = {8: 'Sleeping',
               9: 'Commuting',
@@ -110,8 +117,6 @@ my_account = BankAccount(15)
 my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
 
-import unittest
-
 
 def median(pool):
     copy = sorted(pool)
@@ -149,7 +154,6 @@ if __name__ == '__main__':
 
     doctest.testmod()
 
-from itertools import groupby
 
 lines = '''
 This is the
@@ -165,8 +169,6 @@ for has_chars, frags in groupby(lines, bool):
 # PRINTS:
 # This is the first paragraph.
 # This is the second.
-
-import csv
 
 
 # need to define cmp function in Python 3
@@ -195,10 +197,10 @@ with open('stocks.csv', 'r') as stocksFile:
 BOARD_SIZE = 8
 
 
-def under_attack(col, queens):
+def under_attack(col, girls) -> object:
     left = right = col
 
-    for r, c in reversed(queens):
+    for r, c in reversed(girls):
         left, right = left - 1, right + 1
 
         if c in (left, col, right):
@@ -212,16 +214,14 @@ def solve(n):
 
     smaller_solutions = solve(n - 1)
 
-    return [solution + [(n, i + 1)]
-            for i in range(BOARD_SIZE)
+    return [solution + [(n, a + 1)]
+            for a in range(BOARD_SIZE)
             for solution in smaller_solutions
-            if not under_attack(i + 1, solution)]
+            if not under_attack(a + 1, solution)]
 
 
 for answer in solve(BOARD_SIZE):
     print(answer)
-
-import itertools
 
 
 def iter_primes():
@@ -253,9 +253,8 @@ dinner_recipe = '''<html><body><table>
 </table></body></html>'''
 
 # From http://effbot.org/zone/element-index.htm
-import xml.etree.ElementTree as etree
 
-tree = etree.fromstring(dinner_recipe)
+tree = xml.etree.ElementTree.fromstring(dinner_recipe)
 
 # For invalid HTML use http://effbot.org/zone/element-soup.htm
 # import ElementSoup, StringIO
@@ -274,17 +273,17 @@ class BailOut(Exception):
     pass
 
 
-def validate(queens):
-    left = right = col = queens[-1]
-    for r in reversed(queens[:-1]):
+def validate(king):
+    left = right = col = king[-1]
+    for r in reversed(king[:-1]):
         left, right = left - 1, right + 1
         if r in (left, col, right):
             raise BailOut
 
 
-def add_queen(queens):
-    for i in range(BOARD_SIZE):
-        test_queens = queens + [i]
+def add_queen(womans):
+    for b in range(BOARD_SIZE):
+        test_queens = womans + [b]
         try:
             validate(test_queens)
             if len(test_queens) == BOARD_SIZE:
@@ -300,7 +299,6 @@ queens = add_queen([])
 print(queens)
 print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
 
-import random
 
 guesses_made = 0
 
