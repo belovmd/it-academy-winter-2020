@@ -8,6 +8,7 @@ import sys
 from time import localtime
 import unittest
 import xml.etree.ElementTree
+
 # Все операции импорта перемещены в верхнюю часть файла
 # перемещены из строк 26, 50, 63, 113, 152, 169, 224, 256, 303
 # укоротила строку 11 путем разбивки надвое
@@ -79,7 +80,6 @@ for file_name in sorted(python_files):
             print('    ' + line.rstrip())
 
     print()
-
 
 # 10 lines: Time, conditionals, from..import, for..else
 activities = {8: 'Sleeping',
@@ -153,16 +153,11 @@ if __name__ == '__main__':
 
 
 # 14 lines: Doctest-based testing
-# noqa: F811
-def median(pool):
-
-    """Statistical median to demonstrate doctest.
-
-    >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
-
-    6 #change to 7 in order to pass the test
-
-    """
+def median1(pool):
+    # Statistical median to demonstrate doctest.
+    # Statistical median to demonstrate doctest.
+    # >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
+    # 6 #change to 7 in order to pass the test
 
     copy = sorted(pool)
 
@@ -170,6 +165,7 @@ def median(pool):
 
     if size % 2 == 1:
         return copy[int((size - 1) / 2)]
+
     else:
         return (copy[int(size / 2 - 1)] + copy[int(size / 2)]) / 2
 
@@ -191,6 +187,8 @@ This is the second.
 for has_chars, frags in groupby(lines, bool):
     if has_chars:
         print(' '.join(frags))
+
+
 # PRINTS:
 # This is the first paragraph.
 # This is the second.
@@ -331,30 +329,20 @@ print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
 
 # 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
 guesses_made = 0
-
 name = input('Hello! What is your name?\n')
-
 number = random.randint(1, 20)
 print('Well, {0}, I am thinking of a number between 1 and 20.'.format(name))
-
 while guesses_made < 6:
-
     guess = int(input('Take a guess: '))
-
     guesses_made += 1
-
     if guess < number:
         print('Your guess is too low.')
-
     if guess > number:
         print('Your guess is too high.')
-
     if guess == number:
         break
-
 if guess == number:
-    # noqa: F523
-    print('You guessed my number in {1} guesses!'.format(name, guesses_made))
-
+    print('Good job, {0}! You guessed my number '
+          'in {1} guesses!'.format(name, guesses_made))
 else:
     print('Nope. The number I was thinking of was {0}'.format(number))
