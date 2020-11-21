@@ -1,9 +1,9 @@
 import csv
 import glob
-from itertools import groupby
 import itertools
-from time import localtime
+from itertools import groupby
 import random
+from time import localtime
 import re
 import sys
 import unittest
@@ -154,17 +154,21 @@ if __name__ == '__main__':
 
 # 14 lines: Doctest-based testing
 def median(pool):
+
     """Statistical median to demonstrate doctest.
+
     >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
+
     6 #change to 7 in order to pass the test
+
     """
+
     copy = sorted(pool)
 
     size = len(copy)
 
     if size % 2 == 1:
         return copy[int((size - 1) / 2)]
-
     else:
         return (copy[int(size / 2 - 1)] + copy[int(size / 2)]) / 2
 
@@ -173,7 +177,6 @@ if __name__ == '__main__':
     import doctest
 
     doctest.testmod()
-
 
 # 15 lines: itertools
 lines = '''
