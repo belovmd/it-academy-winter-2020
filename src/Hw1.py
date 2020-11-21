@@ -3,9 +3,9 @@ import glob
 import itertools
 from itertools import groupby
 import random
-from time import localtime
 import re
 import sys
+from time import localtime
 import unittest
 import xml.etree.ElementTree as etree
 
