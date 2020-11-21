@@ -5,9 +5,10 @@ import random
 import re
 import sys
 import unittest
-import xml.etree.ElementTree as etree
-from time import localtime
 from itertools import groupby
+from time import localtime
+import xml.etree.ElementTree as etree
+
 
 # 1 line: Output
 
@@ -136,7 +137,7 @@ print(my_account.balance, my_account.overdrawn())
 # 13 lines: Unit testing with unittest
 
 
-def median(pool):
+def medians(pool):
     copy = sorted(pool)
     size = len(copy)
     if size % 2 == 1:
