@@ -1,13 +1,18 @@
-import re
-import sys
 import glob
-from time import localtime
-import unittest
-from itertools import groupby
 import csv
 import itertools
-import xml.etree.ElementTree as etree
+from itertools import groupby
 import random
+
+import re
+import sys
+from time import localtime
+import unittest
+import xml.etree.ElementTree as etree
+
+
+
+
 
 # 1 line: Output
 
