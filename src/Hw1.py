@@ -1,12 +1,12 @@
 import csv
 import glob
+from itertools import groupby
 import itertools
+from time import localtime
 import random
 import re
 import sys
-from itertools import groupby
 import unittest
-from time import localtime
 import xml.etree.ElementTree as etree
 
 
