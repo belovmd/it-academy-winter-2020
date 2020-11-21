@@ -14,6 +14,7 @@ import random
 print('Hello, world!')
 
 # 2 lines: Input, assignment
+
 name = input('What is your name?\n')
 print('Hi, %s.' % name)
 
@@ -65,6 +66,7 @@ print('I owe the grocer $%.2f' % grocery_bill)
 # This program adds up integers that have been passed \
 # as arguments in the command line
 
+
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
     print('sum =', total)
@@ -87,6 +89,7 @@ for file_name in sorted(python_files):
     print()
 
 # 10 lines: Time, conditionals, from..import, for..else
+
 
 activities = {8: 'Sleeping',
               9: 'Commuting',
@@ -119,7 +122,8 @@ while bottles_of_beer > 1:
                      bottles_of_beer - 1))
     bottles_of_beer -= 1
 
-    # 12 lines: Classes
+
+# 12 lines: Classes
 
 
 class BankAccount(object):
@@ -140,7 +144,9 @@ my_account = BankAccount(15)
 my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
 
+
 # 13 lines: Unit testing with unittest
+
 
 def median(pool):
     copy = sorted(pool)
@@ -162,9 +168,13 @@ if __name__ == '__main__':
 
 # 14 lines: Doctest-based testing
 
+
 def median(pool):
+
     """Statistical median to demonstrate doctest.
+
     >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
+
     6 #change to 7 in order to pass the test
     """
     copy = sorted(pool)
@@ -179,8 +189,8 @@ if __name__ == '__main__':
     import doctest
 
     doctest.testmod()
-
 # 15 lines: itertools
+
 
 lines = '''
  This is the
@@ -225,6 +235,7 @@ for ticker, name, price, change, pct in stocks:
     print('%s is %s (%.2f)' % (name, status, float(pct)))
 
 # 18 lines: 8-Queens Problem (recursion)
+
 
 BOARD_SIZE = 8
 
@@ -363,6 +374,7 @@ while guesses_made < 6:
         break
 
 if guess == number:
-    print('Good job, {0}! You guessed my number in {1} guesses!'.format(name, guesses_made))
+    print('Good job, {0}! You guessed my number in {1} guesses!'\
+          .format(name, guesses_made))
 else:
     print('Nope. The number I was thinking of was {0}'.format(number))
