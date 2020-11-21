@@ -324,7 +324,7 @@ print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
 # 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
 guesses_made = 0
 
-name = input('Hello! What is your name?\n')
+name = input('Hello! What is your name?')
 
 number = random.randint(1, 20)
 print('Well, {0}, I am thinking of a number between 1 and 20.'.format(name))
