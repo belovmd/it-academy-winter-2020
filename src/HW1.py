@@ -3,9 +3,9 @@ import glob
 import itertools
 from itertools import groupby
 import random
-from time import localtime
 import re
 import sys
+from time import localtime
 import unittest
 import xml.etree.ElementTree
 # Все операции импорта перемещены в верхнюю часть файла
@@ -153,6 +153,7 @@ if __name__ == '__main__':
 
 
 # 14 lines: Doctest-based testing
+# noqa: F811
 def median(pool):
 
     """Statistical median to demonstrate doctest.
@@ -328,7 +329,6 @@ queens = add_queen([])
 print(queens)
 print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
 
-
 # 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
 guesses_made = 0
 
@@ -353,7 +353,8 @@ while guesses_made < 6:
         break
 
 if guess == number:
+    # noqa: F523
     print('You guessed my number in {1} guesses!'.format(name, guesses_made))
-# укоротила строку 329
+
 else:
     print('Nope. The number I was thinking of was {0}'.format(number))
