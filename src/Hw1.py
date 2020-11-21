@@ -4,8 +4,8 @@ import itertools
 import random
 import re
 import sys
-import unittest
 from itertools import groupby
+import unittest
 from time import localtime
 import xml.etree.ElementTree as etree
 
