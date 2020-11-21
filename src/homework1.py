@@ -168,8 +168,7 @@ def median1(pool):
 
 if name == '__main__':
     import doctest
-    doctest.te
-stmod()
+    doctest.testmod()
 
 # 15 lines: itertools
 lines = '''
