@@ -15,7 +15,7 @@ print('Hello, world!')
 
 # 2 lines: Input, assignment
 name = ('What is your name?\n')
-
+print('Hi, %s.' % name)
 
 # 3 lines: For loop, built-in enumerate function, new style formatting
 friends = ['john', 'pat', 'gary', 'michael']
@@ -325,6 +325,7 @@ print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
 guesses_made = 0
 
 name = input('Hello! What is your name?')
+print('Hi, %s.' % name)
 
 number = random.randint(1, 20)
 print('Well, {0}, I am thinking of a number between 1 and 20.'.format(name))
