@@ -1,20 +1,18 @@
 import csv
 import glob
 import itertools
-from itertools import groupby
 import random
 import re
 import sys
-from time import localtime
 import unittest
-import xml.etree.ElementTree as etree
+import xml.etree.cElementTree as groupby
+from itertools import groupby
+from time import localtime
 
 # 1 line: Output
-
 print('Hello, world!')
 
 # 2 lines: Input, assignment
-
 name = input('What is your name?\n')
 print('Hi, %s.' % name)
 
@@ -30,7 +28,6 @@ parents, babies = (1, 1)
 while babies < 100:
     print('This generation has {0} babies'.format(babies))
     parents, babies = (babies, parents + babies)
-
 
 # 5 lines: Functions
 
