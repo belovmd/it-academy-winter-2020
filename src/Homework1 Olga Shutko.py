@@ -154,7 +154,7 @@ if __name__ == '__main__':
 
 
 # 14 lines: Doctest-based testing
-def median(pool):
+def median2(pool):
 
     """Statistical median to demonstrate doctest.
 
