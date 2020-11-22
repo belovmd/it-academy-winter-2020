@@ -1,15 +1,14 @@
+import csv
+import doctest
+import glob
+import itertools
+from itertools import groupby
+import random
 import re
 import sys
-import glob
-import unittest
-import doctest
 from time import localtime
-from itertools import groupby
-import csv
-import itertools
+import unittest
 import xml.etree.ElementTree as etree
-import random
-
 
 # 1 line: Output
 print('Hello, world!')
@@ -132,6 +131,7 @@ my_account = BankAccount(15)
 my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
 
+
 # 13 lines: Unit testing with unittest
 
 
@@ -155,10 +155,11 @@ if __name__ == '__main__':
 
 # 14 lines: Doctest-based testing
 def median(pool):
-    '''Statistical median to demonstrate doctest.
+    """Statistical median to demonstrate doctest.
     >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
     6 #change to 7 in order to pass the test
-    '''
+    """
+
     copy = sorted(pool)
     size = len(copy)
     if size % 2 == 1:
@@ -168,7 +169,6 @@ def median(pool):
 
 
 if __name__ == '__main__':
-
     doctest.testmod()
 
 # 15 lines: itertools
@@ -184,6 +184,8 @@ This is the second.
 for has_chars, frags in groupby(lines, bool):
     if has_chars:
         print(' '.join(frags))
+
+
 # PRINTS:
 # This is the first paragraph.
 # This is the second.
@@ -244,6 +246,7 @@ def solve(n):
 
 for answer in solve(BOARD_SIZE):
     print(answer)
+
 
 # 20 lines: Prime numbers sieve w/fancy generators
 
@@ -351,7 +354,7 @@ while guesses_made < 6:
         break
 
 if guess == number:
-    print('Good job, {0}! You guessed my' \ 
+    print('Good job, {0}! You guessed my'\
           'number in {1} guesses!'.format(name, guesses_made))
 else:
     print('Nope. The number I was thinking of was {0}'.format(number))
