@@ -155,8 +155,11 @@ if __name__ == '__main__':
 
 # 14 lines: Doctest-based testing
 def median(pool):
+
     """Statistical median to demonstrate doctest.
+
     >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
+
     6 #change to 7 in order to pass the test
     """
 
@@ -354,7 +357,7 @@ while guesses_made < 6:
         break
 
 if guess == number:
-    print('Good job, {0}! You guessed my'\
+    print('Good job, {0}! You guessed my'
           'number in {1} guesses!'.format(name, guesses_made))
 else:
     print('Nope. The number I was thinking of was {0}'.format(number))
