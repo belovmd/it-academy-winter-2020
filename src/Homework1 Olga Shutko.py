@@ -1,3 +1,16 @@
+import re
+import sys
+import glob
+import unittest
+import doctest
+from time import localtime
+from itertools import groupby
+import csv
+import itertools
+import xml.etree.ElementTree as etree
+import random
+
+
 # 1 line: Output
 print('Hello, world!')
 
@@ -27,7 +40,6 @@ greet('Jill')
 greet('Bob')
 
 # 6 lines: Import, regular expressions
-import re
 
 for test_string in ['555-1212', 'ILL-EGAL']:
     if re.match(r'^\d{3}-\d{4}$', test_string):
@@ -46,7 +58,6 @@ print('I owe the grocer $%.2f' % grocery_bill)
 
 # 8 lines: Command line arguments, exception handling
 # This program adds up integers that have been passed as arguments in the command line
-import sys
 
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
@@ -56,7 +67,6 @@ except ValueError:
 
 # 9 lines: Opening files
 # indent your Python code to put into an email
-import glob
 
 # glob supports Unix style pathname extensions
 python_files = glob.glob('*.py')
@@ -70,7 +80,6 @@ for file_name in sorted(python_files):
     print()
 
 # 10 lines: Time, conditionals, from..import, for..else
-from time import localtime
 
 activities = {8: 'Sleeping',
               9: 'Commuting',
@@ -123,7 +132,6 @@ my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
 
 # 13 lines: Unit testing with unittest
-import unittest
 
 
 def median(pool):
@@ -159,12 +167,10 @@ def median(pool):
 
 
 if __name__ == '__main__':
-    import doctest
 
     doctest.testmod()
 
 # 15 lines: itertools
-from itertools import groupby
 
 lines = '''
 This is the
@@ -183,7 +189,6 @@ for has_chars, frags in groupby(lines, bool):
 
 
 # 16 lines: csv module, tuple unpacking, cmp() built-in
-import csv
 
 
 # need to define cmp function in Python 3
@@ -240,7 +245,6 @@ for answer in solve(BOARD_SIZE):
     print(answer)
 
 # 20 lines: Prime numbers sieve w/fancy generators
-import itertools
 
 
 def iter_primes():
@@ -274,7 +278,6 @@ dinner_recipe = '''<html><body><table>
 </table></body></html>'''
 
 # From http://effbot.org/zone/element-index.htm
-import xml.etree.ElementTree as etree
 
 tree = etree.fromstring(dinner_recipe)
 
@@ -323,7 +326,6 @@ print(queens)
 print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
 
 # 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
-import random
 
 guesses_made = 0
 
