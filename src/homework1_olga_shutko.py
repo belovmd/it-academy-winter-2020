@@ -39,7 +39,6 @@ greet('Jill')
 greet('Bob')
 
 # 6 lines: Import, regular expressions
-
 for test_string in ['555-1212', 'ILL-EGAL']:
     if re.match(r'^\d{3}-\d{4}$', test_string):
         print(test_string, 'is a valid US local phone number')
@@ -80,7 +79,6 @@ for file_name in sorted(python_files):
     print()
 
 # 10 lines: Time, conditionals, from..import, for..else
-
 activities = {8: 'Sleeping',
               9: 'Commuting',
               17: 'Working',
@@ -133,8 +131,6 @@ print(my_account.balance, my_account.overdrawn())
 
 
 # 13 lines: Unit testing with unittest
-
-
 def median(pool):
     copy = sorted(pool)
     size = len(copy)
@@ -155,7 +151,6 @@ if __name__ == '__main__':
 
 # 14 lines: Doctest-based testing
 def median2(pool):
-
     """Statistical median to demonstrate doctest.
 
     >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
@@ -175,7 +170,6 @@ if __name__ == '__main__':
     doctest.testmod()
 
 # 15 lines: itertools
-
 lines = '''
 This is the
 first paragraph.
@@ -195,8 +189,6 @@ for has_chars, frags in groupby(lines, bool):
 
 
 # 16 lines: csv module, tuple unpacking, cmp() built-in
-
-
 # need to define cmp function in Python 3
 def cmp(a, b):
     return (a > b) - (a < b)
@@ -252,8 +244,6 @@ for answer in solve(BOARD_SIZE):
 
 
 # 20 lines: Prime numbers sieve w/fancy generators
-
-
 def iter_primes():
     # an iterator of all numbers between 2 and +infinity
     numbers = itertools.count(2)
@@ -275,7 +265,6 @@ for p in iter_primes():
     print(p)
 
 # 21 lines: XML/HTML parsing
-
 dinner_recipe = '''<html><body><table>
 <tr><th>amt</th><th>unit</th><th>item</th></tr>
 <tr><td>24</td><td>slices</td><td>baguette</td></tr>
@@ -333,7 +322,6 @@ print(queens)
 print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
 
 # 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
-
 guesses_made = 0
 
 name = input('Hello! What is your name?\n')
