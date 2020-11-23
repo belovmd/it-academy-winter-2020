@@ -9,7 +9,3 @@ print(Number2, end=' ')
 for i in range(2, digit_to_enter):
     Number1, Number2 = Number2, Number1 + Number2
     print(Number2, end=' ')
-
-
-
-
