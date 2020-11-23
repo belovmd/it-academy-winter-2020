@@ -157,6 +157,7 @@ class BankAccount(object):
     def overdrawn(self):
         return self.balance < 0
 
+
 my_account = BankAccount(15)
 my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
@@ -177,6 +178,7 @@ def medians(pool):
 class TestMedian(unittest.TestCase):
     def testMedian(self):
         self.assertEqual(median([2, 9, 9, 7, 9, 2, 4, 5, 8]), 7)
+
 
 if __name__ == '__main__':
     unittest.main()
@@ -234,6 +236,7 @@ for has_chars, frags in groupby(lines, bool):
 
 def cmp(a, b):
     return (a > b) - (a < b)
+
 
 # write stocks data as comma-separated values
 
