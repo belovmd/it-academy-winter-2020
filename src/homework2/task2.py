@@ -6,3 +6,4 @@ print(len(text.split()))
 
 
 
+
