@@ -2,10 +2,12 @@ import csv
 
 # need to define cmp function in Python 3
 def cmp(a, b):
+
     return(a > b) - (a < b)
 
 # write stocks data as comma-separated values
 with open('stocks.csv', 'w', newline='') as stocksFileW:
+
     writer = csv.writer(stocksFileW)
     writer.writerows([
         ['GOOG', 'Google, Inc.', 505.24, 0.47, 0.09],
