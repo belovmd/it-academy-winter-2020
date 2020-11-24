@@ -9,22 +9,21 @@ from time import localtime
 import unittest
 import xml.etree.ElementTree
 
-# Все операции импорта перемещены в верхнюю часть файла
-# перемещены из строк 26, 50, 63, 113, 152, 169, 224, 256, 303
-# укоротила строку 11 путем разбивки надвое
-# переставила в алфовитном порядке импорт
 
 # 1 line: Output
 print('Hello, world!')
+
 
 # 2 lines: Input, assignment
 name = input('What is your name?\n')
 print('Hi, %s.' % name)
 
+
 # 3 lines: For loop, built-in enumerate function, new style formatting
 friends = ['john', 'pat', 'gary', 'michael']
 for i, name in enumerate(friends):
     print("iteration {iteration} is {name}".format(iteration=i, name=name))
+
 
 # 4 lines: Fibonacci, tuple assignment
 parents, babies = (1, 1)
@@ -42,12 +41,14 @@ greet('Jack')
 greet('Jill')
 greet('Bob')
 
+
 # 6 lines: Import, regular expressions
 for test_string in ['555-1212', 'ILL-EGAL']:
     if re.match(r'^\d{3}-\d{4}$', test_string):
         print(test_string, 'is a valid US local phone number')
     else:
         print(test_string, 'rejected')
+
 
 # 7 lines: Dictionaries, generator expressions
 prices = {'apple': 0.40, 'banana': 0.50}
@@ -58,6 +59,7 @@ grocery_bill = sum(prices[fruit] * my_purchase[fruit]
                    for fruit in my_purchase)
 print('I owe the grocer $%.2f' % grocery_bill)
 
+
 # 8 lines: Command line arguments, exception handling
 # This program adds up integers
 
@@ -66,6 +68,7 @@ try:
     print('sum =', total)
 except ValueError:
     print('Please supply integer arguments')
+
 
 # 9 lines: Opening files
 # indent your Python code to put into an email
@@ -80,6 +83,7 @@ for file_name in sorted(python_files):
             print('    ' + line.rstrip())
 
     print()
+
 
 # 10 lines: Time, conditionals, from..import, for..else
 activities = {8: 'Sleeping',
@@ -98,6 +102,7 @@ for activity_time in sorted(activities.keys()):
         break
 else:
     print('Unknown, AFK or sleeping!')
+
 
 # 11 lines: Triple-quoted strings, while loop
 REFRAIN = '''
@@ -175,6 +180,7 @@ if __name__ == '__main__':
 
     doctest.testmod()
 
+
 # 15 lines: itertools
 lines = '''
 This is the
@@ -217,6 +223,7 @@ with open('stocks.csv', 'r') as stocksFile:
     for ticker, name, price, change, pct in stocks:
         status = status_labels[cmp(float(change), 0.0)]
         print('%s is %s (%.2f)' % (name, status, float(pct)))
+
 
 # 18 lines: 8-Queens Problem (recursion)
 BOARD_SIZE = 8
@@ -270,6 +277,7 @@ for p in iter_primes():
         break
     print(p)
 
+
 # 21 lines: XML/HTML parsing
 dinner_recipe = '''<html><body><table>
 <tr><th>amt</th><th>unit</th><th>item</th></tr>
@@ -292,6 +300,7 @@ for ingredient in tree.getiterator('tr'):
     amt, unit, item = ingredient
     if item.tag == "td" and item.text not in pantry:
         print("%s: %s %s" % (item.text, amt.text, unit.text))
+
 
 # 28 lines: 8-Queens Problem (define your own exceptions)
 BOARD_SIZE = 8
@@ -326,6 +335,7 @@ def add_queen(womans):
 queens = add_queen([])
 print(queens)
 print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
+
 
 # 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
 guesses_made = 0
