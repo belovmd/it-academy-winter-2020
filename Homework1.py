@@ -12,20 +12,20 @@ import xml.etree.ElementTree as etree
 
 # 1 line: Output
 print('Hello, world!')
+
+
 # 2 lines: Input, assignment
-
-
 name = input('What is your name?\n')
 print('Hi, %s.' % name)
+
+
 # 3 lines: For loop, built-in enumerate function, new style formatting
-
-
 friends = ['john', 'pat', 'gary', 'michael']
 for i, name in enumerate(friends):
     print("iteration {iteration} is {name}".format(iteration=i, name=name))
+
+
 # 4 lines: Fibonacci, tuple assignment
-
-
 parents, babies = (1, 1)
 while babies < 100:
     print('This generation has {0} babies'.format(babies))
@@ -33,8 +33,6 @@ while babies < 100:
 
 
 # 5 lines: Functions
-
-
 def greet(name1):
     print('Hello', name1)
 
@@ -43,17 +41,16 @@ greet('Jack')
 greet('Jill')
 greet('Bob')
 
+
 # 6 lines: Import, regular expressions
-
-
 for test_string in ['555-1212', 'ILL-EGAL']:
     if re.match(r'^\d{3}-\d{4}$', test_string):
         print(test_string, 'is a valid US local phone number')
     else:
         print(test_string, 'rejected')
+
+
 # 7 lines: Dictionaries, generator expressions
-
-
 prices = {'apple': 0.40, 'banana': 0.50}
 my_purchase = {
     'apple': 1,
@@ -61,46 +58,42 @@ my_purchase = {
 grocery_bill = sum(prices[fruit] * my_purchase[fruit]
                    for fruit in my_purchase)
 print('I owe the grocer $%.2f' % grocery_bill)
-# 8 lines: Command line arguments, exception handlinge
 
+
+# 8 lines: Command line arguments, exception handlinge
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
     print('sum =', total)
 except ValueError:
     print('Please supply integer arguments')
+
+
 # 9 lines: Opening files
-
-
 # indent your Python code to put into an email
-
 # glob supports Unix style pathname extensions
 python_files = glob.glob('*.py')
 for file_name in sorted(python_files):
     print('    ------' + file_name)
-
     with open(file_name) as f:
         for line in f:
             print('    ' + line.rstrip())
-
     print()
+
+
 # 10 lines: Time, conditionals, from..import, for..else
-
-
 activities = {8: 'Sleeping', 9: 'Commuting', 17: 'Working',
               18: 'Commuting', 20: 'Eating', 22: 'Resting'}
-
 time_now = localtime()
 hour = time_now.tm_hour
-
 for activity_time in sorted(activities.keys()):
     if hour < activity_time:
         print(activities[activity_time])
         break
 else:
     print('Unknown, AFK or sleeping!')
+
+
 # 11 lines: Triple-quoted strings, while loop
-
-
 REFRAIN = '''
 %d bottles of beer on the wall,
 %d bottles of beer,
@@ -115,8 +108,6 @@ while bottles_of_beer > 1:
 
 
 # 12 lines: Classes
-
-
 class BankAccount(object):
     def __init__(self, initial_balance=0):
         self.balance = initial_balance
@@ -134,9 +125,9 @@ class BankAccount(object):
 my_account = BankAccount(15)
 my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
+
+
 # 13 lines: Unit testing with unittest
-
-
 def median(pool):
     copy = sorted(pool)
     size = len(copy)
@@ -154,9 +145,8 @@ class TestMedian(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
+
 # 14 lines: Doctest-based testing
-
-
 def median1(pool):
 
     """Statistical median to demonstrate doctest.
@@ -176,9 +166,9 @@ def median1(pool):
 if __name__ == '__main__':
 
     doctest.testmod()
+
+
 # 15 lines: itertools
-
-
 lines = '''
 This is the
 first paragraph.
@@ -192,9 +182,9 @@ for has_chars, frags in groupby(lines, bool):
 # PRINTS:
 # This is the first paragraph.
 # This is the second.
+
+
 # 16 lines: csv module, tuple unpacking, cmp() built-in
-
-
 # need to define cmp function in Python 3
 def cmp(a, b):
     return (a > b) - (a < b)
@@ -217,9 +207,9 @@ with open('stocks.csv', 'r') as stocksFile:
     for ticker, name, price, change, pct in stocks:
         status = status_labels[cmp(float(change), 0.0)]
         print('%s is %s (%.2f)' % (name, status, float(pct)))
+
+
 # 18 lines: 8-Queens Problem (recursion)
-
-
 BOARD_SIZE = 8
 
 
@@ -248,9 +238,9 @@ def solve(n):
 
 for answer in solve(BOARD_SIZE):
     print(answer)
+
+
 # 20 lines: Prime numbers sieve w/fancy generators
-
-
 def iter_primes():
     # an iterator of all numbers between 2 and +infinity
     numbers = itertools.count(2)
@@ -270,9 +260,9 @@ for p in iter_primes():
     if p > 1000:
         break
     print(p)
+
+
 # 21 lines: XML/HTML parsing
-
-
 dinner_recipe = '''<html><body><table>
 <tr><th>amt</th><th>unit</th><th>item</th></tr>
 <tr><td>24</td><td>slices</td><td>baguette</td></tr>
@@ -294,9 +284,9 @@ for ingredient in tree.getiterator('tr'):
     amt, unit, item = ingredient
     if item.tag == "td" and item.text not in pantry:
         print("%s: %s %s" % (item.text, amt.text, unit.text))
+
+
 # 28 lines: 8-Queens Problem (define your own exceptions)
-
-
 BOARD_SIZE = 8
 
 
@@ -329,31 +319,22 @@ def add_queen(queens):
 queens = add_queen([])
 print(queens)
 print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
+
+
 # 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
-
-
 guesses_made = 0
-
 name = input('Hello! What is your name?\n')
-
 number = random.randint(1, 20)
 print('Well, {0}, I am thinking of a number between 1 and 20.'.format(name))
-
 while guesses_made < 6:
-
     guess = int(input('Take a guess: '))
-
     guesses_made += 1
-
     if guess < number:
         print('Your guess is too low.')
-
     if guess > number:
         print('Your guess is too high.')
-
     if guess == number:
         break
-
 if guess == number:
     print('Good job, {0} my number in {1} guesses!'.format(name, guesses_made))
 else:
