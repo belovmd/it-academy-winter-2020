@@ -36,6 +36,7 @@ while babies < 100:
 def greet(name1):
     print('Hello', name1)
 
+
 greet('Jack')
 greet('Jill')
 greet('Bob')
@@ -129,6 +130,7 @@ class BankAccount(object):
 
     def overdrawn(self):
         return self.balance < 0
+
 
 my_account = BankAccount(15)
 my_account.withdraw(50)
