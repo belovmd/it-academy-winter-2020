@@ -1,10 +1,10 @@
 import itertools
 
 def iter_primes():
-     # an iterator of all numbers between 2 and +infinity
+    # an iterator of all numbers between 2 and +infinity
      numbers = itertools.count(2)
 
-     # generate primes forever
+    # generate primes forever
      while True:
          # get the first number from the iterator (always a prime)
          prime = next(numbers)
