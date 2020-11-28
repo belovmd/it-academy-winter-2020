@@ -99,7 +99,7 @@ print(queens)
 print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
 
 
-# 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
+# 33 lines: "Guess, the Number" Game (edited) from http://inventwithpython.com
 guesses_made = 0
 
 name = input('Hello! What is your name?\n')
