@@ -6,32 +6,34 @@ import re
 import sys
 import unittest
 import xml.etree.cElementTree as groupby
+
 from itertools import groupby
 from time import localtime
 
+
 # 1 line: Output
 print('Hello, world!')
+
 
 # 2 lines: Input, assignment
 name = input('What is your name?\n')
 print('Hi, %s.' % name)
 
-# 3 lines: For loop, built-in enumerate function, new style formatting
 
+# 3 lines: For loop, built-in enumerate function, new style formatting
 friends = ['john', 'pat', 'gary', 'michael']
 for i, name in enumerate(friends):
     print("iteration {iteration} is {name}".format(iteration=i, name=name))
 
-# 4 lines: Fibonacci, tuple assignment
 
+# 4 lines: Fibonacci, tuple assignment
 parents, babies = (1, 1)
 while babies < 100:
     print('This generation has {0} babies'.format(babies))
     parents, babies = (babies, parents + babies)
 
+
 # 5 lines: Functions
-
-
 def greet(name):
     print('Hello', name)
 
@@ -40,16 +42,16 @@ greet('Jack')
 greet('Jill')
 greet('Bob')
 
-# 6 lines: Import, regular expressions
 
+# 6 lines: Import, regular expressions
 for test_string in ['555-1212', 'ILL-EGAL']:
     if re.match(r'^\d{3}-\d{4}$', test_string):
         print(test_string, 'is a valid US local phone number')
     else:
         print(test_string, 'rejected')
 
-# 7 lines: Dictionaries, generator expressions
 
+# 7 lines: Dictionaries, generator expressions
 prices = {'apple': 0.40, 'banana': 0.50}
 my_purchase = {
     'apple': 1,
@@ -58,22 +60,20 @@ grocery_bill = sum(prices[fruit] * my_purchase[fruit]
                    for fruit in my_purchase)
 print('I owe the grocer $%.2f' % grocery_bill)
 
-# 8 lines: Command line arguments, exception handling
 
+# 8 lines: Command line arguments, exception handling
 # This program adds up integers that have been passed \
 # as arguments in the command line
-
-
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
     print('sum =', total)
 except ValueError:
     print('Please supply integer arguments')
 
+
 # 9 lines: Opening files
 
 # indent your Python code to put into an email
-
 # glob supports Unix style pathname extensions
 python_files = glob.glob('*.py')
 for file_name in sorted(python_files):
@@ -85,9 +85,8 @@ for file_name in sorted(python_files):
 
     print()
 
+
 # 10 lines: Time, conditionals, from..import, for..else
-
-
 activities = {8: 'Sleeping',
               9: 'Commuting',
               17: 'Working',
@@ -105,8 +104,8 @@ for activity_time in sorted(activities.keys()):
 else:
     print('Unknown, AFK or sleeping!')
 
-# 11 lines: Triple-quoted strings, while loop
 
+# 11 lines: Triple-quoted strings, while loop
 REFRAIN = '''
  %d bottles of beer on the wall,
  %d bottles of beer,
@@ -121,8 +120,6 @@ while bottles_of_beer > 1:
 
 
 # 12 lines: Classes
-
-
 class BankAccount(object):
     def __init__(self, initial_balance=0):
         self.balance = initial_balance
@@ -143,8 +140,6 @@ print(my_account.balance, my_account.overdrawn())
 
 
 # 13 lines: Unit testing with unittest
-
-
 def median(pool):
     copy = sorted(pool)
     size = len(copy)
@@ -164,12 +159,11 @@ if __name__ == '__main__':
 
 
 # 14 lines: Doctest-based testing
-
-
 def median(pool):
     """Statistical median to demonstrate doctest.
 
     >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
+
 
     6 #change to 7 in order to pass the test
     """
@@ -185,9 +179,9 @@ if __name__ == '__main__':
     import doctest
 
     doctest.testmod()
+
+
 # 15 lines: itertools
-
-
 lines = '''
  This is the
  first paragraph.
@@ -199,14 +193,12 @@ lines = '''
 for has_chars, frags in groupby(lines, bool):
     if has_chars:
         print(' '.join(frags))
-
-
 # PRINTS:
 # This is the first paragraph.
 # This is the second.
 
-# 16 lines: csv module, tuple unpacking, cmp() built-in
 
+# 16 lines: csv module, tuple unpacking, cmp() built-in
 # need to define cmp function in Python 3
 def cmp(a, b):
     return (a > b) - (a < b)
@@ -230,9 +222,8 @@ for ticker, name, price, change, pct in stocks:
     status = status_labels[cmp(float(change), 0.0)]
     print('%s is %s (%.2f)' % (name, status, float(pct)))
 
+
 # 18 lines: 8-Queens Problem (recursion)
-
-
 BOARD_SIZE = 8
 
 
@@ -264,18 +255,11 @@ for answer in solve(BOARD_SIZE):
 
 
 # 20 lines: Prime numbers sieve w/fancy generators
-
-
-def iter_primes():
-    # an iterator of all numbers between 2 and +infinity
-    numbers = itertools.count(2)
-
-    # generate primes forever
-    while True:
-        # get the first number from the iterator (always a prime)
+def iter_primes(): # an iterator of all numbers between 2 and +infinity
+    numbers = itertools.count(2) # generate primes forever
+    while True: # get the first number from the iterator (always a prime)
         prime = next(numbers)
         yield prime
-
         # this code iteratively builds up a chain of
         # filters...slightly tricky, but ponder it a bit
         numbers = filter(prime.__rmod__, numbers)
@@ -286,15 +270,15 @@ for p in iter_primes():
         break
     print(p)
 
-# 21 lines: XML/HTML parsing
 
+# 21 lines: XML/HTML parsing
 dinner_recipe = '''<html><body><table>
- <tr><th>amt</th><th>unit</th><th>item</th></tr>
- <tr><td>24</td><td>slices</td><td>baguette</td></tr>
- <tr><td>2+</td><td>tbsp</td><td>olive oil</td></tr>
- <tr><td>1</td><td>cup</td><td>tomatoes</td></tr>
- <tr><td>1</td><td>jar</td><td>pesto</td></tr>
- </table></body></html>'''
+<tr><th>amt</th><th>unit</th><th>item</th></tr>
+<tr><td>24</td><td>slices</td><td>baguette</td></tr>
+<tr><td>2+</td><td>tbsp</td><td>olive oil</td></tr>
+<tr><td>1</td><td>cup</td><td>tomatoes</td></tr>
+<tr><td>1</td><td>jar</td><td>pesto</td></tr>
+</table></body></html>'''
 
 # From http://effbot.org/zone/element-index.htm
 
@@ -305,13 +289,13 @@ tree = etree.fromstring(dinner_recipe)
 # tree = ElementSoup.parse(StringIO.StringIO(dinner_recipe))
 
 pantry = {'olive oil', 'pesto'}
-for ingredient in tree.getiterator('tr'):
+for ingredient in tree.iter('tr'):
     amt, unit, item = ingredient
     if item.tag == "td" and item.text not in pantry:
         print("%s: %s %s" % (item.text, amt.text, unit.text))
 
-    # 28 lines: 8-Queens Problem (define your own exceptions)
 
+# 28 lines: 8-Queens Problem (define your own exceptions)
 BOARD_SIZE = 8
 
 
@@ -345,8 +329,8 @@ queens = add_queen([])
 print(queens)
 print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
 
-# 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
 
+# 33 lines: "Guess the Number" Game (edited) from http://inventwithpython.com
 guesses_made = 0
 
 name = input('Hello! What is your name?\n')
