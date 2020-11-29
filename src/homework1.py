@@ -11,34 +11,29 @@ import unittest
 import xml.etree.ElementTree as etree
 
 
-# Output
-
+# 1. Output
 print('Hello, world!')
 
 
-# Input, assignment
-
+# 2. Input, assignment
 name = input('What is your name?\n')
 print('Hi, %s.' % name)
 
 
-# For loop, built-in enumerate function, new style formatting
-
+# 3. For loop, built-in enumerate function, new style formatting
 friends = ['john', 'pat', 'gary', 'michael']
 for i, name in enumerate(friends):
     print("iteration {iteration} is {name}".format(iteration=i, name=name))
 
 
-# Fibonacci, tuple assignment
-
+# 4. Fibonacci, tuple assignment
 parents, babies = (1, 1)
 while babies < 100:
     print('This generation has {0} babies'.format(babies))
     parents, babies = (babies, parents + babies)
 
 
-# Functions
-
+# 5. Functions
 def greet(person_name):
     print('Hello', person_name)
 
@@ -48,8 +43,7 @@ greet('Jill')
 greet('Bob')
 
 
-# Import, regular expressions
-
+# 6. Import, regular expressions
 for test_string in ['555-1212', 'ILL-EGAL']:
     if re.match(r'^\d{3}-\d{4}$', test_string):
         print(test_string, 'is a valid US local phone number')
@@ -57,8 +51,7 @@ for test_string in ['555-1212', 'ILL-EGAL']:
         print(test_string, 'rejected')
 
 
-# Dictionaries, generator expressions
-
+# 7. Dictionaries, generator expressions
 prices = {'apple': 0.40, 'banana': 0.50}
 my_purchase = {
     'apple': 1,
@@ -68,11 +61,9 @@ grocery_bill = sum(prices[fruit] * my_purchase[fruit] for fruit in my_purchase)
 print('I owe the grocer $%.2f' % grocery_bill)
 
 
-# Command line arguments, exception handling
-
+# 8. Command line arguments, exception handling
 # this program adds up integers that have been passed
 # as arguments in the command line
-
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
     print('sum =', total)
@@ -80,11 +71,9 @@ except ValueError:
     print('Please supply integer arguments')
 
 
-# Opening files
-
+# 9. Opening files
 # indent your Python code to put into an email
 # glob supports Unix style pathname extensions
-
 python_files = glob.glob('*.py')
 
 for file_name in sorted(python_files):
@@ -97,8 +86,7 @@ for file_name in sorted(python_files):
     print()
 
 
-# Time, conditionals, from..import, for..else
-
+# 10. Time, conditionals, from..import, for..else
 activities = {
     8: 'Sleeping',
     9: 'Commuting',
@@ -118,8 +106,7 @@ else:
     print('Unknown, AFK or sleeping!')
 
 
-# Triple-quoted strings, while loop
-
+# 11. Triple-quoted strings, while loop
 REFRAIN = '''
 %d bottles of beer on the wall,
 %d bottles of beer,
@@ -133,8 +120,7 @@ while bottles_of_beer > 1:
     bottles_of_beer -= 1
 
 
-# Classes
-
+# 12. Classes
 class BankAccount(object):
     def __init__(self, initial_balance=0):
         self.balance = initial_balance
@@ -154,8 +140,7 @@ my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
 
 
-# Itertools
-
+# 13. Itertools
 lines = '''
 This is the
 first paragraph.
@@ -169,14 +154,12 @@ for has_chars, frags in groupby(lines, bool):
     if has_chars:
         print(' '.join(frags))
 
-
 # PRINTS:
 # This is the first paragraph.
 # This is the second.
 
 
-# Csv module, tuple unpacking, cmp() built-in
-
+# 14. Csv module, tuple unpacking, cmp() built-in
 # need to define cmp function in Python 3
 def cmp(a, b):
     return (a > b) - (a < b)
@@ -201,8 +184,7 @@ with open('stocks.csv', 'r') as stocksFile:
         print('%s is %s (%.2f)' % (name, status, float(pct)))
 
 
-# 8-Queens Problem (recursion)
-
+# 15. 8-Queens Problem (recursion)
 BOARD_SIZE = 8
 
 
@@ -233,8 +215,7 @@ for answer in solve(BOARD_SIZE):
     print(answer)
 
 
-# Prime numbers sieve w/fancy generators
-
+# 16. Prime numbers sieve w/fancy generators
 def iter_primes():
     # an iterator of all numbers between 2 and +infinity
     numbers = itertools.count(2)
@@ -256,8 +237,7 @@ for p in iter_primes():
     print(p)
 
 
-# XML/HTML parsing
-
+# 17. XML/HTML parsing
 dinner_recipe = '''<html><body><table>
 <tr><th>amt</th><th>unit</th><th>item</th></tr>
 <tr><td>24</td><td>slices</td><td>baguette</td></tr>
@@ -280,8 +260,7 @@ for ingredient in tree.iter('tr'):
         print("%s: %s %s" % (item.text, amt.text, unit.text))
 
 
-# 8-Queens Problem (define your own exceptions)
-
+# 18. 8-Queens Problem (define your own exceptions)
 BOARD_SIZE_QUEENS = 8
 
 
@@ -317,13 +296,10 @@ print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE_QUEENS - q - 1)
                 for q in queens))
 
 
-# "Guess the Number" Game
-
+# 19. "Guess the Number" Game
 guesses_made = 0
-
-name = input('Hello! What is your name?\n')
-
 number = random.randint(1, 20)
+name = input('Hello! What is your name?\n')
 print('Well, {0}, I am thinking of a number between 1 and 20.'.format(name))
 
 while guesses_made < 6:
@@ -348,8 +324,7 @@ else:
     print('Nope. The number I was thinking of was {0}'.format(number))
 
 
-# Unit testing with unittest
-
+# 20. Unit testing with unittest
 def median(pool):
     copy = sorted(pool)
     size = len(copy)
@@ -368,8 +343,7 @@ if __name__ == '__main__':
     unittest.main()
 
 
-# Doctest-based testing
-
+# 21. Doctest-based testing
 def median_doctest(pool):
     """Statistical median to demonstrate doctest.
 
