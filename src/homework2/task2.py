@@ -2,10 +2,11 @@
 Найти самое длинное слово в введенном предложении.
 Учтите что в предложении есть знаки препинания.
 """
+
 from string import punctuation
 
 
-def find_longest_work(sentence):
+def find_longest_word(sentence):
     """Поиск самого длинного слова в предложении.
 
     :param sentence: входная строка

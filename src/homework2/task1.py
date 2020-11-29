@@ -11,7 +11,7 @@ def price_count(rub, kop, count):
     :param rub: рубли
     :param kop: копейки
     :param count: количество товара
-    :return: строка. общая цена в рублях и копейках
+    :return: строка. Общая цена в рублях и копейках
     """
     rubles = rub * count
     kopeck = kop * count
