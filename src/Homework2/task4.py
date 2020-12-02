@@ -4,13 +4,11 @@
 
 str_ = 'jjdfhvbUnj  hjsdinUUh  kKKJJBDNM'
 len_MAJ = 0
-len_petit = 0
-
+len_small = 0
 for element in str_:
     if 'a' <= element <= 'z':
-        len_petit += 1
+        len_small += 1
     if 'A' <= element <= 'Z':
-            len_MAJ += 1
-
+        len_MAJ += 1
 print('Прописных букв в предложении:', len_MAJ)
-print('Строчных букв в предложении:', len_petit)
+print('Строчных букв в предложении:', len_small)
