@@ -9,7 +9,7 @@ reversed_number = 0
 tmp_number = number
 
 while tmp_number > 0:
-    reversed_number = (reversed_number*10) + tmp_number % 10
+    reversed_number = (reversed_number * 10) + tmp_number % 10
     tmp_number = tmp_number // 10
 if number == reversed_number:
     print('Палиндром')

@@ -6,5 +6,6 @@
 string = input('Enter string: ')
 new_string = ''
 for i in string:
-    if i not in new_string and i != ' ': new_string += i
+    if i not in new_string and i != ' ':
+        new_string += i
 print(new_string)
