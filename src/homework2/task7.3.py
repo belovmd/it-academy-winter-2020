@@ -19,4 +19,7 @@ def find_anagrams(word, words):
 
 
 if __name__ == '__main__':
-    print(find_anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']))
+    print(find_anagrams('racer',
+                        ['crazer', 'carer', 'racar', 'caers', 'racer']
+                        )
+          )

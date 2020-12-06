@@ -39,6 +39,4 @@ if __name__ == "__main__":
     if not len(string) % k:
         print(merge_the_tools(string, k))
     else:
-        print('-')
-
-
+        print('Exit')

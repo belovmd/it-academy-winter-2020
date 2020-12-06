@@ -22,9 +22,11 @@ def get_good_pairs(numbers):
     """
     pairs = []
 
-    ids = range(len(numbers))  # все индексы списка nums ( 0...len(nums) - 1 )
+    # все индексы списка nums ( 0...len(nums) - 1 )
+    ids = range(len(numbers))
 
-    for first_idx, second_idx in product(ids, ids):  # избавляемся от вложенных циклов
+    # избавляемся от вложенных циклов
+    for first_idx, second_idx in product(ids, ids):
         if first_idx >= second_idx:
             continue
         if numbers[first_idx] == numbers[second_idx]:
@@ -36,5 +38,3 @@ def get_good_pairs(numbers):
 if __name__ == "__main__":
     nums = [1, 2, 3, 1, 1, 3, ]
     print(get_good_pairs(nums))
-
-
