@@ -6,7 +6,8 @@ Given a year, determine whether it is a leap year
 (please refer to the task i=on the site for mote details).
 If it is a leap year, return the Boolean True, otherwise return False.
 
-Note that the code stub provided reads from STDIN and passes arguments to the is_leap function.
+Note that the code stub provided reads from STDIN
+and passes arguments to the is_leap function.
 It is only necessary to complete the is_leap function.
 """
 
@@ -49,7 +50,6 @@ Constraints
 Output Format
 Print Weird if the number is weird. Otherwise, print Not Weird.
 """
-
 
 # !/bin/python3
 if __name__ == '__main__':
@@ -104,8 +104,7 @@ def minion_game(string):
     else:
         print("Draw")
 
+
 if __name__ == '__main__':
-
-
     s = input('Please input a word in upper-case letters: ')
     minion_game(s)
