@@ -105,5 +105,7 @@ def minion_game(string):
         print("Draw")
 
 if __name__ == '__main__':
+
+
     s = input('Please input a word in upper-case letters: ')
     minion_game(s)
