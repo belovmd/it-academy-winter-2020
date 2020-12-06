@@ -28,4 +28,4 @@ if __name__ == "__main__":
         "грамматическое сказуемое."
     )
 
-    print(find_longest_work(input_sentence))
+    print(find_longest_word(input_sentence))

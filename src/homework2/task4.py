@@ -8,16 +8,18 @@ def count(string):
     """Подсчёт строчных и прописных букв
 
     :param string: входная строка
-    :return: строка. Самое длинное слово в предложении (в случае если их
-        несколько, самое левое в строке).
-        в случае если
+    :return: кортеж. Первый элемент - число строчных букв, второй элемент -
+        число прописных букв
     """
-    lower_count = 0
+    lower_count, upper_count = 0, 0
+
     for char in string:
-        if char.lower() == char:
+        if 'a' <= char <= 'z':
             lower_count += 1
+        if 'A' <= char <= 'Z':
+            upper_count += 1
 
-    return lower_count, len(string) - lower_count
+    return lower_count, upper_count
 
 
-print(count("A"))
+print(count("DBCРебус!!!dfgERT"))
