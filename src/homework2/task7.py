@@ -5,7 +5,8 @@ import string
 """
     Task 7. Зарегистрируйтесь на одном (или нескольких) из сайтов:
 
-    https://py.checkio.org/, https://www.codewars.com, https://www.hackerrank.com/, https://acmp.ru
+    https://py.checkio.org/, https://www.codewars.com, 
+    https://www.hackerrank.com/, https://acmp.ru
 
     Решите 1-5 задач уровня Elementary и Advanced.
     Поместите 3 простых и 2 сложных задачи на Ваш выбор в пул реквест.
@@ -19,13 +20,14 @@ import string
     Task 7-1
     Money, Money, Money. (7 kyu)
 
-    Mr. Scrooge has a sum of money 'P' that he wants to invest. Before he does, he wants to know
-    how many years 'Y' this sum 'P' has to be kept in the bank in order for it to amount to a
-    desired sum of money 'D'.
-    The sum is kept for 'Y' years in the bank where interest 'I' is paid yearly. After paying taxes
-    'T' for the year the new sum is re-invested.
+    Mr. Scrooge has a sum of money 'P' that he wants to invest. Before he
+    does, he wants to know how many years 'Y' this sum 'P' has to be kept
+    in the bank in order for it to amount to a desired sum of money 'D'.
+    The sum is kept for 'Y' years in the bank where interest 'I' is paid 
+    yearly. After paying taxes 'T' for the year the new sum is re-invested.
 
-    Note to Tax: not the invested principal is taxed, but only the year's accrued interest
+    Note to Tax: not the invested principal is taxed, but only the year's
+    accrued interest
 
     Example:
     Let P be the Principal = 1000.00
@@ -40,14 +42,15 @@ import string
     After 3rd Year -->
       P = 1128.30
 
-    Thus Mr. Scrooge has to wait for 3 years for the initial principal to amount to the desired sum.
+    Thus Mr. Scrooge has to wait for 3 years for the initial principal to
+    amount to the desired sum.
 
-    Your task is to complete the method provided and return the number of years 'Y' as a whole in
-    order for Mr. Scrooge to get the desired sum.
+    Your task is to complete the method provided and return the number of
+    years 'Y' as a whole in order for Mr. Scrooge to get the desired sum.
 
-    Assumption: Assume that Desired Principal 'D' is always greater than the initial principal.
-    However it is best to take into consideration that if Desired Principal 'D' is equal to
-    Principal
+    Assumption: Assume that Desired Principal 'D' is always greater than
+    the initial principal. However it is best to take into consideration
+    that if Desired Principal 'D' is equal to Principal
     
     'P' this should return 0 Years.
 """
@@ -69,17 +72,21 @@ def calculate_years(principal, interest, tax, desired):
     Task 7-2.
     IQ Test. (6 kyu)
 
-    Bob is preparing to pass IQ test. The most frequent task in this test is to find out which one
-    of the given numbers differs from the others. Bob observed that one number usually differs
-    from the others in evenness. Help Bob — to check his answers, he needs a program that among
-    the given numbers finds one that is different in evenness, and return a position of this number
+    Bob is preparing to pass IQ test. The most frequent task in this test
+    is to find out which one of the given numbers differs from the others.
+    Bob observed that one number usually differs from the others in evenness.
+    Help Bob — to check his answers, he needs a program that among the given
+    numbers finds one that is different in evenness, and return a position of
+    this number
 
     ! Keep in mind that your task is to help Bob solve a real IQ test,
     which means indexes of the elements start from 1 (not 0)
 
     Examples:
-    iq_test("2 4 7 8 10") => 3 // Third number is odd, while the rest of the numbers are even
-    iq_test("1 2 1 1") => 2 // Second number is even, while the rest of the numbers are odd
+    iq_test("2 4 7 8 10") => 3 // Third number is odd, while the rest of the
+    numbers are even
+    iq_test("1 2 1 1") => 2 // Second number is even, while the rest of the
+    numbers are odd
 """
 
 
@@ -107,11 +114,13 @@ def iq_test(numbers):
     Highest Scoring Word (6 kyu)
 
     Given a string of words, you need to find the highest scoring word.
-    Each letter of a word scores points according to its position in the alphabet: 
+    Each letter of a word scores points according to its position in the
+    alphabet: 
     a = 1, b = 2, c = 3 etc.
     
     You need to return the highest scoring word as a string.
-    If two words score the same, return the word that appears earliest in the original string.
+    If two words score the same, return the word that appears earliest in the
+    original string.
     All letters will be lowercase and all inputs will be valid.
 
     Examples:
@@ -141,15 +150,16 @@ def high(x):
     Task 7-4
     +1 Array (6 kyu)
 
-    Given an array of integers of any length, return an array that has 1 added to the value
-    represented by the array.
+    Given an array of integers of any length, return an array that has 1 added
+    to the value represented by the array.
 
     the array can't be empty
     only non-negative, single digit integers are allowed
     Return nil (or your language's equivalent) for invalid inputs.
 
     Examples
-    For example the array [2, 3, 9] equals 239, adding one would return the array [2, 4, 0].
+    For example the array [2, 3, 9] equals 239, adding one would return the
+    array [2, 4, 0].
     [4, 3, 2, 5] would return [4, 3, 2, 6]
 """
 
