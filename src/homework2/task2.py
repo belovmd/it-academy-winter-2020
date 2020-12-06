@@ -12,4 +12,3 @@ for words in new_str:
         longest_word = words
 
 print('Самое длиное слово:', longest_word)
-
