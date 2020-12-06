@@ -15,7 +15,7 @@ def longest_word(sentence, punctuation=',.?!:;"()-'):
 
     for word in words:
         if not word.isalpha():
-        # проверяет, состоит ли слово из букв, т.е. не учитываем числа и т.д.
+            # проверяет, состоит ли слово из букв, т.е. не учитываем числа и т.д.
             continue
 
         if len(word) > len(longest_word):
