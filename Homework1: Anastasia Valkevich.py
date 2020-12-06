@@ -5,7 +5,7 @@ import random
 import re
 import sys
 import unittest
-import xml.etree.cElementTree as groupby
+import xml.etree.cElementTree
 
 from itertools import groupby
 from time import localtime
@@ -288,7 +288,7 @@ dinner_recipe = '''<html><body><table>
 
 # From http://effbot.org/zone/element-index.htm
 
-tree = etree.fromstring(dinner_recipe)
+tree = tree.fromstring(dinner_recipe)
 
 # For invalid HTML use http://effbot.org/zone/element-soup.htm
 # import ElementSoup, StringIO
@@ -361,7 +361,7 @@ while guesses_made < 6:
         break
 
 if guess == number:
-    print('Good job, {0}! You guessed my number in {1} guesses!' \
+    print('Good job, {0}! You guessed my number in {1} guesses!'
           .format(name, guesses_made))
 else:
     print('Nope. The number I was thinking of was {0}'.format(number))
