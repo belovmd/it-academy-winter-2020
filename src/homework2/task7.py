@@ -5,7 +5,7 @@ import string
 """
     Task 7. Зарегистрируйтесь на одном (или нескольких) из сайтов:
 
-    https://py.checkio.org/, https://www.codewars.com, 
+    https://py.checkio.org/, https://www.codewars.com,
     https://www.hackerrank.com/, https://acmp.ru
 
     Решите 1-5 задач уровня Elementary и Advanced.
@@ -23,7 +23,7 @@ import string
     Mr. Scrooge has a sum of money 'P' that he wants to invest. Before he
     does, he wants to know how many years 'Y' this sum 'P' has to be kept
     in the bank in order for it to amount to a desired sum of money 'D'.
-    The sum is kept for 'Y' years in the bank where interest 'I' is paid 
+    The sum is kept for 'Y' years in the bank where interest 'I' is paid
     yearly. After paying taxes 'T' for the year the new sum is re-invested.
 
     Note to Tax: not the invested principal is taxed, but only the year's
@@ -51,7 +51,7 @@ import string
     Assumption: Assume that Desired Principal 'D' is always greater than
     the initial principal. However it is best to take into consideration
     that if Desired Principal 'D' is equal to Principal
-    
+
     'P' this should return 0 Years.
 """
 
@@ -115,9 +115,9 @@ def iq_test(numbers):
 
     Given a string of words, you need to find the highest scoring word.
     Each letter of a word scores points according to its position in the
-    alphabet: 
+    alphabet:
     a = 1, b = 2, c = 3 etc.
-    
+
     You need to return the highest scoring word as a string.
     If two words score the same, return the word that appears earliest in the
     original string.
@@ -187,10 +187,13 @@ def up_array(arr):
     Task 7-5
     String incrementer (5 kyu)
 
-    Your job is to write a function which increments a string, to create a new string.
+    Your job is to write a function which increments a string, to create a new
+    string.
 
-    If the string already ends with a number, the number should be incremented by 1.
-    If the string does not end with a number. the number 1 should be appended to the new string.
+    If the string already ends with a number, the number should be incremented
+    by 1.
+    If the string does not end with a number. the number 1 should be appended
+    to the new string.
 
     Examples:
     foo -> foo1
@@ -199,7 +202,8 @@ def up_array(arr):
     foo9 -> foo10
     foo099 -> foo100
 
-    Attention: If the number has leading zeros the amount of digits should be considered.
+    Attention: If the number has leading zeros the amount of digits should be
+    considered.
 """
 
 regexp = r"\d+$"
