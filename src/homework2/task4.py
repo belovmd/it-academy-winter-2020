@@ -15,4 +15,3 @@ for letter in str_:
 print("Итого нашлось:")
 print(small, "строчных букв")
 print(big, "прописных букв")
-

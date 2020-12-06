@@ -11,4 +11,3 @@ for word in str_:
         count = len(word)
         max_word = word
 print("Самое длинное влово -", word)
-
