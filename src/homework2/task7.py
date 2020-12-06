@@ -2,12 +2,14 @@
 1.
 https://www.hackerrank.com/challenges/write-a-function/problem
 Task
-Given a year, determine whether it is a leap year (please refer to the task i=on the site for mote details).
+Given a year, determine whether it is a leap year
+(please refer to the task i=on the site for mote details).
 If it is a leap year, return the Boolean True, otherwise return False.
 
 Note that the code stub provided reads from STDIN and passes arguments to the is_leap function.
 It is only necessary to complete the is_leap function.
 """
+
 
 def is_leap(year):
     leap = False
@@ -48,14 +50,8 @@ Output Format
 Print Weird if the number is weird. Otherwise, print Not Weird.
 """
 
+
 # !/bin/python3
-
-import math
-import os
-import random
-import re
-import sys
-
 if __name__ == '__main__':
     n = int(input('Please input an integer: ').strip())
 
@@ -88,6 +84,7 @@ String S = BANANA
 Kevin's vowel beginning word = ANA
 Here, ANA occurs twice in BANANA. Hence, Kevin will get 2 Points.
 """
+
 
 def minion_game(string):
     vowels = 'AEIOU'
