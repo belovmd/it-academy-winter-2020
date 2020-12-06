@@ -6,6 +6,6 @@
 text = 'abc cde def'
 txt = ''
 for new_text in text:
-    if new_text not in txt and new_text !=' ':
+    if new_text not in txt and new_text != ' ':
         txt += new_text
 print(txt)
