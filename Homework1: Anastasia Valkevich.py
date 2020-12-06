@@ -142,6 +142,7 @@ print(my_account.balance, my_account.overdrawn())
 # 13 lines: Unit testing with unittest
 
 
+import unittest
 def median(pool):
     copy = sorted(pool)
     size = len(copy)
@@ -163,7 +164,6 @@ if __name__ == '__main__':
 # 14 lines: Doctest-based testing
 
 def median(pool):
-
     # Statistical median to demonstrate doctest.
     # >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
     # 6 #change to 7 in order to pass the test
@@ -289,7 +289,7 @@ dinner_recipe = '''<html><body><table>
 
 # From http://effbot.org/zone/element-index.htm
 
-tree = etree.fromstring(dinner_recipe)
+tree = tree.fromstring(dinner_recipe)
 
 # For invalid HTML use http://effbot.org/zone/element-soup.htm
 # import ElementSoup, StringIO
