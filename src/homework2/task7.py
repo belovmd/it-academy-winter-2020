@@ -40,7 +40,8 @@ print(s)
     не превышает 10100. Числа записаны без ведущих нулей.
     Выходные данные
     В выходной файл OUTPUT.TXT нужно вывести одно целое число —
-    максимальное количество монет, которые может взять вождь  
+    максимальное количество монет, которые может взять вождь 
+    
 """
 a = int(input())
 b = int(input())
@@ -48,10 +49,12 @@ c = int(input())
 var = a, b, c <= 10 ** 100
 gold = [a, b, c]
 count = 0
+
 for num in gold:
     if num > count:
         count = num
     if num > count:
+
         count = num
 print(count)
 
@@ -59,11 +62,13 @@ print(count)
 """ Task 3
     По данному натуральному числу n ≤ 9 выведите лесенку из n ступенек,
     i-я ступенька состоит из чисел от 1 до i без пробелов.
+    
 """
 n = int(input())
 s = 1
 for element in range(1, n + 1):
     s += element
+
     for element_ in range(1, s):
         print(element_, end='')
     s = 1
