@@ -19,5 +19,5 @@ if total_coins >= 100:
     total_roubles = total_roubles + total_coins // 100
     total_coins = total_coins - total_coins // 100 * 100
 
-print('Общая стоимость ' + str(total_roubles) +
-      ' руб. ' + str(total_coins) + ' коп.')
+print('Общая стоимость ' + str(total_roubles)
+      +' руб. ' + str(total_coins) + ' коп.')
