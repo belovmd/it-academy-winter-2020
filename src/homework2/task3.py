@@ -6,13 +6,13 @@
 
 
 def get_unique_substring(string):
-    """
-    Конструирование подстроки.
+    """Конструирование подстроки.
 
     :param string: входная строка
     :return: строка. Строка содержит только уникальные
         символы.
     """
+
     unique_chars = []
 
     string = string.replace(" ", "")

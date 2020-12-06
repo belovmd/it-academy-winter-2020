@@ -7,8 +7,7 @@ Url: https://www.codewars.com/kata/523a86aa4230ebb5420001e1/python
 
 
 def find_anagrams(word, words):
-    """
-    Поиск анаграмм слова word среди слов в списке words
+    """Поиск анаграмм слова word среди слов в списке words
 
     :param word: входное слово
     :param words: список слов

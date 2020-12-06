@@ -16,8 +16,7 @@ However, the array might contain duplicate elements.
 
 
 def get_happiness(negative_set, positive_set, array=None):
-    """
-    Подсчет показателя "happiness" для списка
+    """Подсчет показателя "happiness" для списка
 
     :param negative_set: множество негативных элементов (дающих -1)
     :param positive_set: множество "позитивных" элементов (дающих +1)

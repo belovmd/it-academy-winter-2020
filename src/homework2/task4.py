@@ -11,6 +11,7 @@ def count(string):
     :return: кортеж. Первый элемент - число строчных букв, второй элемент -
         число прописных букв
     """
+
     lower_count, upper_count = 0, 0
 
     for char in string:
