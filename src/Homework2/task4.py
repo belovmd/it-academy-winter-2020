@@ -2,6 +2,7 @@
     прописных (больших) букв в введенной строке.
     Учитывать только английские буквы"""
 
+
 str_ = 'jjdfhvbUnj  hjsdinUUh  kKKJJBDNM'
 len_MAJ = 0
 len_small = 0
