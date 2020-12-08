@@ -15,6 +15,6 @@ if all_cent > 99:
     all_rubl = all_rubl + integer_cent
 
 if all_cent > 99:
-    print(f'Общая стоимость товаров {str(all_rubl)} руб {str(ost_cent)} центов')
+    print(f'Общая стоимость товаров {all_rubl} руб {ost_cent} центов')
 else:
-    print(f'Общая стоимость товаров {str(all_rubl)} руб {str(all_cent)} центов')
+    print(f'Общая стоимость товаров {all_rubl} руб {all_cent} центов')
