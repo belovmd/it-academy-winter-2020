@@ -20,7 +20,6 @@ if a == 0:
 else:
     print('НОД: ' + str(a))
 
-
 # https://acmp.ru/index.asp?main=task&id_task=46
 # Выведите в выходной файл округленное до n знаков после десятичной точки число E.
 # Е в точности равно 2.7182818284590452353602875.
@@ -36,7 +35,6 @@ else:
 
 print(e)
 
-
 # https://acmp.ru/index.asp?main=task&id_task=574
 # Cтрока S1 называется анаграммой строки S2, если она получается из S2
 # перестановкой символов. Даны строки S1 и S2. Напишите программу, которая проверяет,
@@ -47,10 +45,9 @@ str1 = sorted(str1)
 str2 = sorted(str2)
 
 if str1 == str2:
-  print('yes')
+    print('yes')
 else:
-  print('no')
-
+    print('no')
 
 # https://acmp.ru/index.asp?main=task&id_task=77
 # Для заданных натуральных чисел N и K требуется вычислить количество чисел от 1 до N,
@@ -76,7 +73,6 @@ print('Числа с нулями: ')
 print(output_bins)
 
 print('Чисел с нулями всего: ' + str(len(output_bins)))
-
 
 # https://acmp.ru/index.asp?main=task&id_task=146
 # По заданному натуральному числу А требуется найти наибольшее число В такое, что B2 ≤ A.
