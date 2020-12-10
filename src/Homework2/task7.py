@@ -51,7 +51,7 @@ side_one = 5
 side_two = 12
 hypotenuse = (side_one ** 2) + (side_two ** 2)
 
-hypotenuse = (hypotenuse ** 1/2)
+hypotenuse = (hypotenuse ** 1 / 2)
 
 hypotenuse = round(hypotenuse, 11)
 print(hypotenuse)
