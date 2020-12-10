@@ -10,8 +10,3 @@ for element in text:
         result_string += element
 
 print(result_string)
-
-
-
-
-

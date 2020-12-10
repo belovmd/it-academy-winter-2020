@@ -2,7 +2,7 @@
 
 
 """https://www.hackerrank.com/contests/it-academy-03/challenges/fizzbuzz-16-2
-Напишите программу, которая считывает два натуральных числа a и b 
+Напишите программу, которая считывает два натуральных числа a и b
 (гарантируется, что a < b),
 после чего для всех чисел от a до b выводит:
 “Fizz”, если это число делится на 3;
@@ -13,7 +13,7 @@
 
 number1 = int(input())
 number2 = int(input())
-for i in range(number1, number2+1):
+for i in range(number1, number2 + 1):
     if number1 < number2 and i % 5 == 0 and i % 3 == 0:
         print("FizzBuzz")
         continue
@@ -41,7 +41,7 @@ for number in range(n):
 """
 https://www.hackerrank.com/contests/it-academy-01/challenges/
 challenge-1961/problem
-Напишите программу, вычисляющую по двум заданным 
+Напишите программу, вычисляющую по двум заданным
 катетам гипотенузу прямоугольного треугольника"""
 
 
@@ -51,7 +51,7 @@ side_one = 5
 side_two = 12
 hypotenuse = (side_one ** 2) + (side_two ** 2)
 
-hypotenuse = (hypotenuse**1/2)
+hypotenuse = (hypotenuse ** 1/2)
 
 hypotenuse = round(hypotenuse, 11)
 print(hypotenuse)
@@ -71,9 +71,9 @@ for i in range(0, len(string), 2):
 
 
 """https://www.hackerrank.com/contests/it-academy-03/challenges"""
-"""Напишите программу, которая считывает 
-одно целое число N и выводит N строк, 
-содержащих N звёздочек в каждой строке 
+"""Напишите программу, которая считывает
+одно целое число N и выводит N строк,
+содержащих N звёздочек в каждой строке
 (без пробелов)"""
 
 
