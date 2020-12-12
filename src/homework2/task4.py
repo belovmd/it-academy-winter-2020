@@ -13,7 +13,5 @@ for letter in str_:
         low_number += 1
     elif 'A' <= letter <= 'Z':
         up_number += 1
-    else:
-        pass
 
 print(low_number, up_number)
