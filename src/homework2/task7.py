@@ -76,3 +76,63 @@ for i in range(a, b + 1):
         print('Fizz')
     else:
         print(i)
+
+'''
+Дана строка из целых чисел, разделенных пробелом. Напишите программу,
+которая выводит: наибольшее из имеющихся чисел по модулю
+и индекс этого числа.
+Гарантируется, что строка непуста и содержит хотя бы одно число.
+'''
+str_ = '-5 -4 -3 -2 -1'
+lst = str_.split()
+
+constant = int(lst[0])
+
+for ind in range(len(lst)):
+    if abs(constant) < abs(int(lst[ind])):
+        constant = int(lst[ind])
+
+print(constant)
+print(lst.index(str(constant)))
+
+'''
+Напишите программу, которая по введённому числу (обозначим его N) выведет числа по следующей схеме:
+
+         1
+        121
+       12321
+      1234321
+     123454321
+    12345654321
+   1234567654321
+  123456787654321
+        ...
+123456...N...654321
+        ...
+  123456787654321
+   1234567654321
+    12345654321
+     123454321
+      1234321
+       12321
+        121
+         1
+'''
+N = 5
+for line in range(1, N + 1):
+    for space in range(N - line):
+        print(' ', end='')
+    for number in range(1, line + 1):
+        print(number, end='')
+    for number in range(line - 1, 0, -1):
+        print(number, end='')
+    print()
+
+for line in range(1, N):
+    for space in range(line):
+        print(' ', end='')
+    for number in range(1, N - line + 1):
+        print(number, end='')
+    for number in range(N - line - 1, 0, -1):
+        print(number, end='')
+    print()
