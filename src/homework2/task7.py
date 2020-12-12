@@ -76,7 +76,7 @@ print(is_leap())
 
 """5. Word Order
     Difficulty Medium
-    
+ 
     You are given  words. Some words may repeat.
     For each word, output its number of occurrences.
     The output order should correspond with the input order
@@ -91,7 +91,7 @@ print(is_leap())
     Input Format:
         The first line contains the integer, n.
         The next n lines each contain a word.
-    
+
     Output Format:
         Output 2 lines.
         On the first line, output the number of distinct words from the input.
@@ -126,11 +126,11 @@ print(*dct.values())
     ► It may have digits in groups of 4, separated by one hyphen "-".
     ► It must NOT use any other separator like ' ' , '_', etc.
     ► It must NOT have 4 or more consecutive repeated digits.
-    
+
     Input Format
         The first line of input contains an integer N.
         The next N lines contain credit card numbers.
-    
+
     Output Format
         Print 'Valid' if the credit card number is valid.
         Otherwise, print 'Invalid'. Do not print the quotes.
