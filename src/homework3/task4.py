@@ -12,26 +12,39 @@
 from itertools import product
 
 
-def get_all_pairs(indexs=None):
+def get_all_pairs(indexes=None):
+    """
+    Получение всех пар индексов
+
+    :param indexes:
+    :return: список. Список сожержит кортежи вида: (i, j)
+             где i, j - индексы элементов в списке
+    """
     pairs = []
-    for i, j in product(indexs, indexs):
+    for i, j in product(indexes, indexes):
         if i == j:
             continue
-        if (i, j) not in pairs and (j, i) not in pairs:
+        if ((i, j) not in pairs) and ((j, i) not in pairs):
             pairs.append((i, j))
 
-    print(pairs)
+    return pairs
 
 
 def count_equal_pairs(_list=None):
+    pair_count = 0
 
+    indexes = range(len(_list))
+    pairs = get_all_pairs(indexes)
 
-    get_all_pairs(idxs)
+    for first_idx, second_idx in pairs:
+        if _list[first_idx] != _list[second_idx]:
+            continue
+        pair_count += 1
 
-    #for i, j in product(idxs, idxs):
-     #   print(i, j)
+    return pair_count
 
 
 if __name__ == "__main__":
-    input_list = '1 1 1'.split()
-    count_equal_pairs(input_list)
+    input_list = '1 1 1 1'.split()
+
+    print(count_equal_pairs(input_list))
