@@ -1,5 +1,4 @@
-"""
-Task 7.2:
+"""Task 7.4:
 Task name: Number of Good Pairs
 Source: LeetCode
 Level: Easy
