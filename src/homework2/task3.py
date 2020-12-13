@@ -2,9 +2,9 @@
 повторяющиеся символы и все пробелы."""
 
 str_ = input("Введите строку: ")
-symbols = ".,/!| "
-result_string = ""
+str_ = " ".join(str_).split()
+result_string = []
 for element in str_:
-    if element not in symbols:
-        result_string += element
-print(result_string)
+    if element not in result_string:
+        result_string.append(element)
+print("".join(result_string))

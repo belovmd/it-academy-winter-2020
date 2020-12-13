@@ -16,6 +16,9 @@ for num in gold:
 print(count)
 
 # https://acmp.ru/index.asp?main=task&id_task=18. Факториал.
+# Требуется вычислить факториал целого числа N.
+# Факториал обозначают как N! и вычисляют по формуле:
+# N! = 1 * 2 * 3 * … * (N-1) * N, причем 0! = 1.
 n = int(input())
 fact = 1
 for i in range(1, n + 1):
@@ -24,6 +27,8 @@ print(fact)
 
 # Программа, которая преобразует номер телефона,
 # введённого пользователем в защищённый вид.
+# Должно быть выведено только 4 последние цифры номера телефона,
+# остальные цифры закрыты звездочками.
 telnumber = input()
 if telnumber.isdigit() and len(telnumber) >= 8:
     stars_count = len(telnumber) - 4
