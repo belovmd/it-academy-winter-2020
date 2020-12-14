@@ -7,10 +7,10 @@
 str_ = "abc cde def"
 unique_str = ""
 
-for substring in str_:
-    if substring == " " or substring in unique_str:
+for symbol in str_:
+    if symbol == " " or symbol in unique_str:
         continue
     else:
-        unique_str += substring
+        unique_str += symbol
 
 print(unique_str)
