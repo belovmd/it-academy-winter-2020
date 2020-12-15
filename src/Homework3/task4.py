@@ -10,5 +10,5 @@ lst_ = [1, 1, 1, 1, 6, 5, 5]
 pair_lst = 0
 for element in lst_:
     if lst_.count(element) > 1:
-        pair_lst += lst_.count(element)-1
+        pair_lst += lst_.count(element) - 1
 print(pair_lst // 2)
