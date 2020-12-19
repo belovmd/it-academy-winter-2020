@@ -7,15 +7,13 @@
 """
 namb = int(input("Введите целое число: "))
 namb_1 = namb
-namb_2 = 0
-while namb > 0:
-    digit = namb % 10
-    namb = namb // 10
-    namb_2 = namb_2 * 10
-    namb_2 = namb_2 + digit
+num = 0
+while namb_1 > 0:
+    num = (10*num) + namb_1%10
+    namb_1 //= 10
 
 
-if namb_1 == namb_2:
+if namb == num:
     print('число является палиндромом')
 else:
     print('число не является палиндромом')
