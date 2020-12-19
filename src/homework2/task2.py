@@ -4,7 +4,7 @@ import string
    Учтите что в предложении есть знаки препинания.
 """
 
-in_str = input('Введите предложение: ')
+in_str = input('Введите предложение:')
 element = string.punctuation
 for i in range(len(element)):
     in_str = in_str.replace(element[i], "")
