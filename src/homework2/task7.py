@@ -89,9 +89,9 @@ def up_array(arr):
 """
 
 
-def create_number(q):
-    first = "".join(map(str, q[0:3]))
-    second = "".join(map(str, q[3:6]))
-    third = "".join(map(str, q[6:10]))
+def create_number(n):
+    first = "".join(map(str, n[0:3]))
+    second = "".join(map(str, n[3:6]))
+    third = "".join(map(str, n[6:10]))
 
     return "(" + first + ") " + second + "-" + third
