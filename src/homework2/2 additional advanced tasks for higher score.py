@@ -8,6 +8,7 @@
    массив [2, 4, 0]. [4, 3, 2, 5] вернет [4, 3, 2, 6]
 """
 
+
 def up_array(arr):
     if not len(arr):
         return None
@@ -29,13 +30,14 @@ def up_array(arr):
 
 """ # 2Напишите функцию, которая принимает массив из 10 целых чисел(от 0 до 9)
    который возвращает строку этих чисел в форме номера телефона.
-   Пример: create_phone_number ([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) 
+   Пример: create_phone_number ([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
    возвращает «(123) 456-7890»
 """
+
 
 def create_number(n):
     first = "".join(map(str, n[0:3]))
     second = "".join(map(str, n[3:6]))
     third = "".join(map(str, n[6:10]))
 
-    return "("+first+") "+ second +"-"+third
+    return "(" + first + ") " + second + "-" + third
