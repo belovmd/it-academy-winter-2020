@@ -11,6 +11,6 @@
 '''
 list = [0, 0, 1, 0, 2, 3]
 for i in list:
-  if i == 0:
-    list.remove(i), list.append(i)
+    if i == 0:
+        list.remove(i), list.append(i)
 print(list)

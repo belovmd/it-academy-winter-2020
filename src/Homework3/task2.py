@@ -16,7 +16,7 @@ print(list_1)
 
 print(list_1[::2])
 
-list_3 = [str(i) + 'a' for i in range(1,5)]
+list_3 = [str(i) + 'a' for i in range(1, 5)]
 print(list_3)
 
 print(list_3.pop(1), list_3)

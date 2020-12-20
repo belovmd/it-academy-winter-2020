@@ -13,10 +13,10 @@ print(tuple(tuple_1))
 tuple_2 = ('a', 'b', 'c')
 print(list(tuple_2))
 
-a,b,c = 'a', 2, 'pthon'
+a, b, c = 'a', 2, 'pthon'
 print(a, b, c)
 
 typle_4 = ('1, 2, 3',)
 for i in typle_4:
-  print(i)
+    print(i)
 print(len(typle_4))
