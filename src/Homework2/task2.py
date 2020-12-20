@@ -11,12 +11,12 @@ for i in range(len(e)):
     text = text.replace(e[i], "")
 list_ = text.split()
 
-longest_word = ''
-max_len = 0
+word_ = ''
+len_ = 0
 
 for word in list_:
-    if len(word) > max_len:
-        longest_word = word
-        max_len = len(word)
+    if len(word) > len_:
+        word_ = word
+        len_ = len(word)
 
-print('Самое длинное слово - ' + longest_word + ' ', end='\n' + str(max_len) + ' - символов')
+print('Самое длинное слово - ' + word_, end='\n' + str(len_) + ' - символов')
