@@ -19,10 +19,10 @@ for digit in range(1, namb + 1):
 Вам дано положительное целое число N.
 Ваша задача - напечатать палиндромный треугольник размером N.
 Например, палиндромный треугольник размером 5 является:
-1 
-121 
-12321 
-1234321 
+1
+121
+12321
+1234321
 123454321
 Вы не можете взять больше двух строк.
 Первая линия (а для -statement) уже написана для вас.
@@ -73,4 +73,4 @@ for number_1 in range(number - 1, 1, -1):
 length_AB = int(input('Введите длину AB: '))
 length_BC = int(input('Введите длину BC: '))
 print('∠ MBC = ', end='')
-print(round(math.degrees(math.atan2(AB, BC))), end='°')
+print(round(math.degrees(math.atan2(length_AB, length_BC))), end='°')
