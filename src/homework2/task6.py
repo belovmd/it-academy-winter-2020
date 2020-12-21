@@ -7,8 +7,7 @@ test = num
 revers_num = 0
 
 while num > 0:
-    a = num % 10
-    revers_num = revers_num * 10 + a
+    revers_num = revers_num * 10 + num % 10
     num = num // 10
 
 if revers_num == test:

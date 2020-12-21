@@ -9,8 +9,6 @@ all_cent = cent * count
 ost_cent = all_cent % 100
 integer_cent = all_cent // 100
 
-"100 коппек конвертируется в 1 рубль в финальном результате"
-
 if all_cent > 99:
     all_rubl = all_rubl + integer_cent
 
