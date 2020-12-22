@@ -6,7 +6,7 @@
 import string
 
 
-str_ = 'Хлопотное, дельце!!!!!!!!'
+str_ = 'Хлопотное, дельце!!!!!!!!!'
 longest_word = ''
 
 for i in string.punctuation:
