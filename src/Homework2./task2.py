@@ -2,10 +2,13 @@
 Найти самое длинное слово в введенном предложении.
 Учтите что в предложении есть знаки препинания.
 """
-my_string = input(': ').split()
-int_ = 0
-for char in my_string:
-    if len(char) > int_:
-        int_ = len(char)
-        word = char
-print('Самое длинное слово :', word)
+import string
+my_string = input(': ')
+longest_word = ''
+for ch in string.punctuation:
+    my_string = my_string.replace(ch, '')
+new_str = my_string.split()
+for word in new_str:
+    if len(longest_word) < len(word):
+        longest_word = word
+print(longest_word)

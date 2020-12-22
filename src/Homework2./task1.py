@@ -3,9 +3,9 @@
 Вводится M рублей и N копеек цена, а также количество S
 товара Посчитайте общую цену в рублях и копейках за L товаров.
 '''
-rubles = int(input('Цена в рублях: '))
-penny = int(input('Цена в копейках: '))
-product = int(input('Количество товара: '))
-rubles_product = rubles * product
-penny_product = penny * product
-print(str(rubles_product) + 'p.' + str(penny_product) + 'k')
+rubles = 0
+penny = 90
+product = 9
+penny_product = (penny * product) % 100
+rubles_product = (product * rubles) + (product * penny) // 100
+print(rubles_product, 'p.', penny_product, 'k.')
