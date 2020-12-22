@@ -18,13 +18,15 @@
    сумму чисел, расположенных между 1 и N включительно.
 """
 
+
 a = int(input())
 c = 0
-if (a > 0) and (a <= 10 ** 4):
-    s = (a + 1) * a // 2
-elif (a <= 0) and (a > ((-1) * 10 ** 4)):
-    s = (a + 1) * (abs(a) + 2 * (a <= 0)) // 2
-sign = -1 if a <= 0 else 1
+if 0 < a <= 10 ** 4:
+    s = (a + 1) * (abs(a) + 2 * a) // 2
+if a <= 0:
+    sign = -1
+else:
+    sign = 1
 s = sum(range(1, a + sign, sign))
 print(s)
 
@@ -88,8 +90,19 @@ for element in range(1, n + 1):
    в случае ничьей следует вывести «DRAW».
 """
 
-result = sum(int(a) - int(b) for a, b in (input().split() for _ in range(4)))
-print("DRAW" if not result else 1 if result > 0 else 2)
+
+a, b = input().split()
+c, d = input().split()
+e, f = input().split()
+k, w = input().split()
+n = int(a + c + e + k)
+p = int(b + d + f + w)
+if int(n) == int(p):
+    print('DRAW')
+elif p < n:
+    print('1')
+else:
+    print('2')
 
 
 """Task 5

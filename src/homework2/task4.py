@@ -3,14 +3,14 @@
 """
 
 sentence = input('Please enter your sentence:')
-letter = 0
-LETTER = 0
+lowers = 0
+uppers = 0
 for i in sentence:
     if 'a' <= i <= 'z':
-        letter += 1
+        lowers += 1
     elif 'A' <= i <= 'Z':
-        LETTER += 1
+        uppers += 1
     else:
         pass
-print(letter)
-print(LETTER)
+print(lowers)
+print(uppers)

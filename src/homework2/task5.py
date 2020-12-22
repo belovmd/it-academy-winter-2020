@@ -3,17 +3,16 @@
    n - вводится
 """
 
-a = 0
+
+a = 1
 b = 1
+count = 0
+n = int(input("Номер элемента ряда Фибоначчи: "))
 
-n = input("Номер элемента ряда Фибоначчи: ")
-n = int(n)
-
-i = 0
-while i < n - 2:
-    s = a + b
+while count < (n - 2):
+    sum_ = a + b
     a = b
-    b = s
-    i = i + 1
+    b = sum_
+    count += 1
 
 print(b)
