@@ -3,9 +3,15 @@
 """
 
 
-str_ = input('Введите предложение: ')
-new_str = str_.split()
+import string
+
+
+str_ = 'Хлопотное, дельце!!!!!'
 longest_word = ''
+
+for i in string.punctuation:
+    str_ = str_.replace(i, '')
+new_str = str_.split()
 
 for words in new_str:
     if len(words) > len(longest_word):
