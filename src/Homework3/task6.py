@@ -17,10 +17,5 @@ for i in old_list:
     else:
         list_2.append(i)
 list_1.extend(list_2)
-print(list_1)
-
-  
-
-
-        
+print(list_1)      
 
