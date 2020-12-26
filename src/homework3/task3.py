@@ -4,14 +4,14 @@
 
     Task 3-1. Создайте список ['a', 'b', 'c'] и сделайте из него кортеж
 """
-tuple_elements = tuple(['a', 'b', 'c'])
+tuple_elements = tuple(["a", "b", "c"])
 print("3-1", tuple_elements)
 
 
 """
     Task 3-2. Создайте кортеж ('a', 'b', 'c') и сделайте из него список
 """
-list_elements = ('a', 'b', 'c')
+list_elements = ("a", "b", "c")
 print("3-2", list(list_elements))
 
 
@@ -19,7 +19,7 @@ print("3-2", list(list_elements))
     Task 3-3. Сделайте следующие присвоения одной строкой
     a = 'a', b=2, c='python'
 """
-a, b, c = 'a', 2, 'python'
+a, b, c = "a", 2, 'python'
 
 
 """

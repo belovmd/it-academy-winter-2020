@@ -29,7 +29,7 @@ print("2-3", num_list)
     Task 2-4. Одной строкой удалите элемент '2a' из прошлого списка и
     напечатайте его
 """
-el_position = num_list.index('2a')
+el_position = num_list.index("2a")
 el = num_list.pop(el_position)
 print("2-4", el, num_list)
 
