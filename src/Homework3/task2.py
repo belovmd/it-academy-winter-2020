@@ -1,3 +1,4 @@
+import copy
 """List practice
    1) Используйте генератор списков чтобы получить следующий: ['ab', 'ac', 'ad', 'bb', 'bc', 'bd'].
    2) Используйте на предыдущий список slice чтобы получить следующий: ['ab', 'ad', 'bc'].
@@ -8,9 +9,7 @@
 """
 
 
-list = 'abcd'
-list_1 = [i + k for i in list if i != 'c' and
-          i != 'd' for k in list if k != 'a']
+list_1 = [a + i for a in 'ab' for i in 'bcd']
 print(list_1)
 
 
@@ -26,5 +25,6 @@ print(list_3)
 print(list_3.pop(1))
 
 
-list_5 = copy.deepcopy(list_3)
-print(list_5.insert(2, '2a'))
+list_4 = copy.deepcopy(list_3)
+list_4.insert(1, '2a')
+print(list_4)
