@@ -12,7 +12,7 @@
 '''
 import copy
 
-list_ = [_ + _1 for _ in'ab' for _1 in 'bcd']
+list_ = [_ + _1 for _ in 'ab' for _1 in 'bcd']
 print(list_)
 
 print(list_[::2])
