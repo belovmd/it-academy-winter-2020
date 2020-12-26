@@ -9,8 +9,9 @@
 задачу нужно выполнить за один проход по списку.
 Распечатайте полученный список.
 '''
-list = [0, 0, 1, 0, 2, 3]
-for i in list:
-    if i == 0:
-        list.remove(i), list.append(i)
-print(list)
+
+lst = [0, 0, 1, 0, 2, 3]
+for element in lst:
+    if element == 0:
+        lst.remove(element), lst.append(element)
+print(lst)

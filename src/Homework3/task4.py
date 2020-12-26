@@ -1,3 +1,4 @@
+import math
 '''
 Пары элементов
 Дан список чисел. Посчитайте, сколько в нем пар элементов,
@@ -7,17 +8,13 @@
 Выходные данные - количество пар.
 Важно: 1 1 1 - это 3 пары, 1 1 1 1 - это 6 пар
 '''
-import math
 
-dict_ = {}
+dct = {}
 
 for element in input('введите числа, разделенные пробелам: ').split():
-    dict_[element] = dict_.get(element, 0) + 1
-for values_ in dict_.values():
+    dct[element] = dct.get(element, 0) + 1
+for values_ in dct.values():
     if values_ > 1:
         result = (math.factorial(values_) // (math.factorial(values_ - 2) * 2))
-#        print((math.factorial(value - 2) * 2))
-#        print(math.factorial(value))
-        # по формуле C == n! // (n - k)! * k!, где n - кол-во объектов,
-        # k - пара объектов, C - кол-во комбинаций.
+
         print(result)
