@@ -13,5 +13,5 @@ for i in old_list:
     if old_list.count(i) == 1:
         new_list.append(i)
 print('Элементы, встречающиеся в спике только один раз:')
-for i in new_list: 
+for i in new_list:
     print(i)
