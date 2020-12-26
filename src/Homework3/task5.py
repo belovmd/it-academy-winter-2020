@@ -15,4 +15,3 @@ for i in old_list:
 print('Элементы, встречающиеся в спике только один раз:')
 for i in new_list: 
     print(i)
-

@@ -8,7 +8,8 @@
 
 
 list = 'abcd'
-list_1 = [i + k for i in list if i != 'c' and i != 'd' for k in list if k != 'a']
+list_1 = [i + k for i in list if i != 'c'
+          and i != 'd' for k in list if k != 'a']
 print(list_1)
 
 
@@ -20,9 +21,9 @@ list_3 = [i + 'a' for i in f]
 print(list_3)
 
 
-print(list_3.pop (1))
+print(list_3.pop(1))
 
 
 import copy
 list_5 = copy.deepcopy(list_3)
-print(list_5.insert(2,'2a'))
+print(list_5.insert(2, '2a'))
