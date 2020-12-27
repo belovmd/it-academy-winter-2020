@@ -13,7 +13,7 @@
 if __name__ == "__main__":
     # step 1
     chars = 'abcd'
-    _list = [x+y for x in chars[:2] for y in chars[1:]]
+    _list = [x + y for x in chars[:2] for y in chars[1:]]
 
     # step 2
     new_list = _list[::2]
@@ -25,7 +25,4 @@ if __name__ == "__main__":
     print(_lst.pop(1))
 
     # step 5
-    lst_copy = _lst[:]
-    lst_copy.append('2a')
-
-
+    lst_copy = _lst[:].append('2a')

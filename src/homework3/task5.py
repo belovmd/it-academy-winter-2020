@@ -6,10 +6,10 @@
 
 
 def print_unique_elements(_list=None):
-    """
+    """Нахождение и вывод в консоль уникальных элементов списка
 
-    :param _list:
-    :return:
+    :param _list: список элементов
+    :return: None
     """
     count_dict = {}
 

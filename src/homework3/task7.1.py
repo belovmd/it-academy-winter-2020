@@ -4,13 +4,16 @@
 """
 
 
-def is_break(width, height, piece_area):
-    """
+def chocolate_break(width, height, piece_area):
+    """Функция определяющая можно ли от шоколадки заданного размера
+        отломать кусочек площадью k.
 
-    :param width:
-    :param height:
-    :param piece_area:
-    :return:
+    :param width: число. Ширина шоколадки
+    :param height: число. Длина шоколадки
+    :param piece_area: число. Площадь кусочка, который требуется
+        отломать.
+    :return: boolean. True - если шоколадку можно разделить,
+        False - в протином случае
     """
 
     chocolate_area = width * height

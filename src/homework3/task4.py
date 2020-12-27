@@ -13,8 +13,7 @@ from itertools import product
 
 
 def get_all_pairs(indexes=None):
-    """
-    Получение всех пар индексов
+    """Получение всех пар индексов
 
     :param indexes:
     :return: список. Список сожержит кортежи вида: (i, j)
@@ -31,6 +30,11 @@ def get_all_pairs(indexes=None):
 
 
 def count_equal_pairs(_list=None):
+    """Подсчет пар элементов, равных друг другу
+
+    :param _list: список чисел
+    :return: число. Количество равных пар
+    """
     pair_count = 0
 
     indexes = range(len(_list))

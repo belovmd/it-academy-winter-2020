@@ -5,22 +5,23 @@
 """
 
 
-def fizzbuzz():
-    """
+def fizzbuzz(number):
+    """ Решение задачи FizzBuzz
 
-    :return: None
+    :param number: число
+    :return: string. Строка возвращается в зависимости от
+        кратности числа
     """
-    for number in range(1, 101):
-        if (not number % 3) and (not number % 5):
-            print('FizzBuzz')
-            continue
-        if not number % 3:
-            print('Fizz')
-            continue
-        if not number % 5:
-            print('Buzz')
-            continue
+    if not number % 15:
+        return 'FizzBuzz'
+    if not number % 3:
+        return 'Fizz'
+    if not number % 5:
+        return 'Buzz'
+
+    return number
 
 
 if __name__ == '__main__':
-    fizzbuzz()
+    for number in range(1, 101):
+        print(fizzbuzz(number))
