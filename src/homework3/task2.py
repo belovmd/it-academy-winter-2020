@@ -1,4 +1,5 @@
-"""Используйте генератор списков чтобы получить следующий:
+"""List practice.
+Используйте генератор списков чтобы получить следующий:
 ['ab', 'ac', 'ad', 'bb', 'bc', 'bd'].
 Используйте на предыдущий список slice чтобы получить следующий:
 ['ab', 'ad', 'bc'].
@@ -10,8 +11,13 @@
 """
 lst1 = ["".join([i, j]) for i in "ab" for j in "bcd"]
 slc = lst1[::2]
+
 lst2 = ["".join([i, j]) for i in '1234' for j in "a"]
 print(lst2.pop(1))
+
+lst2 = ["".join([i, j]) for i in '1234' for j in "a"]
+print(lst2.pop(1))
+
 lst3 = lst2.copy()
 lst3.append("2a")
 print(lst3)
