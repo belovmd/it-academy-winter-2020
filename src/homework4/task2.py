@@ -30,6 +30,12 @@ if __name__ == "__main__":
         "Novgorod",
     ]
 
-    country, *cities = country_with_cities[0]
+    dict_ = {tuple(cities): country for country, *cities in country_with_cities}
 
-    print(country, cities)
+    for q in queries:
+        if q in dict_.keys():
+            print(11212)
+
+
+
+
