@@ -6,7 +6,7 @@
 
 
 def fizzbuzz(number):
-    """ Решение задачи FizzBuzz
+    """Решение задачи FizzBuzz
 
     :param number: число
     :return: string. Строка возвращается в зависимости от
