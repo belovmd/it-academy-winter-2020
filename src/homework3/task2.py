@@ -42,4 +42,3 @@ print(list1.pop(1))
 new_list = copy.deepcopy(list1)
 new_list.append('2a')
 print(new_list, list1)
-
