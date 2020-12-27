@@ -10,3 +10,4 @@ for element in list1:
     if list1.count(element) == 1:
         new_list1.append(element)
 print(new_list1)
+

@@ -12,3 +12,4 @@ for element in list_:
         list_.remove(element)
         list_.append(element)
 print(list_)
+

@@ -10,3 +10,4 @@
 
 list_ = [1, 1, 1, 2, 2, 2, 2, ]
 print(sum(list_.count(x) - 1 for x in list_) // 2)
+
