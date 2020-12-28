@@ -5,8 +5,8 @@
 list_all = [2, 4, 2, 'a', 5, 'a', 7, 6, 6, 6]
 result = ''
 for el in list_all:
-  if list_all.count(el) == 1:
-    result += str(el)
+    if list_all.count(el) == 1:
+        result += str(el)
 while list_all.count(el) > 1:
-        list_all.remove(el)
+    list_all.remove(el)
 print(result)
