@@ -70,21 +70,17 @@ else:
 
 i = 0
 while (n1 < n) and (m1 < m):
-    if (not n1 % n == 0 and not m1 % m == 0) and (n1 < 0, 5 * n or m1 < 0, 5 * m):
-        n = n - n1
+    if m1 < m // 2:
+        m = m - m1
         i += 1
     else:
-        if (not m1 % m == 0) and (m1 < 0, 5 * m):
-            m = m - m1
+        if n1 < n // 2:
+            n = n - n1
             i += 1
         else:
-            if (not n1 % n) == 0 and (n1 < 0, 5 * n):
-                n = n1 or (n - n1)
-                i += 1
-            else:
-                n = n1
-                m = m1
-                i += 2
+            n = n1
+            m = m1
+            i += 2
 print('за', i, 'разломов')
 
 if t <= i:
