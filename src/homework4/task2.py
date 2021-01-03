@@ -16,16 +16,12 @@
 """
 
 if __name__ == "__main__":
-    country_count = 4
-
     country_with_cities = [
         ('Russia', 'Moscow', 'Petersburg', 'Novgorod', 'Kaluga', ),
         ('Ukraine', 'Kiev', 'Donetsk', 'Odessa', ),
         ('France', 'Paris', 'Lion', 'Brest', ),
         ('Belarus', 'Hrodno', 'Minsk', 'Brest', 'Vitebsk', ),
     ]
-
-    query_count = 4
 
     queries = [
         "Odessa",
