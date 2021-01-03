@@ -30,7 +30,9 @@ if __name__ == "__main__":
         'Brest',
     ]
 
-    city_country_dict = {tuple(cities): country for country, *cities in country_with_cities}
+    city_country_dict = {
+        tuple(cities): country for country, *cities in country_with_cities
+    }
 
     for query in queries:
         for cities in city_country_dict.keys():

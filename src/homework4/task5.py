@@ -28,5 +28,8 @@ if __name__ == "__main__":
 
     one_knows_lang = reduce(lambda x, y: x | y, languages)
 
-    print(f'Кол-во языков которые знают все школьники: {len(all_knows_lang)}\n{" ".join(all_knows_lang)} ')
-    print(f'Кол-во языков которые знает хотя бы один из школьников: {len(one_knows_lang)}\n{" ".join(one_knows_lang)}')
+    print(f'Кол-во языков которые знают все школьники: '
+          f'{len(all_knows_lang)}\n{" ".join(all_knows_lang)} ')
+
+    print(f'Кол-во языков которые знает хотя бы один из школьников: '
+          f'{len(one_knows_lang)}\n{" ".join(one_knows_lang)}')
