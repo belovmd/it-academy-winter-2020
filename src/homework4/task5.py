@@ -52,7 +52,7 @@ for element in all_languages:
     all_named_languages += 1
 all_languages_list = list(all_languages)
 
-print("Количество языков, которые знает хотя бы один школьник: " +
-      str(all_named_languages) + " язык(а/ов).")
+print("Количество языков, которые знает хотя бы один "
+      "школьник: " + str(all_named_languages) + " язык(а/ов).")
 for element in all_languages:
     print(element)

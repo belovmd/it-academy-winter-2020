@@ -13,7 +13,8 @@
 перечисленных выше.
 
 Выходные данные
-Для каждого из запроса выведите название страны, в котором находится данный город.
+Для каждого из запроса выведите название страны,
+в котором находится данный город.
 Примеры
 
 Входные данные
@@ -37,7 +38,8 @@ city_to_country = {}
 for element in range(countries_number):
     country_cities = input('Страна и города: ').split()
     country_cities_tuple = tuple(country_cities)
-    dct = {country_cities_tuple[index]: country_cities_tuple[0] for index in range(1, len(country_cities_tuple))}
+    dct = ({country_cities_tuple[index]: country_cities_tuple[0]
+            for index in range(1, len(country_cities_tuple))})
     city_to_country.update(dct)
 
 result_list = []
