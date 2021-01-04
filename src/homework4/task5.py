@@ -43,7 +43,8 @@ all_known_languages = set.intersection(*languages_list)
 all_known_languages_number = 0
 for element in all_known_languages:
     all_known_languages_number += 1
-print("Все школьники знают " + str(all_known_languages_number) + " язык(а/ов).")
+print("Все школьники знают"
+      " " + str(all_known_languages_number) + " язык(а/ов).")
 for element in all_known_languages:
     print(element)
 
