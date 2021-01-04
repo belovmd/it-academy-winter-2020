@@ -5,4 +5,4 @@
 lst_1 = [1, 5, 4, 2, 3]
 lst_2 = [3, 4, 5, 1, 3]
 result = set(lst_1) & set(lst_2)
-print(len(result)) 
+print(len(result))
