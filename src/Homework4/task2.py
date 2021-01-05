@@ -14,7 +14,7 @@
 dct_ = dict()
 Country = []
 Cities = []
-country_nbr = int(input())                    # количество стран
+country_nbr = int(input())            # количество стран
 for i in range(country_nbr):
     list_to_enter = input('Введите строку: ')  # ввод названия стран и городов
     list_ = list_to_enter.split()
