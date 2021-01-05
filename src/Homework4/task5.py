@@ -36,8 +36,8 @@ lang_ = set()
 all_lang = set()
 
 for pupils in range(int(input('количество школьников: '))):
-    numb_lang = int(input('количество языков ' + str(pupils + 1) + ' школьника: '))
-    lang_pupils = {input('языки ' + str(pupils + 1) + ' школьника: ') for _ in range(numb_lang)}
+    numb_lang = int(input('количество языков школьника: '))
+    lang_pupils = {input('языки школьника: ') for _ in range(numb_lang)}
     all_lang.update(lang_pupils)
     lang_.update(lang_pupils)
 
