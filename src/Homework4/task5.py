@@ -23,6 +23,7 @@ French
 таких языков.
 """
 
+
 Nbr_1 = 2       # введите количество языков которые знает первый школьник
 language_1 = ['Russian', 'English']
 Nbr_2 = 3       # введите количество языков которые знает второй школьник
@@ -34,6 +35,6 @@ print("Все школьники знают", Quantity_of_languages, "языка
 List_of_languages = set(language_1 + language_2 + language_3)
 print("Список языков, которые знают все школьники", List_of_languages)
 at_list_1_pupil = len(set(language_3) - set(language_1) - set(language_2))
-print("Количество языков, которые знает хотя бы один школьник", at_list_1_pupil)
+print("Кол-во языков, которые знает хотя бы один школьник", at_list_1_pupil)
 list_at_list_1_pipil = set(language_3) - set(language_1) - set(language_2)
 print("Например: ", list_at_list_1_pipil)
