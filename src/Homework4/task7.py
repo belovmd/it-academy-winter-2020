@@ -9,9 +9,9 @@ a = 36
 b = 48
 
 if a != 0 and b != 0:
-  if a > b:
-    print(a % b)
-  else:
-    print(b % a)
+    if a > b:
+        print(a % b)
+    else:
+        print(b % a)
 else:
-  print(a + b)
+    print(a + b)
