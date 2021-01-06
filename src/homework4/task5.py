@@ -47,12 +47,12 @@ all_know = set.intersection(*map(set, languages_known))
 all_know_len = len(all_know)
 print("Языки, которые знают все школьники - {} {}"
       .format(
-        str(all_know_len),
-        '- ' + ' '.join(sorted(all_know)) if all_know_len else ""))
+          str(all_know_len),
+          '- ' + ' '.join(sorted(all_know)) if all_know_len else ""))
 
 someone_know = set.union(*map(set, languages_known))
 someone_know_len = len(someone_know)
 print("Языки, которые знает хотя бы один школьник - {} {}"
       .format(
-        str(someone_know_len),
-        '- ' + ' '.join(sorted(someone_know)) if someone_know_len else ""))
+          str(someone_know_len),
+          '- ' + ' '.join(sorted(someone_know)) if someone_know_len else ""))
