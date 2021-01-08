@@ -8,7 +8,18 @@
 """
 
 
-str_ = "1 1 1 1 5 6 7 8 9"
-lst_ = str_.split()
+str_ = "1 1 1 1 1 5 5 6 6 7 8 9"
+dct = {}
+res_ = []
+kol_ = 0
 
-print(sum(lst_.count(num) - 1 for num in lst_) // 2)
+for element in str_.split():
+    dct[element] = dct.get(element, 0) + 1
+
+for values_ in dct.values():
+    if values_ > 1:
+        res_.append(values_ * ((values_ - 1) / 2))
+
+for i in res_:
+    kol_ += i
+print(kol_)

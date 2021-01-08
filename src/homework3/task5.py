@@ -5,11 +5,13 @@
 """
 
 
-a = ['a', 'a', 'c', 'b', 2, 3, 'v']
-uniq_el = []
+lst_ = ['a', 'a', 'c', 'b', 2, 3, 'v']
 
-for el in a:
-    if a.count(el) == 1:
-        uniq_el.append(el)
+dct_ = {}
 
-print(uniq_el)
+for element in lst_:
+    dct_[element] = dct_.get(element, 0) + 1
+
+for key, value in dct_.items():
+    if value == 1:
+        print(key)
