@@ -20,5 +20,3 @@ for key in numbers_amount:
         n += 1
         pairs += n
 print(pairs)
-
-
