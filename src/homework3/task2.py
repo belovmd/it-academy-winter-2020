@@ -19,7 +19,8 @@ if __name__ == "__main__":
     new_list = _list[::2]
 
     # step 3
-    _lst = [str(i) + 'a' for i in range(1, 5)]
+    _lst = [i + 'a' for i in '1234']
+    print(_lst)
 
     # step 4
     print(_lst.pop(1))

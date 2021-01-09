@@ -21,10 +21,9 @@ def get_all_pairs(indexes=None):
     """
     pairs = []
     for i, j in product(indexes, indexes):
-        if i == j:
-            continue
-        if ((i, j) not in pairs) and ((j, i) not in pairs):
-            pairs.append((i, j))
+        if i != j:
+            if ((i, j) not in pairs) and ((j, i) not in pairs):
+                pairs.append((i, j))
 
     return pairs
 
@@ -49,6 +48,19 @@ def count_equal_pairs(_list=None):
 
 
 if __name__ == "__main__":
-    input_list = '1 1 1 1'.split()
+    input_list = '1 1 1 4'.split()
 
-    print(count_equal_pairs(input_list))
+    # O(n**2) solution
+    # print(count_equal_pairs(input_list))
+
+    counter = {}
+    for i in input_list:
+        counter[i] = counter.get(i, 0) + 1
+
+    pair_count = 0
+    for value in counter.values():
+        if value > 1:
+            pair_count += (value * (value - 1)) // 2
+
+    print(f"Количество пар равно {pair_count}")
+

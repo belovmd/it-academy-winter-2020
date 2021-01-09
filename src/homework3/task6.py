@@ -18,10 +18,9 @@ def order_list(_list=None):
     """
     last_idx = 0
     for idx, element in enumerate(_list):
-        if not element:
-            continue
-        _list[last_idx], _list[idx] = _list[idx], _list[last_idx]
-        last_idx += 1
+        if element:
+            _list[last_idx], _list[idx] = _list[idx], _list[last_idx]
+            last_idx += 1
 
     print(_list)
 
