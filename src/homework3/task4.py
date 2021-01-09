@@ -13,7 +13,9 @@ numbers = '1 1 2 2 67 67 1 1 2'
 print(numbers)
 list1 = numbers.split()
 pairs = 0
-numbers_amount = {element: list1.count(element) for element in list1}
+numbers_amount = {}
+for element in list1:
+    numbers_amount[element] = numbers_amount.get(element, 0) + 1
 for key in numbers_amount:
     n = 0
     while n < numbers_amount[key] - 1:
