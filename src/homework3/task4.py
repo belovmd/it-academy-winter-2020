@@ -10,11 +10,15 @@
 """
 
 numbers = '1 1 2 2 67 67 1 1 2'
+print(numbers)
 list1 = numbers.split()
-print(list1)
 pairs = 0
-for index in range(len(list1)):
-    for number in range(index + 1, len(list1)):
-        if list1[index] == list1[number]:
-            pairs += 1
+numbers_amount = {element: list1.count(element) for element in list1}
+for key in numbers_amount:
+    n = 0
+    while n < numbers_amount[key] - 1:
+        n += 1
+        pairs += n
 print(pairs)
+
+

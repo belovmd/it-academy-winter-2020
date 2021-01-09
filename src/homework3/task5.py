@@ -9,7 +9,10 @@
 
 initial_list = [2, 2, 'abc', 79, 'k', 1, 67, 'k']
 result_list = []
-for element in initial_list:
-    if initial_list.count(element) == 1:
-        result_list.append(element)
+elements_number = (
+    {element: initial_list.count(element) for element in initial_list}
+    )
+for key in elements_number:
+    if elements_number[key] == 1:
+        result_list.append(key)
 print(result_list)
