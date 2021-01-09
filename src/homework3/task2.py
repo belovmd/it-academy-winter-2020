@@ -4,7 +4,7 @@ List practice
 Используйте генератор списков чтобы получить следующий:
 ['ab', 'ac', 'ad', 'bb', 'bc', 'bd'].
 """
-final_list = [el1 + el2 for el1 in ['a', 'b'] for el2 in ['b', 'c', 'd']]
+final_list = [el1 + el2 for el1 in ['a', 'b'] for el2 in 'bcd']
 print(final_list)
 
 """
@@ -31,7 +31,7 @@ print(final_list.pop(1))
 чтобы в исходном списке этого элемента не было
 """
 # copy and deepcopy work in the same way in this case
-new_list = copy.deepcopy(final_list)
+new_list = copy.copy(final_list)
 new_list.append('2a')
 print(new_list)
 print(final_list)
