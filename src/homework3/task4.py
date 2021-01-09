@@ -63,4 +63,3 @@ if __name__ == "__main__":
             pair_count += (value * (value - 1)) // 2
 
     print(f"Количество пар равно {pair_count}")
-

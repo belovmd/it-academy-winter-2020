@@ -20,7 +20,6 @@ if __name__ == "__main__":
 
     # step 3
     _lst = [i + 'a' for i in '1234']
-    print(_lst)
 
     # step 4
     print(_lst.pop(1))
