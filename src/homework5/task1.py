@@ -21,4 +21,4 @@ def fibonacci(n=10):
 
 
 if __name__ == "__main__":
-    pass
+    print(getattr(fibonacci, '10'))
