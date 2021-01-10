@@ -8,7 +8,8 @@ N = int(input('Введите количество стран: '))
 
 for element in range(N):
     countries_cities = input("Введите страну и города: ").split()
-    all_base_dct[countries_cities[0]] = countries_cities[1:len(countries_cities)]
+    all_base_dct[countries_cities[0]] = \
+        countries_cities[1:len(countries_cities)]
     # countries_cities[1:len(countries_cities)] - слайс городов
     # для добавления в словарь
 M = int(input('Введите количество запросов: '))

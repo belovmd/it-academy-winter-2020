@@ -17,12 +17,14 @@ for element in range(N):
 for el in all_language_one:
     if all_language_one.count(el) == N:
         language_one.add(el)
-print('Количество языков, которые знают все школьники: ' + str(len(language_one)))
+print('Количество языков, которые знают все '
+      'школьники: ' + str(len(language_one)))
 
 for el in language_one:
     print(el)
 
-print('Количество языков, которые знает хотя бы один школьник: ' + str(len(all_language)))
+print('Количество языков, которые знает хотя '
+      'бы один школьник: ' + str(len(all_language)))
 
 for el in all_language:
     print(el)
