@@ -7,6 +7,8 @@ Tuple practice
     по этому элементы последовательно выводились значения
     1, 2, 3. Убедитесь что len() исходного кортежа возвращает 1.
 '''
+
+
 tuple_1 = ['a', 'b', 'c']
 print(tuple(tuple_1))
 
@@ -18,5 +20,5 @@ print(a, b, c)
 
 typle_4 = ('1, 2, 3',)
 for i in typle_4:
-    print(i)
+    print(*i, sep="")
 print(len(typle_4))

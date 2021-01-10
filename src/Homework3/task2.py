@@ -11,12 +11,14 @@ List practice
 5. Скопируйте список и добавьте в него элемент '2a'
     так чтобы в исходном списке этого элемента не было.
 '''
+
+
 list_1 = [a + i for a in 'ab' for i in 'bcd']
 print(list_1)
 
 print(list_1[::2])
 
-list_3 = [str(i) + 'a' for i in range(1, 5)]
+list_3 = [str(i) + 'a' for i in '1234']
 print(list_3)
 
 print(list_3.pop(1), list_3)

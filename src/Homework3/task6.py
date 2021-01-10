@@ -10,9 +10,9 @@
 Распечатайте полученный список.
 '''
 
-lst = [0, 0, 1, 0, 2, 3]
-for element in lst:
-    if element == 0:
-        lst.remove(element)
-        lst.append(element)
-print(lst)
+lst_ = [0, 0, 1, 0, 2, 3]
+for lst_1 in lst_:
+    if lst_1 == 0:
+        lst_.remove(lst_1)
+        lst_.append(lst_1)
+print(lst_)
