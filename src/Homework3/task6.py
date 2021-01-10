@@ -13,5 +13,6 @@
 lst = [0, 0, 1, 0, 2, 3]
 for element in lst:
     if element == 0:
-        lst.remove(element), lst.append(element)
+        lst.remove(element)
+        lst.append(element)
 print(lst)
