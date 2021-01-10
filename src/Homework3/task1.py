@@ -5,7 +5,7 @@
 
 
 for element in range(1, 101):
-    if element % 15 == 0 :
+    if element % 15 == 0:
         print('FIZZBUZZ')
     elif element % 5 == 0:
         print('BUZZ')
