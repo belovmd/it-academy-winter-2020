@@ -7,6 +7,6 @@
 
 lst_ = [1, 4, 2, 8, 0, 7, 0, 34, 25, 6, 0]
 for element in range(len(lst_)):
-    if lst_[element] == 0:
+    if not lst_[element]:
         lst_.append(lst_.pop(element))
 print(lst_)

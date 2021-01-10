@@ -28,7 +28,8 @@ print(a, b, c)
  """
 
 
-tpl1 = (1, )
-for element in range(1, 4):
+tpl1 = ([1, 2, 3], )
+for element in tpl1[0]:
     print(element)
+print()
 print(len(tpl1))
