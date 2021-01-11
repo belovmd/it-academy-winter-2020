@@ -3,7 +3,7 @@ import copy
 # List practice
 # Используйте генератор списков чтобы получить следующий:
 # ['ab', 'ac', 'ad', 'bb', 'bc', 'bd'].
-list_orig = [el1 + el2 for el1 in ['a', 'b'] for el2 in ['b', 'c', 'd']]
+list_orig = [el1 + el2 for el1 in 'ab' for el2 in 'bcd']
 print(list_orig)
 
 # Используйте на предыдущий список slice чтобы получить следующий:
@@ -13,7 +13,7 @@ print(list_slice)
 
 # Используйте генератор списков чтобы получить следующий
 # ['1a', '2a', '3a', '4a'].
-list_num = [str(el1) + el2 for el1 in range(1, 5) for el2 in ['a']]
+list_num = [str(el1) + el2 for el1 in '1234' for el2 in 'a']
 print(list_num)
 
 # Одной строкой удалите элемент '2a' из прошлого списка и напечатайте его.
