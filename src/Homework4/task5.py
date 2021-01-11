@@ -25,19 +25,16 @@ French
 
 
 language_num_1st = 2
-languages_1st = ['Russian', 'English']
+languages1st = ['Russian', 'English']
 language_num_2nd = 3
-languages_2nd = ['Russian', 'Belarussian', 'English']
+languages2nd = ['Russian', 'Belarussian', 'English']
 language_num_3rd = 3
-languages_3rd = ['Russian', 'French', 'Italian']
-Quantity_of_languages = len(set(languages_1st + languages_2nd + languages_3rd))
-print("Все школьники знают", Quantity_of_languages, "языков)")
-List_of_languages = set(languages_1st) & set(languages_2nd) \
-                & set(languages_3rd)
-print("Список языков, которые знают все школьники", List_of_languages)
-at_list_1_pupil = len(set(languages_3rd) - set(languages_1st)
-                      - set(languages_2nd))
-print("Кол-во языков, которые знает хотя бы один школьник", at_list_1_pupil)
-list_at_list_1_pipil = set(languages_3rd) - set(languages_1st) \
-                       - set(languages_2nd)
-print("Например: ", list_at_list_1_pipil)
+languages3rd = ['Russian', 'French', 'Italian']
+quantity_of_languages = len(set(languages1st + languages2nd + languages3rd))
+print("Все школьники знают", quantity_of_languages, "языков)")
+list_of_languages = set(languages1st) & set(languages2nd) & set(languages3rd)
+print("Список языков, которые знают все школьники", list_of_languages)
+_pupil_1 = len(set(languages3rd) - set(languages1st) - set(languages2nd))
+print("Кол-во языков, которые знает хотя бы один школьник", _pupil_1)
+at_list_1_pupil = set(languages3rd) - set(languages1st) - set(languages2nd)
+print("Например: ", at_list_1_pupil)
