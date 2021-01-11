@@ -3,7 +3,4 @@
 """
 
 
-lst_ = [1, 2, 3, 4, 5, 6, 7]
-lst_1 = [1, 2, 2, 3]
-lst_.extend(lst_1)
-print(len(set(lst_)))
+print(len(set(input().split()) & set(input().split())))

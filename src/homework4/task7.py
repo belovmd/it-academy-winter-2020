@@ -4,11 +4,11 @@
 """
 
 
-a = 15
-b = 100
+a = int(input())
+b = int(input())
 while a != 0 and b != 0:
     if a > b:
-        a = a % b
+        a = a - b
     else:
-        b = b % a
-print(a + b)
+        b = b - a
+print(max(a, b))

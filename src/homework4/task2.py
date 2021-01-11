@@ -12,21 +12,11 @@
 """
 
 
-dct_ = dict()
-ctr_ = []
-ct_ = []
-N = int(input())
-for i in range(N):
-    a = input()
-    b = a.split()
-    ctr_.insert(len(ctr_), b[0])
-    ct_.insert(len(ct_), b[1: len(b)])
+countries_ = {}
 
-dct_ = dict(zip(ctr_, ct_))
+for data in range(int(input())):
+    country, *cities_ = input().split()
+    for city in cities_:
+        countries_[city] = country
 
-M = int(input())
-for i in range(M):
-    city = input()
-    for key, value in dct_.items():
-        if city in value:
-            print(key)
+print(*(countries_[input()] for _ in range(int(input()))), sep="\n")

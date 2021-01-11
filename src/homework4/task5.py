@@ -10,21 +10,21 @@
 """
 
 
-lang_ = set()
-all_lang = set()
+common_language_for_all = set()
+all_studied_languages = set()
 
 for i in range(int(input())):
     m = int(input())
     a = {input() for j in range(m)}
-    all_lang.update(a)
+    all_studied_languages.update(a)
 
     if i == 1:
-        lang_.update(a)
+        common_language_for_all.update(a)
     else:
-        lang_ &= a
+        common_language_for_all &= a
 
-print(len(lang_))
-print('\n'.join(sorted(lang_)))
+print(len(common_language_for_all))
+print('\n'.join(sorted(common_language_for_all)))
 
-print(len(all_lang))
-print('\n'.join(sorted(all_lang)))
+print(len(all_studied_languages))
+print('\n'.join(sorted(all_studied_languages)))

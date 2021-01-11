@@ -6,18 +6,10 @@
 """
 
 
-import string
-
-s = """И только эхо с дальних гор
-       Звучит в ушах,
-       И полной грудью мне легко
-       Опять дышать.
-    """
-
-for c in string.punctuation:
-    s = s.replace(c, "")
+list_of_unique_words = []
+str_ = '1234.4321 //, appleelppa ,,,.,,,     \n . , jhh'
 
 a = []
-for i in s.split('\n'):
-    a += i.split()
-print(len(set(a)))
+for i in str_.split('\n'):
+    list_of_unique_words += i.split()
+print(len(set(list_of_unique_words)))

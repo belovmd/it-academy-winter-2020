@@ -5,11 +5,9 @@
 """
 
 
-a = 1
-b = []
-while a <= 20:
-    b.append(a)
-    a = a + 1
+a = []
+for i in range(1, 21):
+    a.append(i)
 
-dct = {i: i ** 3 for i in b}
+dct = {i: i ** 3 for i in a}
 print(dct, type(dct))

@@ -3,7 +3,4 @@
 """
 
 
-lst_ = [1, 2, 3, 4, 5, 6, 7]
-lst_1 = [1, 2, 2, 3]
-list3 = [item for item in lst_ if item not in lst_1]
-print(len(list3))
+print(len(set(input().split()) ^ set(input().split())))
