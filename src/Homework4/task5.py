@@ -24,17 +24,17 @@ French
 """
 
 
-Nbr_1 = 2       # введите количество языков которые знает первый школьник
-language_1 = ['Russian', 'English']
-Nbr_2 = 3       # введите количество языков которые знает второй школьник
-language_2 = ['Russian', 'Belarussian', 'English']
-Nbr_3 = 3       # введите количество языков которые знает третий школьник
-language_3 = ['Russian', 'French', 'Italian']
-Quantity_of_languages = len(set(language_1 + language_2 + language_3))
-print("Все школьники знают", Quantity_of_languages, "языкаов)")
-List_of_languages = set(language_1 + language_2 + language_3)
+language_num_1st = 2
+languages_1st = ['Russian', 'English']
+language_num_2nd = 3
+languages_2nd = ['Russian', 'Belarussian', 'English']
+language_num_3rd = 3
+languages_3rd = ['Russian', 'French', 'Italian']
+Quantity_of_languages = len(set(languages_1st + languages_2nd + languages_3rd))
+print("Все школьники знают", Quantity_of_languages, "языков)")
+List_of_languages = set(languages_1st) & set(languages_2nd) & set(languages_3rd)
 print("Список языков, которые знают все школьники", List_of_languages)
-at_list_1_pupil = len(set(language_3) - set(language_1) - set(language_2))
+at_list_1_pupil = len(set(languages_3rd) - set(languages_1st) - set(languages_2nd))
 print("Кол-во языков, которые знает хотя бы один школьник", at_list_1_pupil)
-list_at_list_1_pipil = set(language_3) - set(language_1) - set(language_2)
+list_at_list_1_pipil = set(languages_3rd) - set(languages_1st) - set(languages_2nd)
 print("Например: ", list_at_list_1_pipil)

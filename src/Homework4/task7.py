@@ -4,14 +4,5 @@
 """
 
 
-a = 12
-b = 18
-
-while a != 0 and b != 0:
-    if a > b:
-        a = a % b
-
-    else:
-        b = b % a
-
-print("Наибольший общий делитель чисел", a + b)
+import math
+print(math.gcd(48, 52))

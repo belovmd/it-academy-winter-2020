@@ -11,24 +11,11 @@
 """
 
 
-dct_ = dict()
-Country = []
-Cities = []
-country_nbr = int(input())            # количество стран
-for i in range(country_nbr):
-    list_to_enter = input('Введите строку: ')  # ввод названия стран и городов
-    list_ = list_to_enter.split()
-    print(list_)
-    Country.insert(len(Country), list_[0])  # список стран
-    print(Country)
-    Cities.insert(len(Cities), list_[1:len(list_)])       # список городов
-    print(Cities)
+countries = {}
+for word in range(int(input())):
+    country, *cities = input().split()
+    for city in cities:
+        countries[city] = country
 
-dict_ = dict(zip(Country, Cities))                  # словарь
-print(dict_)
-number_to_check = int(input())          # количество городов для определения
-for i in range(number_to_check):
-    city = input('Введите строку: ')         # ввод названия города
-    for key, value in dict_.items():        # поиск страны с данным городом
-        if city in value:
-            print(key)
+for word in range(int(input())):
+    print(countries[input()])

@@ -7,5 +7,5 @@
 lst_1 = [1, 3, 5, 8, 4]
 lst_2 = [2, 1, 19, 4, 8]
 
-set_global = set(lst_1) | set(lst_2)
-print("Одновременно в обоих списках содержится", len(set_global), "чисел")
+set_global = set(lst_1) & set(lst_2)
+print("Одновременно в обоих списках содержится", len(set_global), "чисел/числа")
