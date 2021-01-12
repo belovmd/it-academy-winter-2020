@@ -21,4 +21,4 @@ for k in a1:
         a2.remove(k)
     else:
         s.append(k)
-print(len(s)
+print(len(s))
