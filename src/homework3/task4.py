@@ -11,5 +11,23 @@
 """
 
 sting_of_numbers = "5 5 8 8 8 1 4"
-numbers_list = sting_of_numbers.split()
-print(sum(numbers_list.count(num) - 1 for num in numbers_list) // 2)
+counting_numbers = {}
+pairs = {}
+
+count = 0
+counted_elms = set()
+
+for num in sting_of_numbers.split():
+    counting_numbers[num] = counting_numbers.get(num, 0) + 1
+
+    if counting_numbers[num] > 1:
+        if num in counted_elms:
+            count -= pairs[num]
+
+        pairs[num] = pairs.get(num, 0) + (counting_numbers[num] - 1)
+
+        count += pairs[num]
+        if num not in counted_elms:
+            counted_elms.add(num)
+
+print(count)

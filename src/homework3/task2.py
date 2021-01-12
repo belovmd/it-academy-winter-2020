@@ -21,7 +21,7 @@ print("2-2", list_[::2])
     Task 2-3. Используйте генератор списков чтобы получить следующий:
     ['1a', '2a', '3a', '4a']
 """
-num_list = [f"{num}a" for num in range(1, 5)]
+num_list = [f"{num}a" for num in "1234"]
 print("2-3", num_list)
 
 
