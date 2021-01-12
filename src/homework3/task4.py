@@ -9,9 +9,8 @@ str_num = '2 2 2 2 4 5 6 6 6 6'
 str_num = str_num.replace(' ', '')
 num_pairs = 0
 for num in str_num:
-    if str_num.count(num) >= 2:
-        # формула подсчета пар
-        # Кол-во пар = (всего элементов X всего элементов — 1) / 2
-        num_pairs += (str_num.count(num) * (str_num.count(num) - 1)) / 2
-        str_num = str_num.replace(num, '')
+    # формула подсчета пар
+    # Кол-во пар = (всего элементов X всего элементов — 1) / 2
+    num_pairs += (str_num.count(num) * (str_num.count(num) - 1)) / 2
+    str_num = str_num.replace(num, '')
 print(int(num_pairs))
