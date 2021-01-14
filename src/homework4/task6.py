@@ -6,7 +6,7 @@
 """
 
 
-my_string = ('fcgh gvf g gfgfg. hgfu.   kjhgf/kjbh.kdjhabcs.dfj335gdkhgj.srgh\n'
+my_string = ('fcgh gvf g gfgfg. hgfu.   kjhgf/kjbh.kdjcs.dfj335gdkhgj.srgh\n'
              'jhgfg?nbhvdfg gfdtyug   hgfu. hgfu. hgfu. hgfu.    hjfdgfghjb')
 
 print(len(set(my_string.split())), my_string.split())
