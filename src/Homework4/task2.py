@@ -33,7 +33,7 @@ Russia
 
 dct = {}
 for _ in range(int(input('число стран: '))):
-    country, *city = input('названия страны и городов этой страны: ').split() 
+    country, *city = input('названия страны и городов этой страны: ').split()
     dct[country] = city
 list2 = []
 for _ in range(int(input('M городов или стран которых нужно вывести: '))):
