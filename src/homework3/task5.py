@@ -6,8 +6,10 @@
 
 
 lst = [1, 1, 3, 5, 6, 6, 7, 8, [1, 2], [1, 2], [1, 2, 3], 'ert']
+dct = {}
 
 for element in lst:
-    lst.count(element)
-    if lst.count(element) == 1:
-        print(element)
+    counter = lst.count(element)
+    dct.setdefault(counter, []).append(element)
+
+print(*dct[1])

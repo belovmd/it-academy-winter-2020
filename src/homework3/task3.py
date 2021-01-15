@@ -16,7 +16,7 @@ print(list(tpl))
 
 a, b, c = 'a', 2, 'python'
 
-tuple_ = ('1, 2, 3', )
+tuple_ = ('123', )
 print(len(tuple_))
 for element in tuple_:
-    print(element)
+    print(*element, sep=', ')

@@ -10,7 +10,7 @@
 lst = [1, 0, 3, 0, 0, 0, 4, 0, 0, 0, 3, 5, 0, 0, 0, 6, 2]
 
 for element in lst:
-    if element == 0:
+    if not element:
         lst.remove(element)
         lst.append(element)
 

@@ -1,6 +1,3 @@
-import math
-
-
 """Пары элементов
     Дан список чисел. Посчитайте, сколько в нем пар элементов,
     равных друг другу. Считается, что любые два элемента, равные друг другу
@@ -18,8 +15,5 @@ for element in lst.split():
     dct[element] = dct.get(element, 0) + 1
 
 for value in dct.values():
-    if value > 1:
-        value = (math.factorial(value) // (math.factorial(value - 2) * 2))
-        # по формуле C == n! // (n - k)! * k!, где n - кол-во объектов,
-        # k - пара объектов, C - кол-во комбинаций.
-        print(value)
+    value = (int(value) * (int(value) - 1)) // 2
+    print(value)
