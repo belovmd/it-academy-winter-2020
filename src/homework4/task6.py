@@ -8,5 +8,6 @@
 line = '''By fusing consulting talent with engineering expertise,
        we’re able to integrate vision and execution so you can
        quickly move from strategy to reality.'''
-num = len(line.split())
-print(num)
+lst = line.split()
+st = set(lst)
+print(len(st))

@@ -3,14 +3,14 @@
 Даны два натуральных числа. Вычислите их наибольший общий делитель
 при помощи алгоритма Евклида (мы не знаем функции и рекурсию).
 """
-num_1 = 18
-num_2 = 30
+num_1 = 30
+num_2 = 15
+bigger_num = 0
 while num_1 and num_2:
     if num_1 > num_2:
         num_1 %= num_2
+        bigger_num = num_2
     else:
         num_2 %= num_1
-if not num_1:
-    print(num_2)
-else:
-    print(num_1)
+        bigger_num = num_1
+print(bigger_num)

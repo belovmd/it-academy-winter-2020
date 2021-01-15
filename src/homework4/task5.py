@@ -26,22 +26,22 @@ French
 которые знает хотя бы один школьник, на следующих строках -
 список таких языков.
 """
-lang = set()
-final_lang = set()
-common_lang = set()
+languages = set()
+all_languages = set()
+common_languages = set()
 for pupil in range(int(input())):
     for num_lang in range(int(input())):
         i_speak = input()
-        lang.add(i_speak)
-        final_lang.add(i_speak)
-    if len(common_lang) == 0:
-        common_lang.update(lang)
+        languages.add(i_speak)
+        all_languages.add(i_speak)
+    if not len(common_languages):
+        common_languages.update(languages)
     else:
-        common_lang = common_lang & lang
-    lang.clear()
-print(len(common_lang))
-for element in common_lang:
+        common_languages = common_languages & languages
+    languages.clear()
+print(len(common_languages))
+for element in common_languages:
     print(element)
-print(len(final_lang))
-for element in final_lang:
+print(len(all_languages))
+for element in all_languages:
     print(element)

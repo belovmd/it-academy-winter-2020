@@ -13,14 +13,20 @@
 данный город.
 """
 dct = {}
+another_dct = {}
 
 for _ in range(int(input())):
     country, *cities = input().split()
     for city in cities:
-        if city in dct:  # есть такое предположение для решения issue с
-            print(dct.pop(city))  # Брестом, но оно выводит сразу же.
-            # Я двигаюсь в правильном направлении?
-        dct[city] = country
+        if city in dct:
+            another_dct[city] = country
+        else:
+            dct[city] = country
 
 for _ in range(int(input())):
-    print(dct[input()])
+    city = input()
+    if city in another_dct:
+        print(dct[city])
+        print(another_dct[city])
+    else:
+        print(dct[city])
