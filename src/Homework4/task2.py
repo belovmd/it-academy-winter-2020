@@ -31,17 +31,14 @@ Russia
 '''
 
 
-all_ctr = []
-all_city = []
+dct = {}
 for _ in range(int(input('число стран: '))):
-    city_name = input('названия страны и городов этой страны: ').split()
-    all_ctr.insert(len(all_ctr), city_name[0])
-    all_city.insert(len(all_city), city_name[1: len(city_name)])
-
-dct_ = dict(zip(all_ctr, all_city))
-
+    country, *city = input('названия страны и городов этой страны: ').split() 
+    dct[country] = city
+list2 = []
 for _ in range(int(input('M городов или стран которых нужно вывести: '))):
     city = input('названия каких-то M города или страны: ')
-    for key, value in dct_.items():
-        if city in value:
+    list2.append(city)
+    for key, value in dct.items():
+        if list2[_] in value:
             print(key)
