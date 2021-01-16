@@ -8,7 +8,7 @@ c.  Программа создает 3 файла  top250_movies.txt – наз
     ratings.txt – гистограмма рейтингов, years.txt – гистограмма годов.
 """
 
-def
+
 
 if __name__ == "__main__":
     file_name = 'ratings.list'
