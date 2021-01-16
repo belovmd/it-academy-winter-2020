@@ -12,8 +12,7 @@ lst = '1 1 1 1 2 2 2 3 3 3 4 4 4 5'
 dct = {}
 
 for element in lst.split():
-    dct[element] = dct.get(element, 0) + 1
+    counter = lst.count(element)
+    dct[element] = (counter * (counter - 1)) // 2
 
-for value in dct.values():
-    value = (int(value) * (int(value) - 1)) // 2
-    print(value)
+print(*dct.values())
