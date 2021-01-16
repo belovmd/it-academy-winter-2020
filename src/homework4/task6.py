@@ -1,5 +1,4 @@
 import re
-import string
 
 
 """
@@ -16,8 +15,4 @@ words = []
 for word in input("Текст: ").split():
     words += re.sub(r'\\r\\n|\\n', " ", word).split()
 
-exclude = string.punctuation
-updated_words = ''.join(el for el in " ".join(words) if el not in exclude)\
-                  .split()
-
-print(f"Количество различных слов - {len(set(updated_words))}")
+print(f"Количество различных слов - {len(set(words))}")

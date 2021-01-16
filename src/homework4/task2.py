@@ -38,13 +38,18 @@ def get_countries():
 
     for _ in range(int(input("Количество стран: "))):
         country, *cities = input("Страна, города: ").split()
-        state[country] = cities
+
+        for city in cities:
+            state[city] = state.get(city, [])
+
+            if country not in state[city]:
+                state[city].append(country)
 
     for _ in range(int(input("Количество запрашиваемых городов: "))):
         requested_cities.append(input("Город: "))
 
     for city in requested_cities:
-        print(*[key for key in state if city in state[key]])
+        print(*state.get(city, ["Город не найден"]), sep=", ")
 
 
 get_countries()

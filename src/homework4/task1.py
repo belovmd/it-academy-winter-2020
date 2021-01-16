@@ -6,8 +6,8 @@
 """
 
 
-startNum = 1
-endNum = 20
+from_num = 1
+to_num = 20
 
-cubes = {num: num ** 3 for num in range(startNum, endNum + 1)}
+cubes = {num: num ** 3 for num in range(from_num, to_num + 1)}
 print(cubes)
