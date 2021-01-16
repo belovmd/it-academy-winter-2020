@@ -17,10 +17,10 @@
 
 if __name__ == "__main__":
     country_with_cities = [
-        ('Russia', 'Moscow', 'Petersburg', 'Novgorod', 'Kaluga', ),
-        ('Ukraine', 'Kiev', 'Donetsk', 'Odessa', ),
-        ('France', 'Paris', 'Lion', 'Brest', ),
-        ('Belarus', 'Hrodno', 'Minsk', 'Brest', 'Vitebsk', ),
+        ('Russia', 'Moscow', 'Petersburg', 'Novgorod', 'Kaluga',),
+        ('Ukraine', 'Kiev', 'Donetsk', 'Odessa',),
+        ('France', 'Paris', 'Lion', 'Brest',),
+        ('Belarus', 'Hrodno', 'Minsk', 'Brest', 'Vitebsk',),
     ]
 
     queries = [
@@ -30,12 +30,16 @@ if __name__ == "__main__":
         'Brest',
     ]
 
-    city_country_dict = {
-        tuple(cities): country for country, *cities in country_with_cities
-    }
+    _dict_city_country = dict()
+
+    for country, *cities in country_with_cities:
+        for city in cities:
+            if city in _dict_city_country:
+                _dict_city_country[city] = \
+                    _dict_city_country[city] + (country,)
+            else:
+                _dict_city_country[city] = (country,)
 
     for query in queries:
-        for cities in city_country_dict.keys():
-            if query in cities:
-                print(city_country_dict[cities], end=' ')
-        print()
+        if query in _dict_city_country:
+            print(*_dict_city_country[query])

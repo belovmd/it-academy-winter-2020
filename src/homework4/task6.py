@@ -9,12 +9,9 @@ from string import punctuation
 
 if __name__ == "__main__":
     text = ('Это простой  текст! '
-            'Данный текст  совсем простой. '
-            'Это текст? Нет,  это предложение'
+            'Данный текст      совсем простой. '
+            'Это текст? Нет,  это предложение      '
             )
-
-    for punct_mark in punctuation:
-        text = text.replace(punct_mark, "")
 
     words = text.split()
 

@@ -13,4 +13,4 @@ if __name__ == "__main__":
         else:
             second_number = second_number % first_number
 
-    print(f"НОД равен {first_number + second_number}")
+    print(f"НОД равен {max(first_number, second_number)}")
