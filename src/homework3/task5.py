@@ -3,8 +3,10 @@
    в котором они встречаются в списке.
 """
 
-lst = '123456123'
+lst = ['a', 'b', 'c', 'c', 13, 3, 3, 14]
+dct = {}
 for element in lst:
-    lst.count(element)
-    if lst.count(element) == 1:
-        print(element)
+    dct[element] = dct.get(element, 0) + 1
+for key, value in dct.items():
+    if value == 1:
+        print(key)

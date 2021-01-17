@@ -5,7 +5,7 @@ import copy
    ['ab', 'ac', 'ad', 'bb', 'bc', 'bd']
 """
 
-lst1 = [a + b for a in ['a', 'b'] for b in ['b', 'c', 'd']]
+lst1 = [a + b for a in 'ab' for b in 'bсd']
 print(lst1)
 
 
