@@ -6,8 +6,8 @@
 """
 
 
-num1 = 12
-num2 = 0
+num1 = 32
+num2 = 12
 divider = 0
 
 while num1 and num2:
