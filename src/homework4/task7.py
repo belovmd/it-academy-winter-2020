@@ -8,6 +8,7 @@
 
 num1 = 12
 num2 = 0
+divider = 0
 
 while num1 and num2:
     if num1 > num2:
@@ -15,4 +16,6 @@ while num1 and num2:
     elif num1 < num2:
         num2 = num2 % num1
 
-print(f"Наибольший общий делитель - {max(num1, num2)}")
+divider = num1 if num1 > num2 else num2
+
+print(f"Наибольший общий делитель - {divider}")
