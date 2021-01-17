@@ -1,4 +1,4 @@
-"""
+""" Fixed
 5. Языки
 Каждый из N школьников некоторой школы знает Mi языков.
 Определите, какие языки знают все школьники и языки,
@@ -24,13 +24,10 @@ French
 """
 
 n = int((input("Количество школьников: ")))
-# for collecting sets for each student
 languages_list = []
-# for collecting unique languages
 all_languages = set()
 
 for student in range(n):
-    # creating a set of languages for each student
     student_languages = set()
     languages_number = int(input('Введите количество языков: '))
     for language in range(languages_number):
@@ -38,22 +35,19 @@ for student in range(n):
         student_languages.add(languages)
         all_languages.add(languages)
     languages_list.append(student_languages)
-all_known_languages = set.intersection(*languages_list)
 
+common_languages = set.intersection(*languages_list)
 all_known_languages_number = 0
-for element in all_known_languages:
+for element in common_languages:
     all_known_languages_number += 1
 print("Все школьники знают"
       " " + str(all_known_languages_number) + " язык(а/ов).")
-for element in all_known_languages:
+for element in common_languages:
     print(element)
 
-all_named_languages = 0
-for element in all_languages:
-    all_named_languages += 1
 all_languages_list = list(all_languages)
 
 print("Количество языков, которые знает хотя бы один "
-      "школьник: " + str(all_named_languages) + " язык(а/ов).")
+      "школьник: " + str(len(all_languages)) + " язык(а/ов).")
 for element in all_languages:
     print(element)

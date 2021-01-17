@@ -31,16 +31,27 @@ Novgorod
 Ukraine
 Russia
 Russia
+
+Пример 2
+Входные данные
+Количество стран: 2
+Страна и города: Франция Брест Париж
+Страна и города: Беларусь Брест Минск
+Введите количество городов: 2
+Введите город: Брест
+Введите город: Минск
+
 """
+
 
 countries_number = int(input('Количество стран: '))
 city_to_country = {}
 for element in range(countries_number):
     country_cities = input('Страна и города: ').split()
-    country_cities_tuple = tuple(country_cities)
-    dct = ({country_cities_tuple[index]: country_cities_tuple[0]
-            for index in range(1, len(country_cities_tuple))})
-    city_to_country.update(dct)
+    country = country_cities[0]
+    cities = country_cities[1:]
+    for city in cities:
+        city_to_country.setdefault(city, []).append(country)
 
 result_list = []
 M = int(input('Введите количество городов: '))
@@ -48,4 +59,4 @@ for _ in range(M):
     country = city_to_country[input('Введите город: ')]
     result_list.append(country)
 for element in result_list:
-    print(element)
+    print(*element)
