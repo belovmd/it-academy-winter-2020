@@ -5,7 +5,7 @@
 """
 
 
-string_ = """Наша Саша громко плачет,
+string_1 = """Наша Саша громко плачет,
              уронила в речку мячик"""
 
-print(len(string_.split()))
+print(len(string_1.split()))

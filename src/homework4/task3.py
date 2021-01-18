@@ -3,8 +3,8 @@
 """
 
 
-list1 = [1, 2, 3, 4, 6, ]
-list2 = [1, 7, 2, 2, 3, 3, 4, 4, 5, 5, ]
+list_1 = [1, 2, 3, 4, 6, ]
+list_2 = [1, 7, 2, 2, 3, 3, 4, 4, 5, 5, ]
 
-set1 = set(list1) & set(list2)
-print(len(set1))
+set_1 = set(list_1) & set(list_2)
+print(len(set_1))

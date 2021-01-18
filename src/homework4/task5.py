@@ -33,7 +33,7 @@ students3_lan = ['Russian', 'Italian', 'French']
 
 all_lang = set(students1_lan + students2_lan + students3_lan)
 print('Всего студенты знают', str(len(all_lang)), 'языков')
-print('Список языков которые знают все школьники: ', all_lang)
+print('Список языков которые знают все школьники ', all_lang)
 
 students_lang = set(students3_lan) - set(students2_lan) - set(students1_lan)
 print('Количество языков которые знает хотя бы один школьник:', str(len(students_lang)))
