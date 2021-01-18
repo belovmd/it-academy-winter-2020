@@ -2,13 +2,13 @@
    при помощи алгоритма Евклида (мы не знаем функции и рекурсию).
 """
 
-num_1 = 300
-num_2 = 15
+num_1 = int(input('Введите натуральное число '))
+num_2 = int(input('Введите натуральное число '))
 
-while num_1 and num_2:
+while num_1 != 0 and num_2 != 0:
     if num_1 > num_2:
-        num_1 = num_1 % num_2
+        num_1 = num_1 - num_2
     else:
-        num_2 = num_2 % num_1
+        num_2 = num_2 - num_1
 
-print(num_1 + num_2)
+print(max(num_1, num_2))

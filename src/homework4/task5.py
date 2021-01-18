@@ -8,18 +8,18 @@
 """
 
 language = set()
-language_s = set()
+all_languages = set()
 
-for i in range(int(input())):
-    num = int(input())
-    lan = {input() for j in range(num)}
-    language_s.update(lan)
-    if i == 1:
-        language.update(lan)
+for pupils in range(int(input())):
+    num_language = int(input())
+    pupils_lang = {input() for _ in range(num_language)}
+    all_languages.update(pupils_lang)
+    if pupils == 1:
+        language.update(pupils_lang)
     else:
-        language &= lan
+        language &= pupils_lang
 
 print(len(language))
 print('\n'.join(language))
-print(len(language_s))
-print('\n'.join(language_s))
+print(len(all_languages))
+print('\n'.join(all_languages))
