@@ -24,11 +24,11 @@
 """
 
 students1 = 2
-students1_lan = ['Russian', 'English', ]
+students1_lan = ['Russian', 'English']
 students2 = 3
-students2_lan = ['Russian', 'English', 'Belarusian', ]
+students2_lan = ['Russian', 'English', 'Belarusian']
 students3 = 3
-students3_lan = ['Russian', 'Italian', 'French', ]
+students3_lan = ['Russian', 'Italian', 'French']
 
 
 all_lang = set(students1_lan + students2_lan + students3_lan)
