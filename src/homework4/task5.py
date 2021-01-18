@@ -24,21 +24,21 @@
 """
 
 students1 = 2
-students1_lang = ['Russian', 'English', ]
+students1_lan = ['Russian', 'English', ]
 students2 = 3
-students2_lang = ['Russian', 'English', 'Belarusian', ]
+students2_lan = ['Russian', 'English', 'Belarusian', ]
 students3 = 3
-students3_lang = ['Russian', 'Italian', 'French', ]
+students3_lan = ['Russian', 'Italian', 'French', ]
 
 
-all_lang = set(students1_lang + students2_lang + students3_lang)
+all_lang = set(students1_lan + students2_lan + students3_lan)
 print('Всего студенты знают', str(len(all_lang)), 'языков')
 print('Список языков которые знают все школьники: ', all_lang)
 
-students_lang = set(students3_lang) - set(students2_lang) - set(students1_lang)
+students_lang = set(students3_lan) - set(students2_lan) - set(students1_lan)
 print('Количество языков которые знает хотя бы один школьник:', str(len(students_lang)))
 print('список  таких языков:', students_lang)
 
-students_lang1 = set(students2_lang) - set(students3_lang) - set(students1_lang)
-print('Количество языков которые знает хотя бы один школьник:', str(len(students_lang1)))
-print('список  таких языков:', students_lang1)
+students_lan1 = set(students2_lan) - set(students3_lan) - set(students1_lan)
+print('Количество языков которые знает хотя бы один школьник:', str(len(students_lan1)))
+print('список  таких языков:', students_lan1)
