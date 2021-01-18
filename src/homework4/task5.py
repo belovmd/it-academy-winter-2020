@@ -40,5 +40,5 @@ print('Количество языков которые знает хотя бы
 print('список  таких языков:', students_lang)
 
 students_lan1 = set(students2_lan) - set(students3_lan) - set(students1_lan)
-print('Количество языков которые знает хотя бы один школьник:', str(len(students_lan1)))
+print('Количество языков знает хотя бы один школьник', str(len(students_lan1)))
 print('список  таких языков:', students_lan1)
