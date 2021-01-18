@@ -4,4 +4,4 @@
 
 
 dict_1 = {x: x ** 3 for x in range(1, 21)}
-print(dict1)
+print(dict_1)
