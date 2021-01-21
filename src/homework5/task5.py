@@ -10,6 +10,7 @@ def nearest_power_of_2(number):
     :param number: входное число
     :return: число. Является степенью двойки
     """
+
     prev_power = 1
 
     for i in range(number):

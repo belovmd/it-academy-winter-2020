@@ -17,6 +17,7 @@ def call_function(module, func):
     :param func: название функции
     :return: None
     """
+
     func = getattr(module, func)
     print(f'Call function with name: "{func.__name__}". Result: {func()}')
 
@@ -27,6 +28,7 @@ def runner(*args):
     :param args: список имён функций
     :return: None
     """
+
     _module = src.homework5.func_for_task1.functions
 
     if not args:

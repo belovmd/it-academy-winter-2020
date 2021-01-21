@@ -18,6 +18,7 @@ def read_ratings(file_name, start_pos=28, count=250):
     :param count: int. Количество строк, которое необходимо считать
     :return: кортеж. Формат: (distribution, votes, rank, title, year, )
     """
+
     with open(file_name, mode='r') as f:
         for _ in range(start_pos):
             next(f)
@@ -40,6 +41,7 @@ def count_elements(data=None):
     :return: словарь. Формат: {'элемент': 'количество раз,
     которое элемент встретился'}
     """
+
     counter = dict()
     for item in data:
         counter[item] = counter.get(item, 0) + 1
@@ -53,6 +55,7 @@ def build_txt_hist(data=None):
     :param data: список. Данные для гистограммы
     :return: список. Список содержит строки вида: 'element ++++'
     """
+
     hist_dict = count_elements(data)
     hist_data = list()
     for key in sorted(hist_dict, key=hist_dict.get, reverse=True):
@@ -69,6 +72,7 @@ def write_to_file(data=None, filename='default.txt'):
     :param filename: имя результирующего файлы
     :return: None
     """
+
     with open(filename, mode='a') as file:
         file.write('\n'.join(data))
 

@@ -10,6 +10,7 @@ def max_divisor(number):
     :param number: число
     :return: число. Максимальный делитель являющейся степенью двойки
     """
+
     prev_power = 1
 
     for i in range(number):

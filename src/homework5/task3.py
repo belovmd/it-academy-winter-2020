@@ -14,6 +14,7 @@ def get_ranges(lst=None):
     :param lst: cписок.
     :return: строка.
     """
+
     range_string = ''
 
     for idx, elem in enumerate(lst[:-1]):

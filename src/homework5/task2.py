@@ -13,6 +13,7 @@ def save_to_storage(filename):
     :param filename: строка. Имя файла
     :return: функция. logger
     """
+
     def logger(func):
         def wrapped(*args, **kwargs):
             with open(filename, mode='a') as f:
@@ -31,6 +32,7 @@ def get_current_time():
 
     :return: datetime.time. Текущее время в формате HH:MM:SS.
     """
+
     sleep(1)  # do something
     return datetime.now().time()
 
