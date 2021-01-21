@@ -25,11 +25,12 @@ def read_ratings(file_name, start_pos=28, count=250):
             if count == idx or not line:
                 break
             distribution, votes, rank, *title, year = line.split()
-            yield distribution, \
-                  votes, \
-                  rank, \
-                  ' '.join(title), \
-                  int(year[1:-1]) if '/I' not in year else int(year[1:-3])
+            yield (
+                distribution,
+                votes,
+                rank,
+                ' '.join(title),
+                int(year[1:-1]) if '/I' not in year else int(year[1:-3]), )
 
 
 def count_elements(data=None):
