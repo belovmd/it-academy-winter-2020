@@ -90,7 +90,8 @@ def main():
     write_to_file(rating_data, filename='ratings.txt')
 
     # step 4: запись фильмов в файл
-    write_to_file([elem[3] for elem in ratings_data], filename='top250_movies.txt')
+    write_to_file([elem[3] for elem in ratings_data],
+                  filename='top250_movies.txt')
 
 
 if __name__ == "__main__":
