@@ -10,29 +10,19 @@
 from functools import reduce
 
 
-def tmp(s1, s2):
-    return
-
-
 def get_ranges(lst=None):
-    flag = False
-    result = ''
-    for idx, elem in enumerate(lst[:]):
-        if abs(elem - lst[idx - 1]) > 1:
-            result += f"- {lst[idx + 1]},{elem}"
-            flag = True
-        if flag:
-            result += str(elem) + '-'
-            flag = False
-        else:
-            continue
+    range_string = ''
 
+    for idx, elem in enumerate(lst[:-1]):
+        if elem + 1 != lst[idx + 1]:
+            range_string += f'{elem},'
+        elif elem + 1 == lst[idx + 1] and elem - 1 != lst[idx - 1]:
+            range_string += f'{elem}-'
+    range_string += f'{lst[-1]}'
 
-    print(result)
-
-    return None
+    print(range_string)
 
 
 if __name__ == "__main__":
-    input_list = [0, 1, 2, 3, 4, 7, 8, 10]
+    input_list = [2, 3, 8, 9]
     print(get_ranges(input_list))

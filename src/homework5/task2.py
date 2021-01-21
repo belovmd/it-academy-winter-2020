@@ -8,13 +8,11 @@ from time import sleep
 
 
 def logger(func):
-    inmemory_db = []
 
     def wrapped(*args, **kwargs):
-        nonlocal inmemory_db
-        result = func(*args, **kwargs)
-        inmemory_db.append(result)
-        print(inmemory_db)
+        with open('py_log.txt', mode='a') as f:
+            result = func(*args, **kwargs)
+            f.write(f'Result: {result}\n')
         return result
 
     return wrapped
@@ -24,16 +22,12 @@ def logger(func):
 def get_current_time():
     """Получение текущего системного времени
 
-    :return:
+    :return: datetime.time. Текущее время в формате HH:MM:SS.
     """
+    sleep(1)  # do something
     return datetime.now().time()
 
 
 if __name__ == "__main__":
-    print(get_current_time())
-    sleep(1)  # функция sleep эмулирует выполнение некоторой работы
-
-    print(get_current_time())
-    sleep(2)
-
-    print(get_current_time())
+    for _ in range(3):
+        print(get_current_time())

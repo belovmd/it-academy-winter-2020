@@ -7,18 +7,30 @@ b. runner(‘func_name’) – вызывается только функцию 
 c. runner(‘func’, ‘func1’...) - вызывает все переданные функции
 """
 
+import src.homework5.func_for_task1.functions
 
-def fibonacci(n=10):
-    """Вычисление n-го числа Фибоначчи
-    :param n: номер числа
-    :return: число. Возвращает n-е число Фибоначчи
-    """
-    n1, n2 = 1, 1
-    for _ in range(n - 2):
-        n1, n2 = n2, n2 + n1
 
-    return n2
+def call_function(module, func):
+    func = getattr(module, func)
+    print(f'Call function with name: "{func.__name__}". Result: {func()}')
+
+
+def runner(*args):
+    _module = src.homework5.func_for_task1.functions
+    # if args is empty - call all functions
+    if not args:
+        function_names = [name for name in dir(_module) if not name.startswith('__')]
+        for func in function_names:
+            call_function(_module, func)
+        return
+
+    for arg in args:
+        if hasattr(_module, arg):
+            call_function(_module, arg)
+        else:
+            print(f'No such function: "{arg}"')
 
 
 if __name__ == "__main__":
-    print(getattr(fibonacci, '10'))
+    runner('count', 'abc', 'fibonacci')
+    # runner()
