@@ -1,3 +1,8 @@
+"""
+Функции для импорта
+"""
+
+
 def count(string='AbAb'):
     """Подсчёт строчных и прописных букв
     :param string: входная строка
@@ -21,6 +26,7 @@ def fibonacci(n=10):
     :param n: номер числа
     :return: число. Возвращает n-е число Фибоначчи
     """
+
     n1, n2 = 1, 1
     for _ in range(n - 2):
         n1, n2 = n2, n2 + n1
@@ -34,6 +40,7 @@ def print_unique_elements(_list=[1, 2, 2, 3, 4, 4, ]):
     :param _list: список элементов
     :return: None
     """
+
     count_dict = {}
 
     for element in _list:
