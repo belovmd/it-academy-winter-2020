@@ -9,7 +9,6 @@ c.  Программа создает 3 файла  top250_movies.txt – наз
 """
 
 
-# TODO: если файл не найден, исключение
 def read_ratings(file_name, start_pos=28, count=250):
     """Чтение данный IMDB
 
