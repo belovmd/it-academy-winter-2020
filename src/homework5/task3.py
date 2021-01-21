@@ -7,10 +7,13 @@
     get_ranges([2, 3, 8, 9]) // "2-3,8-9"
 """
 
-from functools import reduce
-
 
 def get_ranges(lst=None):
+    """Свёртка списка
+
+    :param lst: cписок.
+    :return: строка.
+    """
     range_string = ''
 
     for idx, elem in enumerate(lst[:-1]):
@@ -20,7 +23,7 @@ def get_ranges(lst=None):
             range_string += f'{elem}-'
     range_string += f'{lst[-1]}'
 
-    print(range_string)
+    return range_string
 
 
 if __name__ == "__main__":

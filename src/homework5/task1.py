@@ -11,15 +11,28 @@ import src.homework5.func_for_task1.functions
 
 
 def call_function(module, func):
+    """Вызов функции из модуля
+
+    :param module: импортируемый модуль
+    :param func: название функции
+    :return: None
+    """
     func = getattr(module, func)
     print(f'Call function with name: "{func.__name__}". Result: {func()}')
 
 
 def runner(*args):
+    """Запуск функций по переданным именам
+
+    :param args: список имён функций
+    :return: None
+    """
     _module = src.homework5.func_for_task1.functions
-    # if args is empty - call all functions
+
     if not args:
-        function_names = [name for name in dir(_module) if not name.startswith('__')]
+        function_names = [name for name in dir(_module)
+                          if not name.startswith('__')]
+
         for func in function_names:
             call_function(_module, func)
         return
@@ -32,5 +45,5 @@ def runner(*args):
 
 
 if __name__ == "__main__":
-    runner('count', 'abc', 'fibonacci')
-    # runner()
+    # runner('count', 'abc', 'fibonacci', 'print_unique_elements')
+    runner()

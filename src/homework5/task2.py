@@ -7,18 +7,25 @@ from datetime import datetime
 from time import sleep
 
 
-def logger(func):
+def save_to_storage(filename):
+    """Сохранение результата работы функции в указаннай файл
 
-    def wrapped(*args, **kwargs):
-        with open('py_log.txt', mode='a') as f:
-            result = func(*args, **kwargs)
-            f.write(f'Result: {result}\n')
-        return result
+    :param filename: строка. Имя файла
+    :return: функция. logger
+    """
+    def logger(func):
+        def wrapped(*args, **kwargs):
+            with open(filename, mode='a') as f:
+                result = func(*args, **kwargs)
+                f.write(f'Result: {result}\n')
+            return result
 
-    return wrapped
+        return wrapped
+
+    return logger
 
 
-@logger
+@save_to_storage('py_result_log.txt')
 def get_current_time():
     """Получение текущего системного времени
 

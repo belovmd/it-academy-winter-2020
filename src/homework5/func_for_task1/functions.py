@@ -26,3 +26,23 @@ def fibonacci(n=10):
         n1, n2 = n2, n2 + n1
 
     return n2
+
+
+def print_unique_elements(_list=[1, 2, 2, 3, 4, 4, ]):
+    """Нахождение и вывод в консоль уникальных элементов списка
+
+    :param _list: список элементов
+    :return: None
+    """
+    count_dict = {}
+
+    for element in _list:
+        count_dict[element] = count_dict.get(element, 0) + 1
+
+    unique_elem = list()
+
+    for key, value in count_dict.items():
+        if value == 1:
+            unique_elem.append(key)
+
+    return unique_elem
