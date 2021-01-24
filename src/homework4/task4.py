@@ -2,6 +2,4 @@
 # различных чисел входит только в один из этих списков
 lst1 = [1, 2, 3, 4, 5, 6]
 lst2 = [2, 4, 6, 7, 8, 9]
-lst3 = []
-lst3 = [lst3.append(el) for el in lst1 if el not in lst2]
-print(len(lst3))
+print(len(set(lst1) ^ set(lst2)))

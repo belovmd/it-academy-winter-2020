@@ -5,13 +5,10 @@
 a = 12
 b = 42
 
-while a != 0 and b != 0:
+while a != b:
     if a > b:
-        a = a % b
+        a = a - b
     else:
-        b = b % a
+        b = b - a
 
-if a == 0:
-    print('НОД: ' + str(b))
-else:
-    print('НОД: ' + str(a))
+print('HOД:' + str(a))

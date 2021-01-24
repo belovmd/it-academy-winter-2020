@@ -3,20 +3,24 @@
 # Определите, какие языки знают все школьники и языки,
 # которые знает хотя бы один из школьников.
 all_language = set()
-all_language_one = []
+all_language_one = set()
 language_one = set()
 
-N = int(input('Введите количество школьников: '))
-for element in range(N):
-    M = int(input('Введите количество языков школьника: '))
-    for _ in range(M):
+num_students = int(input('Введите количество школьников: '))
+
+for element in range(num_students):
+    num_languages = int(input('Введите количество языков школьника: '))
+    for _ in range(num_languages):
         language = input('Введите язык: ')
         all_language.add(language)
-        all_language_one.append(language)
+        all_language_one.add(language)
+    if not language_one:
+        language_one.update(all_language_one)
+        all_language_one.clear()
+    else:
+        language_one &= all_language_one
+        all_language_one.clear()
 
-for el in all_language_one:
-    if all_language_one.count(el) == N:
-        language_one.add(el)
 print('Количество языков, которые знают все '
       'школьники: ' + str(len(language_one)))
 
