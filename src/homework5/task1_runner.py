@@ -7,8 +7,8 @@
 """
 
 
-from src.homework5 import task1_functions as my_funcs
 import os
+from src.homework5 import task1_functions as my_funcs
 
 
 def runner(*args):

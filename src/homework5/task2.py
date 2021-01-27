@@ -1,7 +1,10 @@
 """Создайте декоратор, который хранит результаты вызовов функции
     (за все время вызовов, не только текущий запуск программы)
 """
-from datetime import datetime, timedelta
+
+
+from datetime import datetime
+from datetime import timedelta
 
 
 def my_dec(func):
