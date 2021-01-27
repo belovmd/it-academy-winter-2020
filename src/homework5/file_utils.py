@@ -14,7 +14,7 @@ def try_to_read(file):
         with open(file, "r") as list_file:
             try:
                 file_lines = list_file.readlines()
-            except:
+            except Exception:
                 print(error_messages['read'])
     else:
         print(error_messages['read'])
@@ -25,5 +25,5 @@ def try_to_write(file, content):
     with open(file, "w") as file:
         try:
             file.write(content)
-        except:
+        except Exception:
             print(error_messages['write'])

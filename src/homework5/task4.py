@@ -7,9 +7,9 @@
    Задачу поместите в файл task4.py в папке src/homework5.
 """
 
-from homework5 import movies
-from homework5 import histogram
 from homework5 import file_utils
+from homework5 import histogram
+from homework5 import movies
 
 
 # Передаем в функцию массив объектов, получаем на выходе
