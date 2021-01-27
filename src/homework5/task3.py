@@ -15,7 +15,8 @@ def get_ranges(not_empty_list):
         if el + 1 != not_empty_list[index + 1]:
             collapsed_lst_in_str += f'{el},'
 
-        elif el + 1 == not_empty_list[index + 1] and el - 1 != not_empty_list[index - 1]:
+        elif el + 1 == not_empty_list[index + 1] \
+                and el - 1 != not_empty_list[index - 1]:
             collapsed_lst_in_str += f'{el}-'
 
     collapsed_lst_in_str += f'{not_empty_list[-1]}'
