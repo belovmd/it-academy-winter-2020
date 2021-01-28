@@ -35,9 +35,9 @@ def log_decorator(log_name):
 
         def new_function(*args, **kwargs):
 
-            logger.debug(f"{function.__name__} - {args} - {kwargs}")
+            _logger.debug(f"{function.__name__} - {args} - {kwargs}")
             output = function(*args, **kwargs)
-            logger.debug(f"{function.__name__} returned: {output}")
+            _logger.debug(f"{function.__name__} returned: {output}")
             return output
         return new_function
     return log_this

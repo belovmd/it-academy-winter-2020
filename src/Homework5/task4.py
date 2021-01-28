@@ -9,8 +9,9 @@ ratings.txt – гистограмма рейтингов,
 
 
 from collections import Counter
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
 
 my_file = open('C:/Users/Lenovo/Desktop/PYTHON/HW5/ratings.list', 'r+')
 try:
