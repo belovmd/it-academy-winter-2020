@@ -24,13 +24,15 @@ except FileNotFoundError:
 top_250_movies = [element.split for element in my_file.readlines()]
 
 
-with open('C:/Users/Lenovo/Desktop/PYTHON/HW5/top250_movies.txt', 'w+') as film_titles:
+with open('C:/Users/Lenovo/Desktop/PYTHON/HW5/top250_movies.txt', 'w+')\
+        as film_titles:
     for element in top_250_movies:
         title1 = element[3:0:-1]
         title2 = ' '.join(title1)
         film_titles.write(title2 + '\n')
 
-with open('C:/Users/Lenovo/Desktop/PYTHON/HW5/ratings.txt', 'w+') as ranks_doc:
+with open('C:/Users/Lenovo/Desktop/PYTHON/HW5/ratings.txt', 'w+')\
+        as ranks_doc:
     for element in top_250_movies:
         rank = element[:2]
         ranks_doc.write(rank + '\n')
