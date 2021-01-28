@@ -9,6 +9,7 @@ i = 1
 while n >= 2 ** i:
     i += 1
 degree = 2 ** (i - 1)
+
 print("Ближайшая степень двойки к введенному числу", degree)
 
 print(math.gcd(n, degree))
