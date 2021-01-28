@@ -4,40 +4,32 @@
 
 import logging
 
-
-def setup_logging(name="logger",
-                  filepath=None,
-                  stream_log_level="DEBUG",
-                  file_log_level="DEBUG"):
-    _logger = logging.getLogger(name)
-    _logger.setLevel("DEBUG")
-    formatter = logging.Formatter(
-        '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-    )
-    ch = logging.StreamHandler()
-    ch.setLevel(getattr(logging, stream_log_level))
-    ch.setFormatter(formatter)
-    _logger.addHandler(ch)
-    if filepath is not None:
-        fh = logging.FileHandler(filepath)
-        fh.setLevel(getattr(logging, file_log_level))
-        fh.setFormatter(formatter)
-        _logger.addHandler(fh)
-    return _logger
+log_file = "./logfile.log"
+log_level = logging.DEBUG
+logging.basicConfig(level=log_level, filename=log_file, filemode="w+",
+                    format="%(asctime)-15s %(levelname)-8s %(message)s")
+logger = logging.getLogger("Function_logging")
 
 
-logger = setup_logging(name="default_log", filepath="logger.log")
+def wrap(begin, end):
+    def decorate(func):
+        def call(*args, **kwargs):
+            begin(func)
+            result = func(*args, **kwargs)
+            end(func)
+            return result
+        return call
+    return decorate
 
 
-def log_decorator(log_name):
-    def log_this(function):
-        _logger = logging.getLogger(log_name)
+def entering(func):
+    logger.debug("Entered %s", func.__name__)
 
-        def new_function(*args, **kwargs):
 
-            _logger.debug(f"{function.__name__} - {args} - {kwargs}")
-            output = function(*args, **kwargs)
-            _logger.debug(f"{function.__name__} returned: {output}")
-            return output
-        return new_function
-    return log_this
+def exiting(func):
+    logger.debug("Exited  %s", func.__name__)
+
+
+@wrap(entering, exiting)
+def logging_function(amount):
+    print("entered the function" % amount)
