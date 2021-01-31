@@ -36,7 +36,7 @@ def logger(func):
 
 @logger
 def cubes(n):
-    """ Возведение числа в степень 3
+    """Возведение числа в степень 3
 
     :param n: number.
     :return:  number. Число n возведенное в степень 3

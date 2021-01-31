@@ -47,7 +47,7 @@ def save_years(movies, file_name):
     start_year = min_year - offset
 
     with open(file_name, 'w') as file:
-        file.write(f"Position, Year, Year to view, Offset\n")
+        file.write("Position, Year, Year to view, Offset\n")
 
         for i, line in enumerate(movies.values()):
             year = line.get('year')
@@ -72,7 +72,7 @@ def save_ratings(movies, file_name):
     start_rating = float(min_rating) - offset
 
     with open(file_name, 'w') as file:
-        file.write(f"Position, Rating, Rating to view, Offset\n")
+        file.write("Position, Rating, Rating to view, Offset\n")
 
         for i, line in enumerate(movies.values()):
             rating = float(line.get('rating'))

@@ -10,7 +10,7 @@
 
 
 def get_ranges(num_list):
-    """ Сворачивание элеменов из списка num_list в строку
+    """Сворачивание элеменов из списка num_list в строку
 
     :param num_list: list[int]. Непустой список неповторяющихся целых чисел
     :return: string. Свернутый список чисел представленный строкой
@@ -26,13 +26,13 @@ def get_ranges(num_list):
             break
 
         if not ranges or ranges[-1] == ",":
-            if num_list[i+1] == num + 1:
+            if num_list[i + 1] == num + 1:
                 ranges += str(num)
             else:
                 ranges += f"{num},"
             continue
 
-        if num_list[i+1] == num + 1:
+        if num_list[i + 1] == num + 1:
             continue
         else:
             ranges += f"-{num},"
