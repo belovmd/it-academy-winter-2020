@@ -16,7 +16,7 @@ import pandas as pd
 
 
 def save_titles(movies, file_name):
-    """ Запись названия фильмов в файл
+    """Запись названия фильмов в файл
 
     :param movies: dict. Содержит информацию о фильмах
     :param file_name: str. путь к файлу
@@ -31,7 +31,8 @@ def save_titles(movies, file_name):
 
 
 def save_years(movies, file_name):
-    """ Запись информации о годах, в которые были сняты фильмы,
+    """
+    Запись информации о годах, в которые были сняты фильмы,
     в файл для возможности построения гистограммы
 
     :param movies: dict. Содержит информацию о фильмах
@@ -55,7 +56,9 @@ def save_years(movies, file_name):
 
 
 def save_ratings(movies, file_name):
-    """ Запись информации о рейтингах фильмов для возможности построения гистограммы
+    """
+    Запись информации о рейтингах фильмов для возможности построения
+    гистограммы
 
     :param movies: dict. Содержит информацию о фильмах
     :param file_name: str. путь к файлу
@@ -78,7 +81,7 @@ def save_ratings(movies, file_name):
 
 
 def show_bar_chart(file_name, label):
-    """ Построение гистограммы на основании чтения файла
+    """Построение гистограммы на основании чтения файла
 
     :param file_name: str. Путь к файлу
     :param label: str. Лейбл для названия полей
@@ -110,7 +113,8 @@ def show_bar_chart(file_name, label):
 
 
 def reader_to_safe():
-    """ Чтение файла с информацией о фильмах для дальнейшего сохранения
+    """
+    Чтение файла с информацией о фильмах для дальнейшего сохранения
     информации и построения гистограммы
 
     :return: None
@@ -125,10 +129,11 @@ def reader_to_safe():
     years_file_name = folder + "years.txt"
 
     try:
-        from_line = 28
+        read_from = 28
+        read_to = read_from + numbers_of_movies
 
         with open(f'{folder}ratings.list', 'r', encoding="ISO-8859-1") as fl:
-            for line in fl.readlines()[from_line:from_line+numbers_of_movies]:
+            for line in fl.readlines()[read_from:read_to]:
                 [distribution, votes, rank, *title, year] = line.split()
                 movies[" ".join(title)] = {"rating": rank, "year": year[1:5]}
 

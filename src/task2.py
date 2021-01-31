@@ -10,8 +10,10 @@ from functools import wraps
 def logger(func):
     """ Сохранение результатов работы функции в файл
 
-    :param func: function. Функция, результаты которой будут сохраняться в файле
-    :return: function. Обертка над func, которая будет возвращать результат работы функции func
+    :param func: function. Функция, результаты которой будут сохраняться в
+    файле
+    :return: function. Обертка над func, которая будет возвращать результат
+    работы функции func
     """
     @wraps(func)
     def wrapper(*args, **kwargs):
