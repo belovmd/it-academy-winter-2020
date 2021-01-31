@@ -77,7 +77,9 @@ def save_ratings(movies, file_name):
         for i, line in enumerate(movies.values()):
             rating = float(line.get('rating'))
             rating_to_view = (int(rating * 10) - (start_rating * 10)) / 10
-            file.write(f"{i + 1}, {rating}, {rating_to_view}, {start_rating}\n")
+            file.write(f"{i + 1}, {rating}, "
+                       f"{rating_to_view}, {start_rating}\n"
+                       )
 
 
 def show_bar_chart(file_name, label):
