@@ -1,4 +1,5 @@
 from functools import wraps
+from datetime import datetime
 
 
 """
@@ -17,7 +18,6 @@ def logger(func):
     """
     @wraps(func)
     def wrapper(*args, **kwargs):
-        print("log values - ", *args, **kwargs)
         result = None
 
         try:
@@ -25,9 +25,11 @@ def logger(func):
         except Exception as err:
             result = f"Error: {err}"
         finally:
+            date_time = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
             func_name = func.__name__
+
             with open('log.txt', 'a') as file:
-                file.write(f"{func_name} - {result}\n")
+                file.write(f"{date_time} - {func_name} - {result}\n")
 
         print(f"log result - {result}")
         return result
