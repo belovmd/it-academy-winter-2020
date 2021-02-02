@@ -1,7 +1,3 @@
-import matplotlib.pyplot as plt
-import pandas as pd
-
-
 """
     Task 4. В файле хранятся данные с сайта IMDB.
     Скопированные данные хранятся в файле ./data_hw5/ ratings.list.
@@ -31,34 +27,28 @@ def save_titles(movies, file_name):
 
 
 def save_years(movies, file_name):
-    """Запись информации о годах, в которые были сняты фильмы,
-
-    в файл для возможности построения гистограммы
+    """Записать информации о рейтингах фильмов в файл в виде гистограммы
 
     :param movies: dict. Содержит информацию о фильмах
-    :param file_name: str. путь к файлу
+    :param file_name: str. путь к файлу для записи
     :return: None
     """
     if not movies:
         return
 
-    min_year = min(int(items['year']) for items in movies.values())
+    min_year = int(min(values.get('year') for values in movies.values()))
     offset = 5
     start_year = min_year - offset
 
     with open(file_name, 'w') as file:
-        file.write("Position, Year, Year to view, Offset\n")
-
-        for i, line in enumerate(movies.values()):
-            year = line.get('year')
-            year_to_view = int(year) - start_year
-            file.write(f"{i+1}, {year}, {year_to_view}, {start_year}\n")
+        for line in movies.values():
+            year = int(line.get('year'))
+            year_with_offset = year - start_year
+            file.write(f"{year_with_offset * '+'} {year}\n")
 
 
 def save_ratings(movies, file_name):
-    """Запись информации о рейтингах фильмов для возможности построения
-
-    гистограммы
+    """Записать информации о годах фильмов в файл в виде гистограммы
 
     :param movies: dict. Содержит информацию о фильмах
     :param file_name: str. путь к файлу
@@ -67,57 +57,21 @@ def save_ratings(movies, file_name):
     if not movies:
         return
 
-    min_rating = min(float(items['rating']) for items in movies.values())
-    offset = 0.1
-    start_rating = float(min_rating) - offset
+    min_rating = float(min(values.get('rating') for values in movies.values()))
+    offset = 0.6
+    start_rating = min_rating - offset
 
     with open(file_name, 'w') as file:
-        file.write("Position, Rating, Rating to view, Offset\n")
-
-        for i, line in enumerate(movies.values()):
+        for line in movies.values():
             rating = float(line.get('rating'))
-            rating_to_view = (int(rating * 10) - (start_rating * 10)) / 10
-            file.write(f"{i + 1}, {rating}, "
-                       f"{rating_to_view}, {start_rating}\n"
-                       )
-
-
-def show_bar_chart(file_name, label):
-    """Построение гистограммы на основании чтения файла
-
-    :param file_name: str. Путь к файлу
-    :param label: str. Лейбл для названия полей
-    :return: None
-    """
-    # read file
-    df = pd.read_csv(
-        file_name,
-        names=['position', 'field', 'fieldToView', 'start_charts'],
-        skiprows=1
-    )
-
-    # prepare chart
-    plt.bar(
-        df.position,
-        df.fieldToView,
-        color='purple',
-        bottom=df.start_charts
-    )
-
-    # set figure window title
-    plt.gcf().canvas.set_window_title(file_name)
-
-    # set label to left side of chart
-    plt.ylabel(label)
-
-    # show chart
-    plt.show()
+            rating_with_offset = int((rating * 10) - (start_rating * 10))
+            file.write(f"{rating_with_offset * '+'} {rating}\n")
 
 
 def reader_to_safe():
     """Чтение файла с информацией о фильмах для дальнейшего сохранения
 
-    информации и построения гистограммы
+    отдельной информации или построения гистограммы на ее основании
 
     :return: None
     """
@@ -143,12 +97,8 @@ def reader_to_safe():
         print(err)
     else:
         save_titles(movies, top_movies_file_name)
-
         save_ratings(movies, ratings_file_name)
-        show_bar_chart(ratings_file_name, 'ratings')
-
         save_years(movies, years_file_name)
-        show_bar_chart(years_file_name, 'years')
 
 
 reader_to_safe()
