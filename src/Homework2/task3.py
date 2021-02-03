@@ -11,5 +11,3 @@ for i in string_w_spaces:
     if i not in new_string:
         new_string += i
 print(new_string)
-
-
