@@ -4,6 +4,7 @@
 """
 
 
+import datetime
 import functools
 import logging
 import time
@@ -44,6 +45,15 @@ def timer(func):
     return function
 
 
+def date_time(fun):
+    def _wrapper(*args, **kwargs):
+        print(f'Функция запущена: {datetime.datetime.now()}')
+        return fun(*args, **kwargs)
+
+    return _wrapper
+
+
+@date_time
 @logger
 @count_calls
 @timer
