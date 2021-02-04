@@ -4,7 +4,7 @@
 
 
 def power_of_two(n):
-    """ Finds the closest power of two to the input number.
+    """Finds the closest power of two to the input number.
 
     :return: int, the closest power.
     """

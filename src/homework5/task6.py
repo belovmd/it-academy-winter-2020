@@ -4,7 +4,7 @@
 
 
 def max_divider(n):
-    """ Finds the number's maximum divider, which is a power of two.
+    """Finds the number's maximum divider, which is a power of two.
 
     :return: int, the maximum divider.
     """
