@@ -24,7 +24,7 @@ def max_divider_pow2(n):
         if not n % i and i in pow2:
             max_divider = i
 
-    print(f"Максимальный делитель степени двойки для {n} - ", max_divider)
+    print(f"Максимальный делитель степени двойки для {n} - {max_divider}")
     return max_divider
 
 
