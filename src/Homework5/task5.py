@@ -11,6 +11,6 @@ while num_2 <= num:
 n = num_2 // 2
 
 if num_2 - num > num - n:
-    print(num)
+    print(n)
 else:
     print(num_2)

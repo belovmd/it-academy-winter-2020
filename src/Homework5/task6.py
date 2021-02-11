@@ -4,10 +4,10 @@
 '''
 
 n = int(input())
-i, x, q = 0, 1, 0
-while i <= n:
-    x = x * 2
-    i = i + 1
-    if n % x == 0:
-        q = x
-print(q)
+a, b, c = 0, 1, 0
+while a <= n:
+    b = b * 2
+    a = a + 1
+    if n % b == 0:
+        c = b
+print(c)

@@ -8,32 +8,17 @@
 '''
 
 
-def get_ranges(lst):
+def get_ranges(list_):
     result = ''
-    prev_n = None
-    lenght = len(lst)
-
-    for i, n in enumerate(lst):
-
-        if prev_n is None:
-            prev_n = n
-            result = str(n)
-            continue
-
-        if prev_n + 1 == n:
-            if i + 1 == lenght:
-                result += f'-{n}'
-                break
-            prev_n = n
-            continue
-
-        else:
-            result += f'-{prev_n},{n}'
-            prev_n = n
-
-    return result
+    for var, el in enumerate(list_[:-1]):
+        if el + 1 != list_[var + 1]:
+            result += f'{el},'
+        elif el + 1 == list_[var + 1] and el - 1 != list_[var - 1]:
+            result += f'{el}-'
+    result += f'{list_[-1]}'
+    print(result)
 
 
-arr = [0, 1, 2, 3, 4, 7, 8, 10]
-res = get_ranges(arr)
-print(res)
+get_ranges([0, 1, 2, 3, 4, 7, 8, 10])
+get_ranges([4, 7, 10])
+get_ranges([2, 3, 8, 9])
