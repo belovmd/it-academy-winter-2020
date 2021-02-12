@@ -28,7 +28,7 @@ all_lines = fh.readlines()
 # Создание файла top250_movies.txt и списков данных
 for line in all_lines[28:278]:
     list_line = line.split()
-    years.extend(re.findall('(\d+)', str(list_line[-1])))
+    years.extend(re.findall(r'(\d+)', str(list_line[-1])))
     num, rating, num3, *title = list_line
     str_line = ''
     ratings.append(rating)

@@ -9,7 +9,8 @@ def my_dec(func):
         result = func(*args, **kwargs)
         func_time = time.time() - start_time
         with open('save_file_for_task2', 'a') as file:
-            file.writelines(f"функции sum_num: {str(func_result)}, время выполнения {func_time} \n")
+            file.writelines(f"функции sum_num: {str(func_result)}, "
+                            f"время выполнения {func_time} \n")
         return result
 
     return wrapper

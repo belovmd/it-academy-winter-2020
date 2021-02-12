@@ -12,4 +12,3 @@ def degree_search(num):
         pass
 
     return search_num
-
