@@ -4,8 +4,9 @@
 """
 
 import datetime
-import pytz
 from os import path
+import pytz
+
 
 if path.exists('functions_results.txt'):
     pass

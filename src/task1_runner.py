@@ -18,7 +18,8 @@ def runner(*args):
     }
 
     function = []
-    [function.append(elem) for elem in dir(task1_functions) if callable(getattr(task1_functions, elem))]
+    [function.append(elem) for elem in dir(task1_functions)
+     if callable(getattr(task1_functions, elem))]
     if args:
         for elem in args:
             callable(getattr(task1_functions, elem)(input.get(elem)))
