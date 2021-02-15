@@ -1,4 +1,7 @@
-from movies.constants import *
+from movies.constants import READ_FROM_LINE
+from movies.constants import READ_TO_LINE
+from movies.constants import YEAR_OFFSET
+from movies.constants import RATING_OFFSET
 
 
 """
