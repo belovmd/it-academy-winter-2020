@@ -16,26 +16,18 @@ def get_ranges(num_list):
     :return: string. Свернутый список чисел представленный строкой
     """
     ranges = ""
+    last_num = len(num_list) - 1
 
     for i, num in enumerate(num_list):
-        if i == len(num_list) - 1:
-            if ranges[-1] != ",":
-                ranges += f"-{num}"
-            else:
-                ranges += str(num)
-            break
+        next_num = num_list[i + 1] if i != last_num else None
 
         if not ranges or ranges[-1] == ",":
-            if num_list[i + 1] == num + 1:
-                ranges += str(num)
-            else:
-                ranges += f"{num},"
-            continue
+            ranges += str(num)
+        elif (next_num is None) or (next_num != num + 1):
+            ranges += f"-{num}"
 
-        if num_list[i + 1] == num + 1:
-            continue
-        else:
-            ranges += f"-{num},"
+        if (next_num is not None) and (next_num != num + 1):
+            ranges += ','
 
     print(ranges)
     return ranges

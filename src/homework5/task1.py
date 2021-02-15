@@ -37,16 +37,19 @@ def runner(func=None):
         import tasks
     except ImportError as err:
         print(err)
+        return
+
+    if not func:
+        functions = [task for task in dir(tasks)
+                     if not task.startswith('__') and not task.endswith('__')]
+
+        for func_name in functions:
+            if callable(getattr(tasks, func_name)):
+                render(func_name, tasks)
+    elif func in dir(tasks):
+        render(func, tasks)
     else:
-        if tasks:
-            if not func:
-                for func_name in dir(tasks):
-                    if callable(getattr(tasks, func_name)):
-                        render(func_name, tasks)
-            elif func in dir(tasks):
-                render(func, tasks)
-            else:
-                print("Function hasn't been found")
+        print("Function hasn't been found")
 
 
 runner()

@@ -1,3 +1,6 @@
+from movies.constants import *
+
+
 """
     Task 4. В файле хранятся данные с сайта IMDB.
     Скопированные данные хранятся в файле ./data_hw5/ ratings.list.
@@ -37,8 +40,7 @@ def save_years(movies, file_name):
         return
 
     min_year = int(min(values.get('year') for values in movies.values()))
-    offset = 5
-    start_year = min_year - offset
+    start_year = min_year - YEAR_OFFSET
 
     with open(file_name, 'w') as file:
         for line in movies.values():
@@ -58,8 +60,7 @@ def save_ratings(movies, file_name):
         return
 
     min_rating = float(min(values.get('rating') for values in movies.values()))
-    offset = 0.6
-    start_rating = min_rating - offset
+    start_rating = min_rating - RATING_OFFSET
 
     with open(file_name, 'w') as file:
         for line in movies.values():
@@ -75,8 +76,6 @@ def reader_to_safe():
 
     :return: None
     """
-
-    numbers_of_movies = 250
     movies = dict()
 
     folder = "movies/"
@@ -85,11 +84,8 @@ def reader_to_safe():
     years_file_name = folder + "years.txt"
 
     try:
-        read_from = 28
-        read_to = read_from + numbers_of_movies
-
         with open(f'{folder}ratings.list', 'r', encoding="ISO-8859-1") as fl:
-            for line in fl.readlines()[read_from:read_to]:
+            for line in fl.readlines()[READ_FROM_LINE:READ_TO_LINE]:
                 [distribution, votes, rank, *title, year] = line.split()
                 movies[" ".join(title)] = {"rating": rank, "year": year[1:5]}
 
