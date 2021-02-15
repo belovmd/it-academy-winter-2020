@@ -19,7 +19,7 @@ def nearest_pow2(n):
             prev = current
         else:
             nearest = n + -current if -current < prev else n - prev
-            print(f"Ближайшая степень двойки для {n} - ", nearest)
+            print(f"Ближайшая степень двойки для {n} - {nearest}")
             return nearest
 
 
