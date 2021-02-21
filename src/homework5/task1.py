@@ -19,7 +19,8 @@ def call_function(module, func):
     """
 
     func = getattr(module, func)
-    print(f'Call function with name: "{func.__name__}". Result: {func()}')
+    if callable(func):
+        print(f'Call function with name: "{func.__name__}". Result: {func()}')
 
 
 def runner(*args):

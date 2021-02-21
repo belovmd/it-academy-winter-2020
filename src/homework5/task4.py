@@ -9,7 +9,7 @@ c.  Программа создает 3 файла  top250_movies.txt – наз
 """
 
 
-def read_ratings(file_name, start_pos=28, count=250):
+def read_ratings(file_name, start_pos, count):
     """Чтение данный IMDB
 
     :param file_name: имя файлы
@@ -17,20 +17,22 @@ def read_ratings(file_name, start_pos=28, count=250):
     :param count: int. Количество строк, которое необходимо считать
     :return: кортеж. Формат: (distribution, votes, rank, title, year, )
     """
-
-    with open(file_name, mode='r') as f:
-        for _ in range(start_pos):
-            next(f)
-        for idx, line in enumerate(f):
-            if count == idx or not line:
-                break
-            distribution, votes, rank, *title, year = line.split()
-            yield (
-                distribution,
-                votes,
-                rank,
-                ' '.join(title),
-                int(year[1:-1]) if '/I' not in year else int(year[1:-3]), )
+    try:
+        with open(file_name, mode='r') as f:
+            for _ in range(start_pos):
+                next(f)
+            for idx, line in enumerate(f):
+                if count == idx or not line:
+                    break
+                distribution, votes, rank, *title, year = line.split()
+                yield (
+                    distribution,
+                    votes,
+                    rank,
+                    ' '.join(title),
+                    int(year[1:-1]) if '/I' not in year else int(year[1:-3]),)
+    except FileNotFoundError:
+        print(f'No such file or directory: {file_name}')
 
 
 def count_elements(data=None):
@@ -78,18 +80,15 @@ def write_to_file(data=None, filename='default.txt'):
 
 def main():
     file_name = 'ratings.list'
-    # step 1: считываем данные из файлы
-    ratings_data = [item for item in read_ratings(file_name)]
 
-    # step 2: построение гистограммы годов
+    ratings_data = [item for item in read_ratings(file_name, 28, 250)]
+
     year_data = build_txt_hist([elem[4] for elem in ratings_data])
     write_to_file(year_data, filename='years.txt')
 
-    # step 3: построение гистограммы рейтингов
     rating_data = build_txt_hist([elem[2] for elem in ratings_data])
     write_to_file(rating_data, filename='ratings.txt')
 
-    # step 4: запись фильмов в файл
     write_to_file([elem[3] for elem in ratings_data],
                   filename='top250_movies.txt')
 

@@ -18,7 +18,7 @@ def save_to_storage(filename):
         def wrapped(*args, **kwargs):
             with open(filename, mode='a') as f:
                 result = func(*args, **kwargs)
-                f.write(f'Result: {result}\n')
+                f.write(f'Function: {func.__name__} Result: {result}\n')
             return result
 
         return wrapped
