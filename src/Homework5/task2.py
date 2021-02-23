@@ -18,9 +18,10 @@ def write_result_to_file(result):
 def decorator_function(func):
     def wrapper(*args, **kwargs):
         write_result_to_file(f'Функция: {func.__name__}\n')
-        write_result_to_file(f'Запущена: {datetime.now().strftime("%d.%m.%Y, %H:%M:%S")}\n')
+        write_result_to_file(f'Запущена:'
+                             f'{datetime.now().strftime("%d.%m.%Y,%H:%M:%S")}')
         result = func(*args, **kwargs)
-        write_result_to_file(f'Результат: {result}\n\n')
+        write_result_to_file(f'\nРезультат: {result}\n\n')
     return wrapper
 
 
