@@ -5,6 +5,18 @@
 
 def max_div(a):
     i = 0
+    while (a << 1) != 0:
+        i += 1
+        a = (a << 1)
+    return 2 ** i
+
+a = int(input('Введите целое четное число: '))
+print(max_div(a))
+
+
+"""
+def max_div(a):
+    i = 0
     while a % 2 == 0:
         i += 1
         a = a // 2
@@ -13,3 +25,4 @@ def max_div(a):
 
 a = int(input('Введите целое четное число: '))
 print(max_div(a))
+"""
