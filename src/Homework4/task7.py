@@ -13,4 +13,7 @@ while a != 0 and b != 0:
     else:
         b = b % a
 
-print(a + b)
+if not a:
+    print(b)
+else:
+    print(a)

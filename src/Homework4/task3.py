@@ -6,5 +6,5 @@
 
 list_1 = [1, 2, 3, 4]
 list_2 = [3, 4, 5]
-set_1 = set(list_1) | set(list_2)
+set_1 = set(list_1) & set(list_2)
 print(len(set_1))

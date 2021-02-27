@@ -4,5 +4,5 @@
 а значениями кубы этих чисел.
 '''
 
-dict_ = {_: _ ** 3 for _ in range(1, 21)}
+dict_ = {el: el ** 3 for el in range(1, 21)}
 print(dict_)

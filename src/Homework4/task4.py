@@ -5,5 +5,5 @@
 
 list_1 = [1, 2, 3, 4, 6, 9]
 list_2 = [2, 3, 7, 5, 8, 9]
-set_1 = set(list_1) | set(list_2)
-print(len(set(set_1) - set(list_2)))
+set_1 = set(list_1) ^ set(list_2)
+print(len(set_1))
