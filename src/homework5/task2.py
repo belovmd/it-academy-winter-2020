@@ -2,29 +2,26 @@
     (за все время вызовов, не только текущий запуск программы)
 """
 
-import functools
+from datetime import datetime
 import time
 
 
 def dec(func):
-    @functools.wraps(func)
     def wrapper(*args, **kwargs):
-        wrapper.calls += 1
-        print(f"Номер вызова функции - {wrapper.calls}")
-        end = time.perf_counter()
-        run = (time.perf_counter() - end)
-        print(f"Функция выполнена за - {run} sec")
-        return func(*args, **kwargs)
-
-    wrapper.calls = 0
+        name = func.__name__
+        date_time = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+        result = func(*args, **kwargs)
+        file = open("task2_results.txt", "a")
+        file.write(f"{name} : {date_time} - result: {result}\n")
+        return result
     return wrapper
 
 
 @dec
-def funck(x, y):
+def func_test(x, y):
     time.sleep(3)
     return x + y
 
 
-print(funck(1, 2))
-print(funck(3, 4))
+print(func_test(1, 2))
+print(func_test(5, 7))

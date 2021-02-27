@@ -9,19 +9,25 @@
 
 def get_ranges(num_list):
 
-    lst_instr = ''
+    ranges = ""
+    last_num = len(num_list) - 1
 
-    for var, element in enumerate(num_list[:-1]):
-        if element + 1 != num_list[var + 1]:
-            lst_instr += f'{element},'
+    for var, element in enumerate(num_list):
+        next_num = num_list[var + 1] if var != last_num else None
 
-        elif element + 1 == num_list[var + 1] \
-                and element - 1 != num_list[var - 1]:
-            lst_instr += f'{element}-'
+        if not ranges or ranges[-1] == ",":
+            ranges += str(element)
+        elif (next_num is None) or (next_num != element + 1):
+            ranges += f"-{element}"
 
-    lst_instr += f'{num_list[-1]}'
-    print(lst_instr)
+        if (next_num is not None) and (next_num != element + 1):
+            ranges += ','
+
+    print(ranges)
+    return ranges
 
 
-notempty_list = [1, 2, 3, 4, 8, 9, 10]
-get_ranges(notempty_list)
+get_ranges([0, 1, 2, 3, 4, 7, 8, 10])
+get_ranges([4, 7, 10])
+get_ranges([2, 3, 8, 9])
+get_ranges([])
