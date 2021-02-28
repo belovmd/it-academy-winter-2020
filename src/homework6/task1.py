@@ -60,10 +60,8 @@ class Manager(Staff):
                 return None
 
         available_courses = (
-            [course for course in courses_list if lang == course.lang
-             and [teacher for teacher in course.teachers
-                  if not teacher.is_busy]]
-        )
+         [course for course in courses_list if lang == course.lang and [
+             teacher for teacher in course.teachers if not teacher.is_busy]])
 
         if not available_courses:
             return None
