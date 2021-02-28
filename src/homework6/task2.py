@@ -52,6 +52,7 @@ def find_number(values):
 
     :param values: список строк
     :return: число.
+    :raises: ValueError: если элемент списка не является числом
     """
     random_value = random.choice(values)
     try:
