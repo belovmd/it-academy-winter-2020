@@ -1,5 +1,5 @@
-from unittest import mock
 from unittest import TestCase
+from unittest import mock
 import task3
 import unittest
 
@@ -47,6 +47,7 @@ class Tests(TestCase):
     @mock.patch('builtins.input', side_effect=students_input)
     def test_students_languages_info(self, mock_input):
         """Several students know several languages,
+
         languages should displayed in alphabet order"""
         result = task3.students_languages_info()
         expected_result = '1\nRussian\n5\nBelarusian, English, ' \
@@ -72,6 +73,7 @@ class Tests(TestCase):
     @mock.patch('builtins.input', side_effect=nobody_knows_languages_input)
     def test_nobody_knows_languages(self, mock_input):
         """Nobody knows the same language,
+
         languages should displayed in alphabet order"""
         result = task3.students_languages_info()
         expected_result = '0\n7\nEnglish, Japanese, Polish, Russian, ' \
@@ -82,6 +84,7 @@ class Tests(TestCase):
                 side_effect=student_dont_know_languages_input)
     def test_student_dont_know_languages(self, mock_input):
         """Student doesn't know any language,
+
         languages should displayed in alphabet order"""
         result = task3.students_languages_info()
         expected_result = '0\n3\nEnglish, Polish, Ukrainian'
