@@ -35,17 +35,14 @@ class WeirdRecursion:
         div, mod = n // 4, n % 4
 
         if mod == 0:
-            result = (
-             6 * self.get(2 * div) - 5 * self.get(div) - 3 * self.get(div - 1)
-             - 1)
+            calc = 6 * self.get(2 * div) - 5 * self.get(div)
+            result = calc - 3 * self.get(div - 1) - 1
         elif mod == 1:
-            result = (
-             2 * self.get(2 * div + 1) + 4 * self.get(2 * div)
-             - 6 * self.get(div) - 2 * self.get(div - 1) - 1)
+            calc = 2 * self.get(2 * div + 1) + 4 * self.get(2 * div)
+            result = calc - 6 * self.get(div) - 2 * self.get(div - 1) - 1
         elif mod == 2:
-            result = (
-             3 * self.get(2 * div + 1) + 3 * self.get(2 * div)
-             - 6 * self.get(div) - 2 * self.get(div - 1) - 1)
+            calc = 3 * self.get(2 * div + 1) + 3 * self.get(2 * div)
+            result = calc - 6 * self.get(div) - 2 * self.get(div - 1) - 1
         elif mod == 3:
             result = 6 * self.get(2 * div + 1) - 8 * self.get(div) - 1
 
