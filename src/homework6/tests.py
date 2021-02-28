@@ -49,7 +49,8 @@ class Tests(TestCase):
         """Several students know several languages,
         languages should displayed in alphabet order"""
         result = task3.students_languages_info()
-        expected_result = '1\nRussian\n5\nBelarusian, English, French, Italian, Russian'
+        expected_result = '1\nRussian\n5\nBelarusian, English, ' \
+                          'French, Italian, Russian'
         self.assertEqual(result, expected_result)
 
     @mock.patch('builtins.input', side_effect=one_student_input)
@@ -73,10 +74,12 @@ class Tests(TestCase):
         """Nobody knows the same language,
         languages should displayed in alphabet order"""
         result = task3.students_languages_info()
-        expected_result = '0\n7\nEnglish, Japanese, Polish, Russian, Turkish, Ukrainian, Urdu'
+        expected_result = '0\n7\nEnglish, Japanese, Polish, Russian, ' \
+                          'Turkish, Ukrainian, Urdu'
         self.assertEqual(result, expected_result)
 
-    @mock.patch('builtins.input', side_effect=student_dont_know_languages_input)
+    @mock.patch('builtins.input',
+                side_effect=student_dont_know_languages_input)
     def test_student_dont_know_languages(self, mock_input):
         """Student doesn't know any language,
         languages should displayed in alphabet order"""
@@ -91,7 +94,10 @@ class Tests(TestCase):
             try:
                 task3.students_languages_info()
             except ValueError as e:
-                self.assertEqual(e.args, ("The number of students should be a number", ))
+                self.assertEqual(
+                    e.args,
+                    ("The number of students should be a number", )
+                )
                 raise
 
 
