@@ -1,7 +1,7 @@
-from unittest import mock
 import task3
-from unittest import TestCase
 import unittest
+from unittest import mock
+from unittest import TestCase
 
 
 class Tests(TestCase):
