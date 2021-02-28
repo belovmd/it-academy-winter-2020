@@ -1,6 +1,6 @@
-from unittest import TestCase
 from unittest import mock
 import task3
+from unittest import TestCase
 import unittest
 
 
@@ -48,7 +48,8 @@ class Tests(TestCase):
     def test_students_languages_info(self, mock_input):
         """Several students know several languages,
 
-        languages should displayed in alphabet order"""
+        languages should displayed in alphabet order
+        """
         result = task3.students_languages_info()
         expected_result = '1\nRussian\n5\nBelarusian, English, ' \
                           'French, Italian, Russian'
@@ -74,7 +75,8 @@ class Tests(TestCase):
     def test_nobody_knows_languages(self, mock_input):
         """Nobody knows the same language,
 
-        languages should displayed in alphabet order"""
+        languages should displayed in alphabet order
+        """
         result = task3.students_languages_info()
         expected_result = '0\n7\nEnglish, Japanese, Polish, Russian, ' \
                           'Turkish, Ukrainian, Urdu'
@@ -85,7 +87,8 @@ class Tests(TestCase):
     def test_student_dont_know_languages(self, mock_input):
         """Student doesn't know any language,
 
-        languages should displayed in alphabet order"""
+        languages should displayed in alphabet order
+        """
         result = task3.students_languages_info()
         expected_result = '0\n3\nEnglish, Polish, Ukrainian'
         self.assertEqual(result, expected_result)
