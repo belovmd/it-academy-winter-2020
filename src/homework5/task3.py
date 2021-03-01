@@ -4,7 +4,7 @@
 # этот список “сворачивает”
 # def get_ranges(self):
 import copy
-import re
+
 
 def get_ranges(list_num):
     list_all = []

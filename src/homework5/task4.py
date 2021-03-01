@@ -70,7 +70,7 @@ for el in x:
     years_for_histogram.append(years.count(el))
 
 y = years_for_histogram
-plt.figure(figsize=(15,5))
+plt.figure(figsize=(15, 5))
 plt.tick_params(axis='x', which='major', labelsize=6)
 plt.tight_layout()
 plt.xticks(

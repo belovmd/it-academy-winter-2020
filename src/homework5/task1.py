@@ -1,7 +1,7 @@
 # Оформите решение задач из прошлых домашних
 # работ в функции. Напишите функцию runner.
-import tasks_functions
 from inspect import isfunction
+import tasks_functions
 
 
 def runner(*args):
