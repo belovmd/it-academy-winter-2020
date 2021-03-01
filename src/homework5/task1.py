@@ -1,13 +1,15 @@
 # Оформите решение задач из прошлых домашних
 # работ в функции. Напишите функцию runner.
 import tasks_functions
+from inspect import isfunction
 
 
 def runner(*args):
     list_func = []
     if not args:
         for func in dir(tasks_functions):
-            if '__' not in func:
+            is_func = getattr(tasks_functions, func)
+            if '__' not in func and isfunction(is_func):
                 list_func.append(func)
         for el in list_func:
             print('Result', el, ':', )

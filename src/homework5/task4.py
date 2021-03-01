@@ -29,7 +29,7 @@ all_lines = fh.readlines()
 for line in all_lines[28:278]:
     list_line = line.split()
     years.extend(re.findall(r'(\d+)', str(list_line[-1])))
-    num, rating, num3, *title = list_line
+    num, num2, rating, *title = list_line
     str_line = ''
     ratings.append(rating)
     with open('top250_movies', 'a') as file:
@@ -42,11 +42,16 @@ print('Файл "top250_movies" создан!')
 
 
 # Создание ratings.txt
-x = [x for x in range(1, 251)]
-y = [int(y) for y in ratings]
+x = sorted(set(ratings))
+ratings_for_histogram = []
+
+for el in x:
+    ratings_for_histogram.append(ratings.count(el))
+
+y = ratings_for_histogram
 plt.bar(x, y, label='Рейтинг')
-plt.xlabel('Позиция в "TOP 250"')
-plt.ylabel('Рейтинг')
+plt.xlabel('Рейтинг')
+plt.ylabel('Количество фильмов в топ-250')
 plt.title('Гистограмма рейтингов')
 plt.savefig('ratings')
 plt.show()
@@ -58,11 +63,22 @@ print('Файл "ratings.txt" создан!')
 
 
 # Создание years.txt
-x = [x for x in range(1, 251)]
-y = [int(y) for y in years]
+x = sorted(set(years))
+years_for_histogram = []
+
+for el in x:
+    years_for_histogram.append(years.count(el))
+
+y = years_for_histogram
+plt.figure(figsize=(15,5))
+plt.tick_params(axis='x', which='major', labelsize=6)
+plt.tight_layout()
+plt.xticks(
+    rotation=90
+)
 plt.bar(x, y, label='Год')
-plt.xlabel('Позиция в "TOP 250"')
-plt.ylabel('Год')
+plt.xlabel('Год')
+plt.ylabel('Количество фильмов в топ-250')
 plt.title('Гистограмма годов')
 plt.savefig('years')
 plt.show()
