@@ -3,11 +3,18 @@
 являющийся степенью двойки. 10(2) 16(16), 12(4).
 '''
 
-n = int(input())
-a, b, c = 0, 1, 0
-while a <= n:
-    b = b * 2
-    a = a + 1
-    if n % b == 0:
-        c = b
-print(c)
+
+def max_divisor(number):
+    prev = 1
+    for i in range(number):
+        current = 1 << i
+        if not number % current:
+            prev = current
+        if current >= number:
+            print(prev)
+            return prev
+
+
+max_divisor(10)
+max_divisor(16)
+max_divisor(12)

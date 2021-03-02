@@ -4,13 +4,19 @@
 '''
 
 
-num = int(input())
-num_2 = 2
-while num_2 <= num:
-    num_2 *= 2
-n = num_2 // 2
+def nearest_pow2(numb):
+    current, prev = 0, 0
+    for i in range(numb):
+        current = numb - (1 << i)
+        if current > 0:
+            prev = current
+        else:
+            nearest = numb + -current if -current < prev else numb - prev
+            print(nearest)
+            return nearest
 
-if num_2 - num > num - n:
-    print(n)
-else:
-    print(num_2)
+
+nearest_pow2(10)
+nearest_pow2(16)
+nearest_pow2(1)
+nearest_pow2(13)

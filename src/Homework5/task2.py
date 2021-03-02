@@ -1,33 +1,38 @@
-'''
-Создайте декоратор, который хранит результаты вызовов функции
-(за все время вызовов, не только текущий запуск программы)
-'''
-
+import functools
 import time
+import random
 
 
-def count(func):
+def count_calls(func):
+    @functools.wraps(func)
     def wrapper(*args, **kwargs):
-        wrapper.num += 1
-        print(f'вызов: {wrapper.num}')
+        wrapper.number += 1
+        print(f"{wrapper.number} вызов {func.__name__!r}")
         return func(*args, **kwargs)
-    wrapper.num = 0
+    wrapper.number = 0
     return wrapper
 
 
-def time_(func):
-    def func_time():
+def timer(func):
+    def function(*args, **kwargs):
         start_time = time.perf_counter()
+        value = func(*args, **kwargs)
         end_time = time.perf_counter()
         run_time = end_time - start_time
-        print(f'Время выполнена: {run_time:.8f} сек')
-    return func_time
+        print(f"время вызова {run_time:.8f} sec")
+        return value
+    return function
 
 
-@count
-@time_
-def call():
-    return
+@count_calls
+@timer
+def add(a, b):
+    print(f'random {random.randint(a, b)}')
+    return a + b
 
 
-call(), call(), call()
+add(0, 10)
+print()
+add(10, 20)
+print()
+add(20, 30)
