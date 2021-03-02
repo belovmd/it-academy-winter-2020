@@ -1,6 +1,6 @@
 import functools
-import time
 import random
+import time
 
 
 def count_calls(func):
