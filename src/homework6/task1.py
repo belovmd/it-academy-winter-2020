@@ -74,7 +74,7 @@ class Hello(All_menu, Waiter_call):
         if self.amount_money > self.order_price:
             self.surrender = self.amount_money - self.order_price
         elif self.amount_money == self.order_price:
-            return print(f'Без сдачи')
+            return print('Без сдачи')
         else:
-            return print(f'Недостаточно средств')
+            return print('Недостаточно средств')
         return print(f'Сдача по счету составляет: {self.surrender}')
