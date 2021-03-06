@@ -5,9 +5,9 @@
 # Не нужно переделывать функцию для того чтобы она
 # ловила все возможные ситуации сама.
 import ddt
-import unittest
-import task2
 import random
+import task2
+import unittest
 from unittest.mock import patch
 
 

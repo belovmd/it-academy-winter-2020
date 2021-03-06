@@ -20,7 +20,8 @@ def my_dec(func):
             if int(trying_to_guess) > total_attempts:
                 raise TooManyErrors('Превышено количество попыток!')
             else:
-                print(f'Попытка №{trying_to_guess}. Всего попыток {total_attempts}')
+                print(f'Попытка №{trying_to_guess}. '
+                      f'Всего попыток {total_attempts}')
 
             trying_to_guess = int(trying_to_guess) + 1
             with open('trying_to_guess_task2', 'w') as file:

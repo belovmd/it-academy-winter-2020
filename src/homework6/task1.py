@@ -41,7 +41,8 @@ class All_menu:
         for key, values in All_menu.menu.items():
             menu_for_print += f'\n{key}: {values}'
 
-        return print(f'Официант {self.waiter}: Добрый вечер {self.name}. Меню - {menu_for_print}')
+        return print(f'Официант {self.waiter}: Добрый вечер {self.name}. '
+                     f'Меню - {menu_for_print}')
 
 
 class Hello(All_menu, Waiter_call):
@@ -64,7 +65,8 @@ class Hello(All_menu, Waiter_call):
     def bill(self):
         for el in self.order_visitor:
             self.order_price += Hello.menu[el]
-        return print(f'Официант {self.waiter}: сумма счета составляет - {self.order_price}')
+        return print(f'Официант {self.waiter}: сумма счета '
+                     f'составляет - {self.order_price}')
 
     def invoice(self, amount_money):
         Waiter_call.let_waiter(self)
