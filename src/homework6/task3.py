@@ -14,8 +14,8 @@
 """
 
 
-import unittest
 import home_work34
+import unittest
 
 
 class HomeworkTest(unittest.TestCase):
