@@ -12,21 +12,17 @@ def date_time(fun):
         print(f'Функция запущена: {datetime.datetime.now()}')
         result = fun(*args, **kwargs)
         with open('file_for_task2.txt', 'a') as file:
-            file.writelines(f'result function call: {str(func_result)} \n')
-            file.writelines(f'function started: {datetime.datetime.now()} \n \n')
+            file.writelines(f'result function call: {str(result)} \n')
+            file.writelines(f'function started: {datetime.datetime.now()} \n '
+                            f'\n')
         return result
 
     return _wrapper
 
 
-global func_result
-
-
 @date_time
 def add(a, b):
-    global func_result
-    func_result = a + b
-    return func_result
+    return a + b
 
 
 add(10, 20)
