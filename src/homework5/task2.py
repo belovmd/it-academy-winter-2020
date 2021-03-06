@@ -5,65 +5,30 @@
 
 
 import datetime
-import functools
-import logging
-import time
-
-
-def count_calls(func):
-    @functools.wraps(func)
-    def wrapper_c(*args, **kwargs):
-        wrapper_c.num_calls += 1
-        print(f"{wrapper_c.num_calls} вызов функции {func.__name__!r}")
-        return func(*args, **kwargs)
-
-    wrapper_c.num_calls = 0
-    return wrapper_c
-
-
-def logger(func):
-    log = logging.getLogger(__name__)
-
-    def wrapper(a, b):
-        log.info("Вызов функции ", func.__name__)
-        ret = func(a, b)
-        log.info("Вызвана функция ", func.__name__)
-        return ret
-
-    return wrapper
-
-
-def timer(func):
-    def function(*args, **kwargs):
-        start_time = time.perf_counter()
-        value = func(*args, **kwargs)
-        end_time = time.perf_counter()
-        run_time = end_time - start_time
-        print(f"Функция выполнена за {run_time:.8f} sec")
-        return value
-
-    return function
 
 
 def date_time(fun):
     def _wrapper(*args, **kwargs):
         print(f'Функция запущена: {datetime.datetime.now()}')
-        return fun(*args, **kwargs)
+        result = fun(*args, **kwargs)
+        with open('file_for_task2.txt', 'a') as file:
+            file.writelines(f'result function call: {str(func_result)} \n')
+            file.writelines(f'function started: {datetime.datetime.now()} \n \n')
+        return result
 
     return _wrapper
 
 
+global func_result
+
+
 @date_time
-@logger
-@count_calls
-@timer
 def add(a, b):
-    print('a + b =', a + b)
-    return a + b
+    global func_result
+    func_result = a + b
+    return func_result
 
 
 add(10, 20)
-print()
 add(20, 30)
-print()
 add(30, 40)

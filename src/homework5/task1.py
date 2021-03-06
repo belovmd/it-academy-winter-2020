@@ -8,17 +8,17 @@
 """
 
 
-import src.homework5.taskFunctions
+import src.homework5.task_functions
 
 
 def runner(*args):
-    publicProps = []
-    for prop in dir(src.homework5.taskFunctions):
-        if not prop.startswith('_'):
-            publicProps.append(prop)
-    for arg in (publicProps, args)[len(args) > 0]:
+    public_props = []
+    for prop in dir(src.homework5.task_functions):
+        if not prop.startswith('__') and callable(prop):
+            public_props.append(prop)
+    for arg in (public_props, args)[len(args) > 0]:
         print(arg + ' function result:')
-        getattr(src.homework5.taskFunctions, arg)()
+        getattr(src.homework5.task_functions, arg)()
 
 
 runner()
