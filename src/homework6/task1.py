@@ -104,7 +104,7 @@ class the_14february():
         print(f" Твое настроение - {self.mood} \n"
               f" Её настроение- {self.girlfriend_mood} \n"
               f" Ваши чувства - {self.feelings} \n"
-              f" Осталось в кармане - {self.mood} рублей")
+              f" Осталось в кармане - {self.money} рублей")
 
 
 date = the_14february()
