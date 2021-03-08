@@ -1,6 +1,10 @@
 from unittest import TestCase
 
-from ddt import ddt, data, unpack
+from ddt import (
+    ddt,
+    data,
+    unpack,
+)
 
 from . import task3
 
@@ -29,8 +33,10 @@ class MyTest(TestCase):
     )
     def test_write_to_file_iterable_object(self, data_):
         """Test: check data arg type"""
-        self.assertEqual(True, isinstance(data_, list) or
-                         isinstance(data_, tuple))
+        self.assertEqual(
+            True,
+            isinstance(data_, list) or isinstance(data_, tuple)
+        )
 
     def test_write_to_file_with_non_string_items(self):
         """Test: write to file with non string items"""
