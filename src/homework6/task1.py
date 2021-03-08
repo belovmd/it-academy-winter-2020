@@ -44,7 +44,8 @@ class MiddleDeveloper(JuniorDeveloper):
         self.advanced_skills = advanced_skills
 
     def about_me(self):
-        print(f'Ищу только те вакансии {self.language} разработчика, которые нравятся.')
+        print(f'Ищу только те вакансии {self.language} разработчика, '
+              f'которые нравятся.')
 
     def __str__(self):
         return f'Меня зовут {self.name}. Я Middle {self.language} Developer'
@@ -52,7 +53,8 @@ class MiddleDeveloper(JuniorDeveloper):
 
 class SeniorDeveloper(MiddleDeveloper):
 
-    def __init__(self, name, language, base_skills, advanced_skills, professional_skills):
+    def __init__(self, name, language, base_skills, advanced_skills,
+                 professional_skills):
         super().__init__(name, language, base_skills, advanced_skills)
         self.professional_skills = professional_skills
 

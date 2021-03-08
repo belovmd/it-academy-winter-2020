@@ -35,7 +35,9 @@ class MyTest(TestCase):
         100000,
     )
     def test_euler_function_for_number_more_than_1000(self, number):
-        self.assertRaises(task4.TooLongException, task4.euler_function_maximum, number)
+        self.assertRaises(task4.TooLongException,
+                          task4.euler_function_maximum,
+                          number)
 
     @data(
         [123, ],
@@ -43,4 +45,6 @@ class MyTest(TestCase):
         dict(),
     )
     def test_euler_function_with_non_integer_parameter(self, number):
-        self.assertRaises(TypeError, task4.euler_function_maximum, number)
+        self.assertRaises(TypeError,
+                          task4.euler_function_maximum,
+                          number)
