@@ -9,6 +9,7 @@
    Find F(109, 109) mod 1 234 567 891.
 """
 
+
 import math
 
 
@@ -64,8 +65,8 @@ class SieveAlgorithm:
                     number_list[i] //= p
                     e += 1
                 result_list[i] = (
-                                         result_list[i] * self.__get_solution_count(e)
-                                 ) % self.mod
+                    result_list[i] * self.__get_solution_count(e)
+                ) % self.mod
         for i in range(end - begin + 1):
             if number_list[i] > 1:
                 result_list[i] = (result_list[i] * self.n) % self.mod
