@@ -68,8 +68,9 @@ class SieveAlgorithm:
                 while number_list[i] % p == 0:
                     number_list[i] //= p
                     e += 1
-                result_list[i] = (result_list[i] *
-                                  self.__get_solution_count(e)) % self.mod
+                    result_list[i] = (
+                                             result_list[i] * self.__get_solution_count(e)
+                                     ) % self.mod
         for i in range(end - begin + 1):
             if number_list[i] > 1:
                 result_list[i] = (result_list[i] * self.n) % self.mod
@@ -99,13 +100,12 @@ class Problem:
         sieve_algorithm = SieveAlgorithm(n, self.mod)
         total_count = 0
         for i in range(segment_count):
-            solution_count_list = sieve_algorithm.get_range(i * segment_len +
-                                                            1, (i + 1) *
-                                                            segment_len)
+            solution_count_list = sieve_algorithm.get_range(
+                i * segment_len + 1, (i + 1) * segment_len
+            )
             count = sum(solution_count_list) % self.mod
             total_count = (total_count + count) % self.mod
-            print('current =>', i * segment_len + 1, (i + 1) * segment_len,
-                  '=>', count, '=>', total_count)
+
         return total_count
 
 

@@ -1,9 +1,9 @@
-from task4 import Problem
 import task3
+from task4 import Problem
 import unittest
 
 
-class HomeworkTest(unittest.TestCase):
+class HomeworkTask3Test(unittest.TestCase):
     def test_no_arguments(self):
         self.assertEqual(task3.task5_from_hw3(), '')
 
@@ -16,14 +16,14 @@ class HomeworkTest(unittest.TestCase):
     def test_boolean_data(self):
         self.assertEqual(task3.task5_from_hw3([1, 'b', 1, 'b', 4]), ' 4')
 
-    def test_boolean_data(self):
+    def test_boolean_data_2(self):
         self.assertRaises(TypeError, task3.task5_from_hw3, True)
 
     def test_number_data(self):
         self.assertRaises(TypeError, task3.task5_from_hw3, 1)
 
 
-class HomeworkTest(unittest.TestCase):
+class HomeworkTask4Test(unittest.TestCase):
 
     def test_regular(self):
         self.assertEqual(Problem(1).solve(), 571)
@@ -57,7 +57,7 @@ def test_boolean(self):
     self.assertEqual(Problem(True).solve(), 571)
 
 
-def test_boolean(self):
+def test_boolean_2(self):
     self.assertEqual(Problem(False).solve(), 1)
 
 

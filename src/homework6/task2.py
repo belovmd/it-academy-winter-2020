@@ -19,7 +19,7 @@ def decorators(tries, success_on_try=-1):
                     return func(*fn_args)
                 try:
                     func(*fn_args)
-                except:
+                except Exception:
                     print(f'Try {iter_ + 1}: exception catched!')
                 else:
                     print(f"Try {iter_ + 1}: "
