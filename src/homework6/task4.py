@@ -9,23 +9,20 @@
    Find F(109, 109) mod 1 234 567 891.
 """
 
-
 import math
 
 
-def get(n):
-    primes = []
-    visited = [False] * (n + 1)
-    for i in range(2, n + 1):
-        if not visited[i]:
-            primes.append(i)
-            for j in range(i * i, n + 1, i):
-                visited[j] = True
-    return primes
-
-
 class Prime:
-    pass
+    @staticmethod
+    def get(n):
+        primes = []
+        visited = [False] * (n + 1)
+        for i in range(2, n + 1):
+            if not visited[i]:
+                primes.append(i)
+                for j in range(i * i, n + 1, i):
+                    visited[j] = True
+        return primes
 
 
 class BinomialCoefficient:
@@ -49,16 +46,14 @@ class SieveAlgorithm:
         self.n = n
         self.mod = mod
         self.binomial_coefficient = BinomialCoefficient(mod)
-        self.basic_primes = get(math.floor(math.sqrt(n)))
+        self.basic_primes = Prime().get(math.floor(math.sqrt(n)))
         self.solution_count_cache = {}
 
     def get_range(self, begin, end):
         if begin > end:
             return []
         number_list = [i for i in range(begin, end + 1)]
-        result_list = []
-        for i in range(begin, end + 1):
-            result_list.append(1)
+        result_list = [1 for _ in range(begin, end + 1)]
         for p in self.basic_primes:
             p_begin_pos = 0
             if begin % p != 0:
@@ -68,9 +63,9 @@ class SieveAlgorithm:
                 while number_list[i] % p == 0:
                     number_list[i] //= p
                     e += 1
-                    result_list[i] = (
-                        result_list[i] * self.__get_solution_count(e)
-                    ) % self.mod
+                result_list[i] = (
+                                         result_list[i] * self.__get_solution_count(e)
+                                 ) % self.mod
         for i in range(end - begin + 1):
             if number_list[i] > 1:
                 result_list[i] = (result_list[i] * self.n) % self.mod
@@ -78,20 +73,21 @@ class SieveAlgorithm:
 
     def __get_solution_count(self, e):
         if e not in self.solution_count_cache:
-            self.solution_count_cache[e] = \
-                self.binomial_coefficient.get(self.n + e - 1, e)
+            self.solution_count_cache[e] = self.binomial_coefficient.get(
+                self.n + e - 1, e
+            )
         return self.solution_count_cache[e]
 
 
 class Problem:
-
     def __init__(self, power):
         self.mod = 1234567891
         self.power = power
-        self.solve()
 
     def solve(self):
-        print(self.get(10 ** self.power, 10 ** self.power))
+        result = self.get(10 ** self.power, 10 ** self.power)
+        print(result)
+        return result
 
     def get(self, n, segment_count=1):
         assert (n % segment_count == 0)
@@ -105,8 +101,4 @@ class Problem:
             )
             count = sum(solution_count_list) % self.mod
             total_count = (total_count + count) % self.mod
-
         return total_count
-
-
-Problem(1)
