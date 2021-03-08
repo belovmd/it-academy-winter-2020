@@ -1,5 +1,5 @@
-import task3
-from task4 import Problem
+import src.homework6.task3
+from src.homework6.task4 import Problem
 import unittest
 
 
