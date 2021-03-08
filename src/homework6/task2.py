@@ -15,7 +15,7 @@ def retry(max_retry_number=2):
 
         def wrapped(*args, **kwargs):
             nonlocal max_retry_number
-            result = 0
+
             while max_retry_number != 0:
                 try:
                     result = func(*args, **kwargs)
