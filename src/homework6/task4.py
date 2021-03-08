@@ -1,33 +1,31 @@
-""" Task 4: Максимум функции Эйлера
-
-
+""" Task 3: Максимум функции Эйлера, Задача 69
+Функция Эйлера, φ(n) [иногда ее называют фи-функцией] используется для
+определения количества чисел, меньших n, которые взаимно просты с n.
+К примеру, т.к. 1, 2, 4, 5, 7 и 8 меньше девяти и взаимно просты с
+девятью, φ(9)=6.
 """
 
+def gcd(a, b):
+    while a != b:
+        if a > b:
+            a = a - b
+        else:
+            b = b - a
 
-def totient_maximum(max_value):
-    func_max_value = 0
-    result_number = 0
+    return a
 
-    for n in range(2, max_value):
 
-        result = n
+def totient_maximum(n):
+    result = 1
+    for i in range(2, n):
+        if (gcd(i, n) == 1):
+            result += 1
+    return result
 
-        p = 2
-        while p * p <= n:
 
-            if n % p == 0:
-                while n % p == 0:
-                    n = n // p
-                result = result * (1.0 - (1.0 / float(p)))
-            p = p + 1
+# Driver Code
+for n in range(2, 11):
+    print('n=', n, totient_maximum(n), n / totient_maximum(n))
 
-        if n > 1:
-            result = result * (1.0 - (1.0 / float(n)))
-        print(n, result, n/ result)
-        if n / result > func_max_value:
-            func_max_value = n / result
-            result_number = n
-
-    return result_number
-
-print(totient_maximum(10))
+# This code is contributed
+# by Smitha
