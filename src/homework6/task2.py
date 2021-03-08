@@ -6,24 +6,34 @@ TooManyErrors.
 """
 
 
-def retry(n):
+class TooManyErrors(Exception):
+    ...
+
+
+def retry(max_retry_number=2):
     def decorator(func):
 
         def wrapped(*args, **kwargs):
-            for attempt_number in range(0, n):
-                result = func(*args, **kwargs)
-            print('-')
+            nonlocal max_retry_number
+            result = 0
+            while max_retry_number != 0:
+                try:
+                    result = func(*args, **kwargs)
+                    return result
+                except Exception:
+                    max_retry_number -= 1
 
-            return result
+            raise TooManyErrors('Превышено количество попыток')
 
         return wrapped
+
     return decorator
 
 
-@retry
-def division(number):
-    return 1 / number
+@retry(10)
+def division():
+    print('Try to 1/0')
+    return 1 / 0  # set 1/0 and run program
 
 
-print(division(0))
-
+print(division())
