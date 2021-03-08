@@ -5,22 +5,22 @@ import unittest
 
 class HomeworkTask3Test(unittest.TestCase):
     def test_no_arguments(self):
-        self.assertEqual(task3.task5_from_hw3(), '')
+        self.assertEqual(src.homework6.task3.task5_from_hw3(), '')
 
     def test_regular(self):
-        self.assertEqual(task3.task5_from_hw3([1, 2, 3, 4, 5]), ' 1 2 3 4 5')
+        self.assertEqual(src.homework6.task3.task5_from_hw3([1, 2, 3, 4, 5]), ' 1 2 3 4 5')
 
     def test_dict_data(self):
-        self.assertEqual(task3.task5_from_hw3({'key': 1}), ' key')
+        self.assertEqual(src.homework6.task3.task5_from_hw3({'key': 1}), ' key')
 
     def test_boolean_data(self):
-        self.assertEqual(task3.task5_from_hw3([1, 'b', 1, 'b', 4]), ' 4')
+        self.assertEqual(src.homework6.task3.task5_from_hw3([1, 'b', 1, 'b', 4]), ' 4')
 
     def test_boolean_data_2(self):
-        self.assertRaises(TypeError, task3.task5_from_hw3, True)
+        self.assertRaises(TypeError, src.homework6.task3.task5_from_hw3, True)
 
     def test_number_data(self):
-        self.assertRaises(TypeError, task3.task5_from_hw3, 1)
+        self.assertRaises(TypeError, src.homework6.task3.task5_from_hw3, 1)
 
 
 class HomeworkTask4Test(unittest.TestCase):
