@@ -11,6 +11,7 @@
 
 
 import math
+import unittest
 
 
 class Prime:
@@ -103,3 +104,37 @@ class Problem:
             count = sum(solution_count_list) % self.mod
             total_count = (total_count + count) % self.mod
         return total_count
+
+
+class HomeworkTask4Test(unittest.TestCase):
+
+    def test_regular(self):
+        self.assertEqual(Problem(1).solve(), 571)
+
+    def test_regular_2(self):
+        self.assertEqual(Problem(2).solve(), 613658361)
+
+    def test_regular_3(self):
+        self.assertEqual(Problem(3).solve(), 1229737624)
+
+    def test_regular_4(self):
+        self.assertEqual(Problem(0).solve(), 1)
+
+    def test_float(self):
+        self.assertRaises(TypeError, Problem(3.5).solve)
+
+    def test_list(self):
+        self.assertRaises(TypeError, Problem([1, 2, 3]).solve)
+
+    def test_tuple(self):
+        self.assertRaises(TypeError, Problem((1, 2, 3)).solve)
+
+    def test_boolean(self):
+        self.assertEqual(Problem(True).solve(), 571)
+
+    def test_boolean_2(self):
+        self.assertEqual(Problem(False).solve(), 1)
+
+
+if __name__ == '__main__':
+    unittest.main()

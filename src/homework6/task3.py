@@ -12,6 +12,9 @@
 """
 
 
+import unittest
+
+
 def task5_from_hw3(lst_=None):
     if lst_ is None:
         lst_ = []
@@ -26,3 +29,29 @@ def task5_from_hw3(lst_=None):
             result = f'{result} {key}'
 
     return result
+
+
+class HomeworkTask3Test(unittest.TestCase):
+    def test_no_arguments(self):
+        self.assertEqual(task5_from_hw3(), '')
+
+    def test_regular(self):
+        self.assertEqual(
+            task5_from_hw3([1, 2, 3, 4, 5]), ' 1 2 3 4 5')
+
+    def test_dict_data(self):
+        self.assertEqual(
+            task5_from_hw3({'key': 1}), ' key')
+
+    def test_boolean_data(self):
+        self.assertEqual(task5_from_hw3([1, 'b', 1, 'b', 4]), ' 4')
+
+    def test_boolean_data_2(self):
+        self.assertRaises(TypeError, task5_from_hw3, True)
+
+    def test_number_data(self):
+        self.assertRaises(TypeError, task5_from_hw3, 1)
+
+
+if __name__ == '__main__':
+    unittest.main()
