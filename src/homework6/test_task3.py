@@ -1,10 +1,8 @@
 from unittest import TestCase
 
-from ddt import (
-    ddt,
-    data,
-    unpack,
-)
+from ddt import data
+from ddt import ddt
+from ddt import unpack
 
 from . import task3
 
