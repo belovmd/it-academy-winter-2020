@@ -2,13 +2,14 @@ import ddt
 import task4
 import unittest
 
+
 @ddt.ddt
 class TestSuite(unittest.TestCase):
 
     @ddt.data(
         ('aaa', False),
-        (5+2j, False),
-        ('', False),
+        (5 + 2j, False),
+        (' ', False),
     )
     @ddt.unpack
     def test_type_error(self, num, result):
@@ -25,4 +26,3 @@ class TestSuite(unittest.TestCase):
     def test_boolean(self):
         with self.assertRaises(ValueError):
             task4.func(False)
-
