@@ -43,6 +43,3 @@ def func(module_):
         else:
             break
     return max(all_result)
-
-
-print(func(100))

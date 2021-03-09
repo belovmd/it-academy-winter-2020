@@ -7,11 +7,6 @@
 # эмулировать какую-либо ситуацию - вызывать методы,
 # взаимодействие объектов и т.д.
 
-"""Модель принятия заказа в заведении.
-Каждый официант закреплен за одним гостем. При расчете официант освобождается.
-Начать лучше с приветствия :)
-"""
-
 
 class Waiter_call:
     all_waiter = ['Ира', 'Маша', 'Кирилл']
@@ -66,7 +61,7 @@ class Hello(All_menu, Waiter_call):
         for el in self.order_visitor:
             self.order_price += Hello.menu[el]
         return print(f'Официант {self.waiter}: сумма счета '
-                     f'составляет - {self.order_price}')
+                     f'составляет: {self.order_price}')
 
     def invoice(self, amount_money):
         Waiter_call.let_waiter(self)
@@ -78,3 +73,13 @@ class Hello(All_menu, Waiter_call):
         else:
             return print('Недостаточно средств')
         return print(f'Сдача по счету составляет: {self.surrender}')
+
+
+max = Hello('Maxim')
+max.order('Хлеб', 'Сок', 'Борщ')
+vadim = Hello('Vadim')
+vadim.order('Сок', 'Салат', 'Блюдо из рыбы')
+max.bill()
+max.invoice(20)
+vadim.bill()
+vadim.invoice(5)
