@@ -1,7 +1,6 @@
-import unittest
-from task4 import numerator
-
 from fractions import Fraction
+from task4 import numerator
+import unittest
 
 
 class TestNumeratorFunction(unittest.TestCase):

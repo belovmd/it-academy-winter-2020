@@ -4,6 +4,7 @@
    типа TooManyErrors
 """
 
+
 class TooManyErrors(Exception):
     print("TooManyErrors: the function is called more times.")
 
