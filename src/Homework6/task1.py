@@ -1,4 +1,4 @@
-import enum
+import random
 
 
 """
@@ -12,107 +12,379 @@ import enum
 """
 
 
-class Languages(enum.IntEnum):
-    ENGLISH = 0
-    ITALIAN = 1
-
-    @staticmethod
-    def get_code(lang):
-        for language in Languages:
-            if language.name.lower() == lang:
-                return language
-
-    @staticmethod
-    def get_lang(code):
-        for language in Languages:
-            if language == code:
-                return language.name.lower()
-
-
-class Client:
-    def __init__(self, name):
+class Bum:
+    def __init__(self, name='Вася',
+                 clothes='балаклава',
+                 house='коробка из под холодильника',
+                 transport='босый',
+                 age=40, rubles=0, bottles=0):
         self.name = name
-        self.course = ""
+        self.clothes = clothes
+        self.house = house
+        self.transport = transport
+        self.age = age
+        self.rubles = rubles
+        self.bottles = bottles
 
-    def __str__(self):
-        return self.name
-
-
-class Staff:
-    def __init__(self, staff_type):
-        self.salary = 0
-        self.staff_type = staff_type
-
-    def __str__(self):
-        return self.staff_type
-
-
-class Manager(Staff):
-    def __init__(self):
-        super(Manager, self).__init__("manager")
-
-    @staticmethod
-    def find_course(courses_list, lang):
-        if isinstance(lang, str):
-            lang = Languages.get_code(lang)
-            if not lang:
-                return None
-
-        available_courses = [course for course in courses_list if lang == course.lang and
-                             [teacher for teacher in course.teachers if not teacher.is_busy]]
-
-        if not available_courses:
-            return None
-
-        course = available_courses[0]
-        for teacher in course.teachers:
-            if not teacher.is_busy:
-                teacher.is_busy = True
-                break
-
-        return course
+        print(f"имя: {self.name} \n"
+              f'одежда: {self.clothes} \n'
+              f"жильё: {self.house} \n"
+              f"возраст: {self.age} \n"
+              f"на кормане: {self.rubles} p \n"
+              f"количество собранных бутылок: {self.bottles} \n"
+              f"транспорт: {self. transport}"
+              f"\n")
 
 
-class Teacher(Staff):
-    def __init__(self, language):
-        super(Teacher, self).__init__("teacher")
-        self.language = language
-        self.is_busy = False
+class A_life(Bum):
+
+    def occupation(self):
+        if self.clothes in "костюм от Armani":
+            if self.house in "пентхаус":
+                if self. transport in "Ветолёт":
+                    print(f'ПОЗДРАВЛЯЮ! Вы стали успешным!  \n'
+                          f"\n"
+                          f"имя: {self.name} \n"
+                          f'одежда: {self.clothes} \n'
+                          f"жильё: {self.house} \n"
+                          f"возраст: {self.age} \n"
+                          f"на кормане: {self.rubles} p \n"
+                          f"количество собранных бутылок: {self.bottles} \n"
+                          f"транспорт: {self. transport}"
+                          f"\n")
+        else:
+            pass
+
+        print(f'\n'
+              f"Чем заняться?! \n"
+              f'\n'
+              f"Воляться в своём жилье - 'house':\n"
+              f"Пойти собирать бутылки - 'bottles':\n"
+              f"Сдать будылки - 'give': \n"
+              f"Пойти к своиим друзьям - 'friends': \n"
+              f"новая одежда - 'clothes': \n"
+              f"Купить покушать - 'food': \n"
+              f"Купить жильё - 'buy': \n"
+              f"Купить транспорт - 'car': \n")
+        namb = input(': ')
+
+        if 'house' in namb:
+            print(f'\n Вас не станит если вы ничего не будите делать! \n')
+            life.occupation()
+        else:
+            if 'bottles' in namb:
+                bottles = random.randint(0, 100)
+                self.bottles += bottles
+                print(f'Вы собрали {bottles} бутылки \n'
+                      f'Всего бутолок: {self.bottles} \n'
+                      f"\n"
+                      f"имя: {self.name} \n"
+                      f'одежда: {self.clothes} \n'
+                      f"жильё: {self.house} \n"
+                      f"возраст: {self.age} \n"
+                      f"на кормане: {self.rubles} p \n"
+                      f"количество собранных бутылок: {self.bottles} \n"
+                      f"транспорт: {self. transport}"
+                      f"\n")
+                life.occupation()
+
+            if 'friends' in namb:
+                if self.rubles > 50:
+                    rubles = random.randint(0, self.rubles)
+                    self.rubles -= rubles
+                    print(f'У друзей вы пропили {rubles}p \n'
+                          f'У вас осталось {self.rubles}p \n'
+                          f'\n'
+                          f"имя: {self.name} \n"
+                          f"одежда: {self.clothes} \n"
+                          f"жильё: {self.house} \n"
+                          f"возраст: {self.age} \n"
+                          f"на кормане: {self.rubles} p \n"
+                          f"количество собранных бутылок: {self.bottles} \n"
+                          f"транспорт: {self. transport}")
+                    life.occupation()
+                else:
+                    print(f'Вам не за что пить. Друзья будут не рады! \n'
+                          f'Сдайте свои бутылки \n')
+                    life.occupation()
+
+            if 'give' in namb:
+                if 1 <= self.bottles:
+                    rubles = self.bottles * 3
+                    print(f'вы сдали {self.bottles}')
+                    self.bottles = 0
+                    self.rubles += rubles
+                    print(f'у вас {self.bottles} бутылок, но есть {rubles}р \n'
+                          f'\n'
+                          f"имя: {self.name} \n"
+                          f"одежда: {self.clothes} \n"
+                          f"жильё: {self.house} \n"
+                          f"возраст: {self.age} \n"
+                          f"на кормане: {self.rubles} p \n"
+                          f"количество собранных бутылок: {self.bottles} \n"
+                          f"транспорт: {self. transport}")
+                    life.occupation()
+                else:
+                    print(f'Вам нечего сдавать. бутылок {self.bottles} \n')
+                    life.occupation()
+
+            if 'car' in namb:
+                if self.rubles > 10 ** 3:
+                    print(f'Можете позволить купить себе транспорт \n'
+                          f'У вас есть {self.rubles}p \n'
+                          f"Новые тапки 500p - 'slippers': \n"
+                          f"Самокат 800p - 'Kick_scooter':\n"
+                          f"Машина 3000p - 'car':\n"
+                          f"Ветолёт 9000p - 'helicopter': \n")
+                    car = input(': ')
+
+                    if 'slippers' in car:
+                        if self.rubles > 500:
+                            self.rubles -= 500
+                            self.transport = 'Тапки'
+                            print(f'Поздравляю! вы купили новые тапки \n'
+                                  f'Ваш транспорт: {self.transport} \n'
+                                  f'у вас осталось {self.rubles}p \n'
+                                  f"\n"
+                                  f"имя: {self.name} \n"
+                                  f'одежда: {self.clothes} \n'
+                                  f"жильё: {self.house} \n"
+                                  f"возраст: {self.age} \n"
+                                  f"на кормане: {self.rubles} p \n"
+                                  f"количество собранных бутылок: {self.bottles} \n"
+                                  f"транспорт: {self. transport}"
+                                  f"\n")
+                            life.occupation()
+                        else:
+                            print(f'Не хватает на покупки \n'
+                                  f'Ваш транспорт: {self.transport} \n')
+                            life.occupation()
+
+                    if 'Kick_scooter' in car:
+                        if self.rubles > 800:
+                            self.rubles -= 800
+                            self.transport = "Самокат"
+                            print(f'ПОЗДРАВЛЯЮ! Вы купили новые Самокат \n'
+                                  f'Ваш транспорт: {self.transport} \n'
+                                  f'у вас осталось {self.rubles}p \n'
+                                  f"\n"
+                                  f"имя: {self.name} \n"
+                                  f'одежда: {self.clothes} \n'
+                                  f"жильё: {self.house} \n"
+                                  f"возраст: {self.age} \n"
+                                  f"на кормане: {self.rubles} p \n"
+                                  f"количество собранных бутылок: {self.bottles} \n"
+                                  f"транспорт: {self. transport}"
+                                  f"\n")
+                            life.occupation()
+                        else:
+                            print(f'Не хватает на покупки \n'
+                                  f'Ваш транспорт: {self.transport} \n')
+                            life.occupation()
+
+                    if 'car' in car:
+                        if self.rubles > 3000:
+                            self.rubles -= 3000
+                            self.transport = "Машина"
+                            print(f'ПОЗДРАВЛЯЮ! вы купили новые машину \n'
+                                  f'Ваш транспорт: {self.transport} \n'
+                                  f'у вас осталось {self.rubles}p \n'
+                                  f"\n"
+                                  f"имя: {self.name} \n"
+                                  f'одежда: {self.clothes} \n'
+                                  f"жильё: {self.house} \n"
+                                  f"возраст: {self.age} \n"
+                                  f"на кормане: {self.rubles} p \n"
+                                  f"количество собранных бутылок: {self.bottles} \n"
+                                  f"транспорт: {self. transport}"
+                                  f"\n")
+                            life.occupation()
+                        else:
+                            print(f'Не хватает на покупки \n'
+                                  f'Ваш транспорт: {self.transport} \n')
+                            life.occupation()
+
+                    if 'helicopter' in car:
+                        if self.rubles > 9000:
+                            self.rubles -= 9000
+                            self.transport = "Ветолёт"
+                            print(f'ПОЗДРАВЛЯЮ! Вы купили новые ветолёт \n'
+                                  f'Ваш транспорт: {self.transport} \n'
+                                  f'у вас осталось {self.rubles}p \n'
+                                  f"\n"
+                                  f"имя: {self.name} \n"
+                                  f'одежда: {self.clothes} \n'
+                                  f"жильё: {self.house} \n"
+                                  f"возраст: {self.age} \n"
+                                  f"на кормане: {self.rubles} p \n"
+                                  f"количество собранных бутылок: {self.bottles} \n"
+                                  f"транспорт: {self. transport}"
+                                  f"\n")
+                            life.occupation()
+                        else:
+                            print(f'Не хватает на покупки \n'
+                                  f'Ваш транспорт: {self.transport} \n')
+                            life.occupation()
+
+                else:
+                    print(f'Не хватает на покупки \n'
+                          f'Ваш транспорт: {self.transport} \n'
+                          f"\n"
+                          f"имя: {self.name} \n"
+                          f'одежда: {self.clothes} \n'
+                          f"жильё: {self.house} \n"
+                          f"возраст: {self.age} \n"
+                          f"на кормане: {self.rubles} p \n"
+                          f"количество собранных бутылок: {self.bottles} \n"
+                          f"транспорт: {self. transport}"
+                          f"\n")
+                    life.occupation()
+
+            if 'buy' in namb:
+                print(f'у вас есть {self.rubles}p \n'
+                      f"построить шалаш 0р - 'hut': \n"
+                      f"купить квартиру 10000p - 'apartment': \n"
+                      f"купить пентхаус 150000p - 'penthouse':\n")
+                house = input(': ')
+
+                if 'hut' in house:
+                    self.house = 'шалаш'
+                    print(f'МОЛОДЕЦ! Вы сами посторили шалаш. \n'
+                          f'Ваше жильё: {self.house} \n'
+                          f"\n"
+                          f"имя: {self.name} \n"
+                          f'одежда: {self.clothes} \n'
+                          f"жильё: {self.house} \n"
+                          f"возраст: {self.age} \n"
+                          f"на кормане: {self.rubles} p \n"
+                          f"количество собранных бутылок: {self.bottles} \n"
+                          f"транспорт: {self. transport}"
+                          f"\n")
+                    life.occupation()
+
+                if 'apartment' in house:
+                    if self.rubles > 10000:
+                        self.rubles -= 10000
+                        self.house = "квартира"
+                        print(f'ПОЗДРАВЛЯЮ! Вы купили новые квартиру \n'
+                              f'Ваш жильё: {self.house} \n'
+                              f"\n"
+                              f"имя: {self.name} \n"
+                              f'одежда: {self.clothes} \n'
+                              f"жильё: {self.house} \n"
+                              f"возраст: {self.age} \n"
+                              f"на кормане: {self.rubles} p \n"
+                              f"количество собранных бутылок: {self.bottles} \n"
+                              f"транспорт: {self. transport}"
+                              f"\n")
+                        life.occupation()
+                    else:
+                        print(f'Не хватает на покупки \n'
+                              f'Ваше жильё: {self.house} \n')
+                        life.occupation()
+
+                if 'penthouse' in house:
+                    if self.rubles > 150000:
+                        self.rubles -= 150000
+                        self.house = "пентхаус"
+                        print(f'ПОЗДРАВЛЯЮ! Вы купили новые пентхаус \n'
+                              f'Ваш жильё: {self.house} \n'
+                              f"\n"
+                              f"имя: {self.name} \n"
+                              f'одежда: {self.clothes} \n'
+                              f"жильё: {self.house} \n"
+                              f"возраст: {self.age} \n"
+                              f"на кормане: {self.rubles} p \n"
+                              f"количество собранных бутылок: {self.bottles} \n"
+                              f"транспорт: {self. transport}"
+                              f"\n")
+                        life.occupation()
+                    else:
+                        print(f'Не хватает на покупки \n'
+                              f'Ваше жильё: {self.house} \n')
+                        life.occupation()
+
+            if 'food' in namb:
+                if self.rubles > 0:
+                    rubles = random.randint(0, self.rubles)
+                    self.rubles -= rubles
+                    print(f'вы потратили в магазине: {rubles}p \n'
+                          f' осталось: {self.rubles}р'
+                          f"\n"
+                          f"имя: {self.name} \n"
+                          f'одежда: {self.clothes} \n'
+                          f"жильё: {self.house} \n"
+                          f"возраст: {self.age} \n"
+                          f"на кормане: {self.rubles} p \n"
+                          f"количество собранных бутылок: {self.bottles} \n"
+                          f"транспорт: {self. transport}"
+                          f"\n")
+                    life.occupation()
+                else:
+                    if self.rubles == 0:
+                        print('У вас нет деняг. сдайте бутылки')
+                        life.occupation()
+
+            if 'clothes' in namb:
+                print(f'у вас есть {self.rubles}p \n'
+                      f"одежда с мусорки 0р - 'rubbish': \n"
+                      f"гуманитарная помощь 0p - 'help': \n"
+                      f"шопинг в Италии 9000p - 'shopping':\n")
+                clothes = input(': ')
+
+                if 'rubbish' in clothes:
+                    form = self.clothes + ', форма ОМОНа'
+                    self.clothes = form
+                    print(f'МОЛОДЕЦ! Вы нашли форму ОМОНа. \n'
+                          f'Ваша одежда: {self. clothes} \n'
+                          f"\n"
+                          f"имя: {self.name} \n"
+                          f'одежда: {self.clothes} \n'
+                          f"жильё: {self.house} \n"
+                          f"возраст: {self.age} \n"
+                          f"на кормане: {self.rubles} p \n"
+                          f"количество собранных бутылок: {self.bottles} \n"
+                          f"транспорт: {self. transport}"
+                          f"\n")
+                    life.occupation()
+
+                if 'help' in clothes:
+                    scarf = self.clothes + ', наски'
+                    self.clothes = scarf
+                    print(f'МОЛОДЕЦ! у вас дали шарф. \n'
+                          f'Ваша одежда: {self.clothes} \n'
+                          f"\n"
+                          f"имя: {self.name} \n"
+                          f'одежда: {self.clothes} \n'
+                          f"жильё: {self.house} \n"
+                          f"возраст: {self.age} \n"
+                          f"на кормане: {self.rubles} p \n"
+                          f"количество собранных бутылок: {self.bottles} \n"
+                          f"транспорт: {self. transport}"
+                          f"\n")
+                    life.occupation()
+
+                if 'shopping' in clothes:
+                    if self.rubles > 9000:
+                        self.rubles -= 9000
+                        self.clothes = "костюм от Armani"
+                        print(f'ПОЗДРАВЛЯЮ! Вы купили костюм от Armani \n'
+                              f'Ваша одежда: {self.clothes} \n'
+                              f"\n"
+                              f"имя: {self.name} \n"
+                              f'одежда: {self.clothes} \n'
+                              f"жильё: {self.house} \n"
+                              f"возраст: {self.age} \n"
+                              f"на кормане: {self.rubles} p \n"
+                              f"количество собранных бутылок: {self.bottles} \n"
+                              f"транспорт: {self. transport}"
+                              f"\n")
+                        life.occupation()
+                    else:
+                        print(f'Не хватает денег на шопинг \n'
+                              f'Ваша одежда: {self.clothes} \n')
+                        life.occupation()
 
 
-class Course:
-    def __init__(self, lang, teachers):
-        self.lang = lang
-        self.teachers = teachers
-
-    def __str__(self):
-        return Languages.get_lang(self.lang)
-
-
-"""Менеджер распределяет учителей между учениками, в зависимости от
-запрашиваемого языка"""
-
-manager = Manager()
-
-teacher1 = Teacher(Languages.ENGLISH)
-teacher2 = Teacher(Languages.ITALIAN)
-teacher3 = Teacher(Languages.ITALIAN)
-teacher4 = Teacher(Languages.ENGLISH)
-
-course1 = Course(Languages.ENGLISH, [teacher1])
-course2 = Course(Languages.ITALIAN, [teacher2, teacher3])
-course3 = Course(Languages.ENGLISH, [teacher4, teacher1])
-
-courses = [course1, course2, course3]
-
-client = Client("Anna")
-client.course = manager.find_course(courses, "italian")
-print(client.course)
-
-client1 = Client("Sarah")
-client1.course = manager.find_course(courses, Languages.ITALIAN)
-print(client1.course)
-
-client2 = Client("Hailey")
-client2.course = manager.find_course(courses, "english")
-print(client2.course)
+life = A_life()
+life.occupation()
