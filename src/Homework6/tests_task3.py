@@ -1,5 +1,6 @@
-import unittest
 from task3 import max_div
+
+import unittest
 
 
 class TestMaxDivFunction(unittest.TestCase):

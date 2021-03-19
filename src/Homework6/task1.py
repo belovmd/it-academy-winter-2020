@@ -14,7 +14,7 @@ class GoingOnVacation(object):
                  count_covid=0,
                  count_voucher=0,
                  number_days_before_vacation=7,
-                 result_test='negative', 
+                 result_test='negative',
                  your_money=1000):
         self.count_work = count_work
         self.count_covid = count_covid
