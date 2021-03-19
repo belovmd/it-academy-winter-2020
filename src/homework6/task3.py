@@ -3,10 +3,10 @@
     здесь может пригодится ‘assertRaises’. Не нужно переделывать функцию для
     того чтобы она ловила все возможные ситуации сама.
 """
-import src.homework6.task3_func as func
 import ddt
 import unittest
 import src.homework6.task3_additional as funcs
+import src.homework6.task3_func as func
 
 
 @ddt.ddt
