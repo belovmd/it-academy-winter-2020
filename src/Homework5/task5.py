@@ -6,8 +6,8 @@
 def degree(a):
     i = 0
     while True:
-        b = a - (1 << i)
-        c = a - (1 << i + 1)
+        b = abs(a - (1 << i))
+        c = abs(a - (1 << i + 1))
         if c > b:
             break
         else:
@@ -15,8 +15,10 @@ def degree(a):
     return 1 << i
 
 
-a = int(input('Введите целое число: '))
-print(degree(a))
+print(degree(10))
+print(degree(20))
+print(degree(1))
+print(degree(13))
 
 
 """
@@ -32,6 +34,6 @@ def degree(a):
         return c
 
 
-a = int(input('Введите целое число: '))
+a = int(input('Введите целое четное число: '))
 print(degree(a))
 """

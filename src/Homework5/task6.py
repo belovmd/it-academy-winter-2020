@@ -14,8 +14,9 @@ def max_div(a):
     return i
 
 
-a = int(input('Введите целое четное число: '))
-print(max_div(a))
+print(max_div(10))
+print(max_div(16))
+print(max_div(12))
 
 
 """
