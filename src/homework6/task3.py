@@ -4,9 +4,8 @@
     того чтобы она ловила все возможные ситуации сама.
 """
 import src.homework6.task3_func as func
-import unittest
 import ddt
-
+import unittest
 import src.homework6.task3_additional as funcs
 
 
