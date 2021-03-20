@@ -9,9 +9,9 @@ def max_divider(n):
     :return: int, the maximum divider.
     """
     primary_power = 0
-    while not n % (2 ** primary_power):
+    while not n % (1 << primary_power):
         primary_power += 1
-    return 2 ** (primary_power - 1)
+    return 1 << (primary_power - 1)
 
 
 if __name__ == '__main__':

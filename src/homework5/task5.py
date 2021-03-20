@@ -10,12 +10,12 @@ def power_of_two(n):
     """
 
     primary_power = 1
-    while 2 ** primary_power < n:
+    while n >> primary_power:
         primary_power += 1
-    if (2 ** primary_power - n) > (n - (2 ** (primary_power - 1))):
-        return 2 ** (primary_power - 1)
+    if abs((1 << primary_power) - n) > abs((n - (1 << (primary_power - 1)))):
+        return 1 << (primary_power - 1)
     else:
-        return 2 ** primary_power
+        return 1 << primary_power
 
 
 if __name__ == '__main__':

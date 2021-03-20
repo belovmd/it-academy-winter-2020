@@ -2,3 +2,5 @@ flake8
 pydocstyle
 ddt
 nose
+matplotlib~=3.3.3
+numpy~=1.19.5

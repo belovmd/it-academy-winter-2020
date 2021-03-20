@@ -10,6 +10,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
+START_LINE = 28
+END_LINE = 277
+
 try:
     rating_list = open('./data_hw5/ratings.list')
 except FileNotFoundError:
@@ -20,7 +23,7 @@ except FileNotFoundError:
 with open('./data_hw5/ratings.list', 'rt') as rl:
     for line in rl:
         txt = rl.readlines()
-        top_250 = txt[27:277]
+        top_250 = txt[START_LINE:END_LINE]
 
 top_250_new = [element.split() for element in top_250]
 
@@ -66,7 +69,7 @@ with open('./data_hw5/years.txt', 'r') as years:
 num2 = Counter(dct2)
 x2 = list(num2.values())
 y2 = list(num2.keys())
-x_coordinates2 = np.arange(len(num2.keys()))
-plt.bar(x_coordinates2, x2)
-plt.xticks(x_coordinates2, y2)
+x_coordinates2 = np.arange(len(num2.values()))
+plt.barh(x_coordinates2, x2)
+plt.yticks(x_coordinates2, y2, fontsize=5)
 plt.show()

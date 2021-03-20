@@ -4,23 +4,18 @@
 
 
 from datetime import datetime
-from datetime import timedelta
 
 
 def my_dec(func):
-    all_results = {}
-    func_name = func.__name__
-    call_counter = 0
-
     def wrapper(*args, **kwargs):
-        nonlocal all_results, func_name, call_counter
+        func_name = func.__name__
+        func_start = datetime.now()
+        result = func(*args, **kwargs)
+        with open('task2.txt', 'a') as results:
+            results.writelines('{}, {}, {}'.format(func_name, func_start,
+                                                   result))
 
-        call_counter += 1
-        (all_results.setdefault(call_counter, [func_name])
-         .append(func(*args, **kwargs)))
-
-        print(all_results)
-        return func(*args, **kwargs)
+        return result
 
     return wrapper
 
@@ -36,9 +31,4 @@ def my_func(a, b):
     return a + b
 
 
-start = datetime.now()
-cache_lifetime = timedelta(days=30)
-func_expiration = start + cache_lifetime
-
-if datetime.now() <= func_expiration:
-    my_func(3, 5)
+print(my_func(2, 3))

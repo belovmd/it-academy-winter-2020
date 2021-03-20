@@ -7,7 +7,6 @@
 """
 
 
-import os
 from src.homework5 import task1_functions as my_funcs
 
 
@@ -17,13 +16,19 @@ def runner(*args):
     :param args: functions' names.
     :return: None
     """
+    funcs = []
     if args:
         for function_ in args:
             my_func = getattr(my_funcs, function_)
             my_func()
             print('The function was called.')
     else:
-        os.system('task1_functions.py')
+        for func in dir(my_funcs):
+            if not func.startswith('__'):
+                funcs.append(func)
+        for f in funcs:
+            my_func = getattr(my_funcs, f)
+            my_func()
         print('All functions were called.')
 
 
