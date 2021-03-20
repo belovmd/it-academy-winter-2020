@@ -15,5 +15,4 @@ else:
             a = a - b
         else:
             b = b - a
-    else:
-        print(a)
+    print(a)

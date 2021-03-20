@@ -33,10 +33,8 @@ N = int(input())
 dct = {}
 
 while N:
-    lst = input().split()
+    countries, *cities = input().split()
     N -= 1
-    countries = lst[0]
-    cities = lst[1:]
 
     for city in cities:
         dct.setdefault(city, []).append(countries)

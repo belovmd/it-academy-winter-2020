@@ -32,7 +32,7 @@
 N = int(input())
 languages = []
 dct = {}
-n = 0  # счетчик языков, которые знают все
+n = 0
 
 for student in range(N):
     M1 = int(input())
@@ -47,10 +47,10 @@ for language in languages:
 for value in dct.values():
     if N == value:
         n += 1
-print(n)
+print('All students have', n, 'languages in common')
 
 for key in dct.keys():
     if dct[key] == N:
-        print(key)
+        print('Here they are:', key)
 
 print(len(set(languages)), *set(languages), sep='\n')
