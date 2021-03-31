@@ -54,8 +54,8 @@ class A_life(Bum):
         else:
             pass
 
-        print(f"Чем заняться?! \n \n"
-              f"Воляться в своём жилье - 'house': \n"
+        print("Чем заняться?! \n")
+        print(f"Воляться в своём жилье - 'house': \n"
               f"Пойти собирать бутылки - 'bottles': \n"
               f"Сдать будылки - 'give': \n"
               f"Пойти к своиим друзьям - 'friends': \n"
@@ -66,7 +66,7 @@ class A_life(Bum):
         namb = input(': ')
 
         if 'house' in namb:
-            print(f"\n Вас не станит если вы ничего не будите делать! \n")
+            print("\n Вас не станит если вы ничего не будите делать! \n")
             life.occupation()
         else:
             if 'bottles' in namb:
@@ -100,8 +100,8 @@ class A_life(Bum):
                           f"транспорт: {self. transport}")
                     life.occupation()
                 else:
-                    print(f"Вам не за что пить. Друзья будут не рады! \n"
-                          f"Сдайте свои бутылки \n")
+                    print("Вам не за что пить. Друзья будут не рады! \n")
+                    print("Сдайте свои бутылки \n")
                     life.occupation()
 
             if 'give' in namb:
@@ -110,7 +110,8 @@ class A_life(Bum):
                     print(f'вы сдали {self.bottles}')
                     self.bottles = 0
                     self.rubles += rubles
-                    print(f'у вас {self.bottles} бутылок, но есть {rubles}р \n \n'
+                    print(f'у вас {self.bottles} бутылок, но есть {rubles}р \n'
+                          f'\n'
                           f"имя: {self.name} \n"
                           f"одежда: {self.clothes} \n"
                           f"жильё: {self.house} \n"

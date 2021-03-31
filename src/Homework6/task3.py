@@ -5,8 +5,7 @@ import math
 покройте тестами. Учтите, что в функцию могут быть переданы некорректные
 значения, здесь может пригодится ‘assertRaises’. Не нужно переделывать
 функцию для того чтобы она ловила все возможные ситуации сама.
-Домашняя 4.
-Задача 5.
+
 Пары элементов
 Дан список чисел. Посчитайте, сколько в нем пар элементов,
 равных друг другу. Считается, что любые два элемента,
@@ -24,9 +23,9 @@ def func(element):
         dct[element] = dct.get(element, 0) + 1
     for values_ in dct.values():
         if values_ > 1:
-            result = (math.factorial(values_) // (math.factorial(values_ - 2) * 2))
+            i = (math.factorial(values_) // (math.factorial(values_ - 2) * 2))
 
-            print(result)
+            print(i)
             return element
 
 
