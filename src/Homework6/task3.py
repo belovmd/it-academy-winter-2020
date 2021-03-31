@@ -24,8 +24,7 @@ def func(element):
         dct[element] = dct.get(element, 0) + 1
     for values_ in dct.values():
         if values_ > 1:
-            result = (math.factorial(values_) //
-                (math.factorial(values_ - 2) * 2))
+            result = (math.factorial(values_) // (math.factorial(values_ - 2) * 2))
 
             print(result)
             return element

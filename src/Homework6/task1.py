@@ -43,23 +43,20 @@ class A_life(Bum):
         if self.clothes in "костюм от Armani":
             if self.house in "пентхаус":
                 if self. transport in "Ветолёт. Коленька в подаркок":
-                    print(f'ПОЗДРАВЛЯЮ! Вы стали успешным!  \n'
-                          f"\n"
+                    print(f'ПОЗДРАВЛЯЮ! Вы стали успешным!  \n \n'
                           f"имя: {self.name} \n"
                           f'одежда: {self.clothes} \n'
                           f"жильё: {self.house} \n"
                           f"возраст: {self.age} \n"
                           f"на кормане: {self.rubles} p \n"
                           f"количество собранных бутылок: {self.bottles} \n"
-                          f"транспорт: {self. transport}"
-                          f"\n")
+                          f"транспорт: {self. transport} \n")
         else:
             pass
 
-        print(f"Чем заняться?! \n"
-              f'\n'
-              f"Воляться в своём жилье - 'house':\n"
-              f"Пойти собирать бутылки - 'bottles':\n"
+        print(f"Чем заняться?! \n \n"
+              f"Воляться в своём жилье - 'house': \n"
+              f"Пойти собирать бутылки - 'bottles': \n"
               f"Сдать будылки - 'give': \n"
               f"Пойти к своиим друзьям - 'friends': \n"
               f"новая одежда - 'clothes': \n"
@@ -69,32 +66,31 @@ class A_life(Bum):
         namb = input(': ')
 
         if 'house' in namb:
-            print(f'\n Вас не станит если вы ничего не будите делать! \n')
+            print(f"\n Вас не станит если вы ничего не будите делать! \n")
             life.occupation()
         else:
             if 'bottles' in namb:
                 bottles = random.randint(0, 100)
                 self.bottles += bottles
-                print(f'Вы собрали {bottles} бутылки \n'
-                      f'Всего бутолок: {self.bottles} \n'
+                print(f"Вы собрали {bottles} бутылки \n"
+                      f"Всего бутолок: {self.bottles} \n"
                       f"\n"
                       f"имя: {self.name} \n"
-                      f'одежда: {self.clothes} \n'
+                      f"одежда: {self.clothes} \n"
                       f"жильё: {self.house} \n"
                       f"возраст: {self.age} \n"
                       f"на кормане: {self.rubles} p \n"
                       f"количество собранных бутылок: {self.bottles} \n"
-                      f"транспорт: {self. transport}"
-                      f"\n")
+                      f"транспорт: {self. transport} \n")
                 life.occupation()
 
             if 'friends' in namb:
                 if self.rubles > 50:
                     rubles = random.randint(0, self.rubles)
                     self.rubles -= rubles
-                    print(f'У друзей вы пропили {rubles}p \n'
-                          f'У вас осталось {self.rubles}p \n'
-                          f'\n'
+                    print(f"У друзей вы пропили {rubles}p \n"
+                          f"У вас осталось {self.rubles}p \n"
+                          f"\n"
                           f"имя: {self.name} \n"
                           f"одежда: {self.clothes} \n"
                           f"жильё: {self.house} \n"
@@ -104,8 +100,8 @@ class A_life(Bum):
                           f"транспорт: {self. transport}")
                     life.occupation()
                 else:
-                    print(f'Вам не за что пить. Друзья будут не рады! \n'
-                          f'Сдайте свои бутылки \n')
+                    print(f"Вам не за что пить. Друзья будут не рады! \n"
+                          f"Сдайте свои бутылки \n")
                     life.occupation()
 
             if 'give' in namb:
@@ -114,8 +110,7 @@ class A_life(Bum):
                     print(f'вы сдали {self.bottles}')
                     self.bottles = 0
                     self.rubles += rubles
-                    print(f'у вас {self.bottles} бутылок, но есть {rubles}р \n'
-                          f'\n'
+                    print(f'у вас {self.bottles} бутылок, но есть {rubles}р \n \n'
                           f"имя: {self.name} \n"
                           f"одежда: {self.clothes} \n"
                           f"жильё: {self.house} \n"
@@ -133,8 +128,8 @@ class A_life(Bum):
                     print(f'Можете позволить купить себе транспорт \n'
                           f'У вас есть {self.rubles}p \n'
                           f"Новые тапки 500p - 'slippers': \n"
-                          f"Самокат 800p - 'Kick_scooter':\n"
-                          f"Машина 3000p - 'car':\n"
+                          f"Самокат 800p - 'Kick_scooter': \n"
+                          f"Машина 3000p - 'car': \n"
                           f"Ветолёт 9000p - 'helicopter': \n")
                     car = input(': ')
 
@@ -152,8 +147,7 @@ class A_life(Bum):
                                   f"возраст: {self.age} \n"
                                   f"на кормане: {self.rubles} p \n"
                                   f"кол. собранных бутылок: {self.bottles} \n"
-                                  f"транспорт: {self. transport}"
-                                  f"\n")
+                                  f"транспорт: {self. transport} \n")
                             life.occupation()
                         else:
                             print(f'Не хватает на покупки \n'
@@ -164,18 +158,16 @@ class A_life(Bum):
                         if self.rubles > 800:
                             self.rubles -= 800
                             self.transport = "Самокат"
-                            print(f'ПОЗДРАВЛЯЮ! Вы купили новые Самокат \n'
-                                  f'Ваш транспорт: {self.transport} \n'
-                                  f'у вас осталось {self.rubles}p \n'
-                                  f"\n"
+                            print(f"ПОЗДРАВЛЯЮ! Вы купили новые Самокат \n"
+                                  f"Ваш транспорт: {self.transport} \n"
+                                  f"у вас осталось {self.rubles}p \n \n"
                                   f"имя: {self.name} \n"
-                                  f'одежда: {self.clothes} \n'
+                                  f"одежда: {self.clothes} \n"
                                   f"жильё: {self.house} \n"
                                   f"возраст: {self.age} \n"
                                   f"на кормане: {self.rubles} p \n"
                                   f"кол. собранных бутылок: {self.bottles} \n"
-                                  f"транспорт: {self. transport}"
-                                  f"\n")
+                                  f"транспорт: {self. transport} \n")
                             life.occupation()
                         else:
                             print(f'Не хватает на покупки \n'
@@ -196,8 +188,7 @@ class A_life(Bum):
                                   f"возраст: {self.age} \n"
                                   f"на кормане: {self.rubles} p \n"
                                   f"кол. собранных бутылок: {self.bottles} \n"
-                                  f"транспорт: {self. transport}"
-                                  f"\n")
+                                  f"транспорт: {self. transport} \n")
                             life.occupation()
                         else:
                             print(f'Не хватает на покупки \n'
@@ -218,8 +209,7 @@ class A_life(Bum):
                                   f"возраст: {self.age} \n"
                                   f"на кормане: {self.rubles} p \n"
                                   f"кол. собранных бутылок: {self.bottles} \n"
-                                  f"транспорт: {self. transport}"
-                                  f"\n")
+                                  f"транспорт: {self. transport} \n")
                             life.occupation()
                         else:
                             print(f'Не хватает на покупки \n'
@@ -236,8 +226,7 @@ class A_life(Bum):
                           f"возраст: {self.age} \n"
                           f"на кормане: {self.rubles} p \n"
                           f"количество собранных бутылок: {self.bottles} \n"
-                          f"транспорт: {self. transport}"
-                          f"\n")
+                          f"транспорт: {self. transport} \n")
                     life.occupation()
 
             if 'buy' in namb:
@@ -258,8 +247,7 @@ class A_life(Bum):
                           f"возраст: {self.age} \n"
                           f"на кормане: {self.rubles} p \n"
                           f"количество собранных бутылок: {self.bottles} \n"
-                          f"транспорт: {self. transport}"
-                          f"\n")
+                          f"транспорт: {self. transport} \n")
                     life.occupation()
 
                 if 'apartment' in house:
@@ -275,8 +263,7 @@ class A_life(Bum):
                               f"возраст: {self.age} \n"
                               f"на кормане: {self.rubles} p \n"
                               f"кол. собранных бутылок: {self.bottles} \n"
-                              f"транспорт: {self. transport}"
-                              f"\n")
+                              f"транспорт: {self. transport} \n")
                         life.occupation()
                     else:
                         print(f'Не хватает на покупки \n'
@@ -296,8 +283,7 @@ class A_life(Bum):
                               f"возраст: {self.age} \n"
                               f"на кормане: {self.rubles} p \n"
                               f"кол. собранных бутылок: {self.bottles} \n"
-                              f"транспорт: {self. transport}"
-                              f"\n")
+                              f"транспорт: {self. transport} \n")
                         life.occupation()
                     else:
                         print(f'Не хватает на покупки \n'
@@ -317,8 +303,7 @@ class A_life(Bum):
                           f"возраст: {self.age} \n"
                           f"на кормане: {self.rubles} p \n"
                           f"количество собранных бутылок: {self.bottles} \n"
-                          f"транспорт: {self. transport}"
-                          f"\n")
+                          f"транспорт: {self. transport} \n")
                     life.occupation()
                 else:
                     if self.rubles == 0:
@@ -336,16 +321,14 @@ class A_life(Bum):
                     form = self.clothes + ', форма ОМОНа'
                     self.clothes = form
                     print(f'МОЛОДЕЦ! Вы нашли форму ОМОНа. \n'
-                          f'Ваша одежда: {self. clothes} \n'
-                          f"\n"
+                          f"Ваша одежда: {self. clothes} \n \n"
                           f"имя: {self.name} \n"
                           f'одежда: {self.clothes} \n'
                           f"жильё: {self.house} \n"
                           f"возраст: {self.age} \n"
                           f"на кормане: {self.rubles} p \n"
                           f"количество собранных бутылок: {self.bottles} \n"
-                          f"транспорт: {self. transport}"
-                          f"\n")
+                          f"транспорт: {self. transport} \n")
                     life.occupation()
 
                 if 'help' in clothes:
@@ -360,8 +343,7 @@ class A_life(Bum):
                           f"возраст: {self.age} \n"
                           f"на кормане: {self.rubles} p \n"
                           f"количество собранных бутылок: {self.bottles} \n"
-                          f"транспорт: {self. transport}"
-                          f"\n")
+                          f"транспорт: {self. transport} \n")
                     life.occupation()
 
                 if 'shopping' in clothes:
@@ -377,8 +359,7 @@ class A_life(Bum):
                               f"возраст: {self.age} \n"
                               f"на кормане: {self.rubles} p \n"
                               f"кол. собранных бутылок: {self.bottles} \n"
-                              f"транспорт: {self. transport}"
-                              f"\n")
+                              f"транспорт: {self. transport} \n")
                         life.occupation()
                     else:
                         print(f'Не хватает денег на шопинг \n'
