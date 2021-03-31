@@ -26,14 +26,15 @@ class Bum:
         self.rubles = rubles
         self.bottles = bottles
 
-        print(f"имя: {self.name} \n"
+        print(f'▀▄▀▄▀▄▀▄▀▄▀▄▀ БОМЖ ▀▄▀▄▀▄▀▄▀▄▀▄▀ \n'
+              f"имя: {self.name} \n"
               f'одежда: {self.clothes} \n'
               f"жильё: {self.house} \n"
               f"возраст: {self.age} \n"
               f"на кормане: {self.rubles} p \n"
               f"количество собранных бутылок: {self.bottles} \n"
-              f"транспорт: {self. transport}"
-              f"\n")
+              f"транспорт: {self. transport} \n"
+              f'▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀\n')
 
 
 class A_life(Bum):
@@ -55,8 +56,7 @@ class A_life(Bum):
         else:
             pass
 
-        print(f'\n'
-              f"Чем заняться?! \n"
+        print(f"Чем заняться?! \n"
               f'\n'
               f"Воляться в своём жилье - 'house':\n"
               f"Пойти собирать бутылки - 'bottles':\n"
