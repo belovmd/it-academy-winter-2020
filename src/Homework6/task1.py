@@ -55,8 +55,8 @@ class A_life(Bum):
             pass
 
         print("Чем заняться?! \n")
-        print("Воляться в своём жилье - 'house':")
-        print(f"Пойти собирать бутылки - 'bottles': \n"
+        print(f"Воляться в своём жилье - 'house': \n"
+              f"Пойти собирать бутылки - 'bottles': \n"
               f"Сдать будылки - 'give': \n"
               f"Пойти к своиим друзьям - 'friends': \n"
               f"новая одежда - 'clothes': \n"
@@ -66,7 +66,7 @@ class A_life(Bum):
         namb = input(': ')
 
         if 'house' in namb:
-            print("\n Вас не станит если вы ничего не будите делать! \n")
+            print(f"\n Вас не станит если вы ничего не будите делать! \n")
             life.occupation()
         else:
             if 'bottles' in namb:
@@ -100,8 +100,8 @@ class A_life(Bum):
                           f"транспорт: {self. transport}")
                     life.occupation()
                 else:
-                    print("Вам не за что пить. Друзья будут не рады! \n")
-                    print("Сдайте свои бутылки \n")
+                    print(f"Вам не за что пить. Друзья будут не рады! \n"
+                          f"Сдайте свои бутылки \n")
                     life.occupation()
 
             if 'give' in namb:
