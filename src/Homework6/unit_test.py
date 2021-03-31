@@ -1,6 +1,5 @@
-
-import unittest
 from task3 import func
+import unittest
 
 
 class TestStringMethods(unittest.TestCase):
