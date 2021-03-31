@@ -55,8 +55,8 @@ class A_life(Bum):
             pass
 
         print("Чем заняться?! \n")
-        print(f"Воляться в своём жилье - 'house': \n"
-              f"Пойти собирать бутылки - 'bottles': \n"
+        print("Воляться в своём жилье - 'house':")
+        print(f"Пойти собирать бутылки - 'bottles': \n"
               f"Сдать будылки - 'give': \n"
               f"Пойти к своиим друзьям - 'friends': \n"
               f"новая одежда - 'clothes': \n"
