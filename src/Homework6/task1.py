@@ -151,7 +151,7 @@ class A_life(Bum):
                                   f"жильё: {self.house} \n"
                                   f"возраст: {self.age} \n"
                                   f"на кормане: {self.rubles} p \n"
-                                  f"количество собранных бутылок: {self.bottles} \n"
+                                  f"кол. собранных бутылок: {self.bottles} \n"
                                   f"транспорт: {self. transport}"
                                   f"\n")
                             life.occupation()
@@ -173,7 +173,7 @@ class A_life(Bum):
                                   f"жильё: {self.house} \n"
                                   f"возраст: {self.age} \n"
                                   f"на кормане: {self.rubles} p \n"
-                                  f"количество собранных бутылок: {self.bottles} \n"
+                                  f"кол. собранных бутылок: {self.bottles} \n"
                                   f"транспорт: {self. transport}"
                                   f"\n")
                             life.occupation()
@@ -195,7 +195,7 @@ class A_life(Bum):
                                   f"жильё: {self.house} \n"
                                   f"возраст: {self.age} \n"
                                   f"на кормане: {self.rubles} p \n"
-                                  f"количество собранных бутылок: {self.bottles} \n"
+                                  f"кол. собранных бутылок: {self.bottles} \n"
                                   f"транспорт: {self. transport}"
                                   f"\n")
                             life.occupation()
@@ -217,7 +217,7 @@ class A_life(Bum):
                                   f"жильё: {self.house} \n"
                                   f"возраст: {self.age} \n"
                                   f"на кормане: {self.rubles} p \n"
-                                  f"количество собранных бутылок: {self.bottles} \n"
+                                  f"кол. собранных бутылок: {self.bottles} \n"
                                   f"транспорт: {self. transport}"
                                   f"\n")
                             life.occupation()
@@ -274,7 +274,7 @@ class A_life(Bum):
                               f"жильё: {self.house} \n"
                               f"возраст: {self.age} \n"
                               f"на кормане: {self.rubles} p \n"
-                              f"количество собранных бутылок: {self.bottles} \n"
+                              f"кол. собранных бутылок: {self.bottles} \n"
                               f"транспорт: {self. transport}"
                               f"\n")
                         life.occupation()
@@ -295,7 +295,7 @@ class A_life(Bum):
                               f"жильё: {self.house} \n"
                               f"возраст: {self.age} \n"
                               f"на кормане: {self.rubles} p \n"
-                              f"количество собранных бутылок: {self.bottles} \n"
+                              f"кол. собранных бутылок: {self.bottles} \n"
                               f"транспорт: {self. transport}"
                               f"\n")
                         life.occupation()
@@ -376,7 +376,7 @@ class A_life(Bum):
                               f"жильё: {self.house} \n"
                               f"возраст: {self.age} \n"
                               f"на кормане: {self.rubles} p \n"
-                              f"количество собранных бутылок: {self.bottles} \n"
+                              f"кол. собранных бутылок: {self.bottles} \n"
                               f"транспорт: {self. transport}"
                               f"\n")
                         life.occupation()

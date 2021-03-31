@@ -14,6 +14,7 @@ class TooManyErrors(RuntimeError):
 
 def dec(func):
     total_count = 0
+
     def wrapper(namb):
 
         nonlocal total_count
