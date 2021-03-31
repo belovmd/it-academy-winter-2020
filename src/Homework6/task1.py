@@ -41,7 +41,7 @@ class A_life(Bum):
     def occupation(self):
         if self.clothes in "костюм от Armani":
             if self.house in "пентхаус":
-                if self. transport in "Ветолёт":
+                if self. transport in "Ветолёт. Коленька в подаркок":
                     print(f'ПОЗДРАВЛЯЮ! Вы стали успешным!  \n'
                           f"\n"
                           f"имя: {self.name} \n"
@@ -205,9 +205,9 @@ class A_life(Bum):
                             life.occupation()
 
                     if 'helicopter' in car:
-                        if self.rubles > 9000:
-                            self.rubles -= 9000
-                            self.transport = "Ветолёт"
+                        if self.rubles > 6000:
+                            self.rubles -= 6000
+                            self.transport = "Ветолёт. Коленька в подаркок"
                             print(f'ПОЗДРАВЛЯЮ! Вы купили новые ветолёт \n'
                                   f'Ваш транспорт: {self.transport} \n'
                                   f'у вас осталось {self.rubles}p \n'
@@ -349,7 +349,7 @@ class A_life(Bum):
                     life.occupation()
 
                 if 'help' in clothes:
-                    scarf = self.clothes + ', наски'
+                    scarf = self.clothes + ', чулки'
                     self.clothes = scarf
                     print(f'МОЛОДЕЦ! у вас дали шарф. \n'
                           f'Ваша одежда: {self.clothes} \n'
