@@ -1,6 +1,6 @@
-import unittest
 from task3 import get_countries
 from task3 import get_country_cities
+import unittest
 
 
 class TestTask(unittest.TestCase):
