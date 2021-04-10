@@ -8,12 +8,13 @@
 
 import matplotlib.pyplot as plt
 
-path_list = 'data_hw5/ratings.list'
+PATH_DATA_HW5 = '~/data_hw5'
+PATH_RATING_LIST = f'{PATH_DATA_HW5}/ratings.list'
 
 try:
-    raiting_list = open(path_list, 'r', encoding='ISO-8859-1')
+    raiting_list = open(PATH_RATING_LIST, 'r', encoding='ISO-8859-1')
 except FileNotFoundError:
-    print(f'No such file or directory: {path_list}')
+    print(f'No such file or directory: {PATH_RATING_LIST}')
 
 titles = []
 ratings = []
@@ -37,7 +38,7 @@ def write_file(name, lst):
         file.write('\n'.join(lst))
 
 
-write_file('top250_movies.txt', titles[:250])
+write_file(f'{PATH_DATA_HW5}/top250_movies.txt', titles[:250])
 
 num_bins = 25
 n, bins, patches = plt.hist(ratings[:250], num_bins)
