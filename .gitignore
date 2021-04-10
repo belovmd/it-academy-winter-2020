@@ -107,3 +107,6 @@ venv.bak/
 .idea/
 .tox/
 .gitignore/
+
+# other
+data_hw5/

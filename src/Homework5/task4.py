@@ -8,7 +8,7 @@
 
 import matplotlib.pyplot as plt
 
-PATH_DATA_HW5 = '~/data_hw5'
+PATH_DATA_HW5 = './data_hw5'
 PATH_RATING_LIST = f'{PATH_DATA_HW5}/ratings.list'
 
 try:
